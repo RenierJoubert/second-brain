@@ -1,4 +1,4 @@
-# https://renierj.dev 
+# # [renierj.dev](https://renierj.dev)
 
 A centralized academic note-base and collection of content/ideas synced to my obsidian vault.
 
