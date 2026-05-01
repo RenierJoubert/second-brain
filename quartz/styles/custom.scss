@@ -105,3 +105,14 @@
   }
 }
 
+// Hide title and metadata on index.md
+body[data-slug="index"] h1,
+body[data-slug="index"] .content-meta,
+body[data-slug="index"] .meta {
+  display: none !important;
+}
+
+// Increase home page font size
+body[data-slug="index"] article {
+  font-size: 1.2rem;
+}
