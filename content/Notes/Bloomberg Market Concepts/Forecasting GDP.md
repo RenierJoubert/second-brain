@@ -1,4 +1,0 @@
-#economics #finance 
-
-# Forecasting GDP
-

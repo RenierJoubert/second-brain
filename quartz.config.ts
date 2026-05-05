@@ -62,8 +62,8 @@ const config: QuartzConfig = {
       }),
       Plugin.SyntaxHighlighting({
         theme: {
-          light: "ayu-dark",
-          dark: "rose-pine-dawn",
+          light: "catppuccin-mocha",
+          dark: "catppuccin-mocha",
         },
         keepBackground: false,
       }),
