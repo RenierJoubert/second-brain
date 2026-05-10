@@ -5,10 +5,11 @@ import * as Component from "./quartz/components"
 export const sharedPageComponents: SharedLayout = {
   head: Component.Head(),
   header: [],
-  afterBody: [],
+  afterBody: [
+  ],
   footer: Component.Footer({
     links: {
-        GitHub: "https://github.com/renierjoubert"
+      GitHub: "https://github.com/renierjoubert",
     },
   }),
 }
@@ -17,48 +18,51 @@ export const sharedPageComponents: SharedLayout = {
 export const defaultContentPageLayout: PageLayout = {
   beforeBody: [
     Component.ConditionalRender({
-      component: Component.Breadcrumbs(),
+      component: Component.Breadcrumbs({
+        spacerSymbol: "❯",
+        rootName: "Home",
+        resolveFrontmatterTitle: true,
+        showCurrentPage: true,
+      }),
       condition: (page) => page.fileData.slug !== "index",
     }),
+    Component.Spacer(),
+    Component.Search(),
     Component.ArticleTitle(),
     Component.ContentMeta(),
   ],
   left: [
-    Component.PageTitle(),
-    Component.MobileOnly(Component.Spacer()),
-    Component.Flex({
-      components: [
-        {
-          Component: Component.Search(),
-          grow: true,
-        },
-        { Component: Component.ReaderMode() },
-      ],
-    }),
-    Component.Explorer(),
+    Component.Graph(),
   ],
   right: [
-    Component.Graph(),
-    Component.DesktopOnly(Component.TableOfContents()),
     Component.Backlinks(),
+    Component.DesktopOnly(
+      Component.Explorer({
+        title: "Explore",
+        useSavedState: true,
+      }),
+    ),
+    Component.MobileOnly(
+      Component.Explorer({
+        title: "Explore",
+        useSavedState: true,
+      }),
+    ),
   ],
 }
 
 // components for pages that display lists of pages  (e.g. tags or folders)
 export const defaultListPageLayout: PageLayout = {
-  beforeBody: [Component.Breadcrumbs(), Component.ArticleTitle(), Component.ContentMeta()],
-  left: [
-    Component.PageTitle(),
-    Component.MobileOnly(Component.Spacer()),
-    Component.Flex({
-      components: [
-        {
-          Component: Component.Search(),
-          grow: true,
-        },
-      ],
+  beforeBody: [
+    Component.Breadcrumbs({
+      spacerSymbol: "❯",
+      rootName: "Home",
+      resolveFrontmatterTitle: true,
+      showCurrentPage: true,
     }),
-    Component.Explorer(),
+    Component.Search(),
+    Component.ArticleTitle(),
   ],
+  left: [Component.MobileOnly(Component.Spacer())],
   right: [],
 }

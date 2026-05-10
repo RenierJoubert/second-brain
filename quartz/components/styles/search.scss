@@ -1,11 +1,9 @@
 @use "../../styles/variables.scss" as *;
 
 .search {
-  min-width: fit-content;
-  max-width: 14rem;
-  @media all and ($mobile) {
-    flex-grow: 0.3;
-  }
+  min-width: 41rem;
+  max-width: 41rem;
+
 
   & > .search-button {
     background-color: transparent;
@@ -21,6 +19,7 @@
     cursor: pointer;
     white-space: nowrap;
     width: 100%;
+    margin-top: 1.5rem;
 
     & > p {
       display: inline;
