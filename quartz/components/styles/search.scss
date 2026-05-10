@@ -1,8 +1,7 @@
 @use "../../styles/variables.scss" as *;
 
 .search {
-  min-width: 41rem;
-  max-width: 41rem;
+  width: min(100%, 41rem);
 
 
   & > .search-button {
