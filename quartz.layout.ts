@@ -26,7 +26,6 @@ export const defaultContentPageLayout: PageLayout = {
       }),
       condition: (page) => page.fileData.slug !== "index",
     }),
-    Component.Spacer(),
     Component.Search(),
     Component.ArticleTitle(),
     Component.ContentMeta(),
@@ -37,12 +36,6 @@ export const defaultContentPageLayout: PageLayout = {
   right: [
     Component.Backlinks(),
     Component.DesktopOnly(
-      Component.Explorer({
-        title: "Explore",
-        useSavedState: true,
-      }),
-    ),
-    Component.MobileOnly(
       Component.Explorer({
         title: "Explore",
         useSavedState: true,
@@ -63,6 +56,6 @@ export const defaultListPageLayout: PageLayout = {
     Component.Search(),
     Component.ArticleTitle(),
   ],
-  left: [Component.MobileOnly(Component.Spacer())],
+  left: [],
   right: [],
 }
