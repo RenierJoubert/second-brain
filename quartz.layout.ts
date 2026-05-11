@@ -29,9 +29,10 @@ export const defaultContentPageLayout: PageLayout = {
     Component.Search(),
     Component.ArticleTitle(),
     Component.ContentMeta(),
+    Component.MobileOnly(Component.Graph()),
   ],
   left: [
-    Component.Graph(),
+    Component.DesktopOnly(Component.Graph()),
   ],
   right: [
     Component.Backlinks(),
