@@ -4,7 +4,9 @@
 
 A set $S \subseteq \mathbb{R}^n$ is **convex** if for all points $x, y \in S$ and all $t \in [0, 1]$, the following line lies fully within the set:
 
-$$xt + (1-t)y \in S$$
+$$
+tx + (1-t)y \in S
+$$
 
 Intuitively, a set is convex if the **line segment** connecting any two points in the set lies entirely within the set.
 
@@ -32,6 +34,8 @@ Intuitively, a set is convex if the **line segment** connecting any two points i
 
 A function $f: S \to \mathbb{R}$ on a convex set $S$ is **convex** if:
 
-$$f(xt + (1-t)y) \leq tf(x) + (1-t)f(y) \quad \forall\, x,y \in S,\ t \in [0,1]$$
+$$
+f(tx + (1-t)y) \leq tf(x) + (1-t)f(y) \quad \forall\, x,y \in S,\ t \in [0,1]
+$$
 
 
