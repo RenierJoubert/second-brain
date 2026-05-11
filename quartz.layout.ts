@@ -10,6 +10,7 @@ export const sharedPageComponents: SharedLayout = {
   footer: Component.Footer({
     links: {
       GitHub: "https://github.com/renierjoubert",
+      LinkedIn: "https://www.linkedin.com/in/renier-joubert/",
     },
   }),
 }
@@ -29,7 +30,10 @@ export const defaultContentPageLayout: PageLayout = {
     Component.Search(),
     Component.ArticleTitle(),
     Component.ContentMeta(),
-    Component.MobileOnly(Component.Graph()),
+    Component.ConditionalRender({
+      component: Component.MobileOnly(Component.Graph()),
+      condition: (page) => page.fileData.slug !== "index", // hide graph on mobile index
+    }),
   ],
   left: [
     Component.DesktopOnly(Component.Graph()),
