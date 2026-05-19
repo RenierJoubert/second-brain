@@ -1,4 +1,4 @@
-#stats #stat302 #math
+#stats #math #stat302 
 
 
 # A Review of Set Theory
