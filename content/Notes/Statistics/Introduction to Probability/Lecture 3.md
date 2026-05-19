@@ -96,19 +96,20 @@ $$
 > m
 > \end{pmatrix}
 >= {}_nC_m = \frac{n!}{m!(n-m)!}
-$$
+>$$
+>
+
 
 ## Permutations
-> A permutation is an arrangement of a set's elements in a specific order, that is a permutation is unique. The number of permutations for a set of size $n$ is given by $n!$
+
+>A permutation is an arrangement of a set's elements in a specific order, that is permutation is unique. The number of permutations for a set of size $n$ is given by $n!$
 
 For example, there are 720 different ways to arrange the letters $ABCDEF$, for in this case the set has a size of 6, hence $6! = 720$.
 
 
 > [!Question] But what about duplication?
 > When a set contains duplicates, naturally this decreases the number of permutations of that set, as two identical elements can be swapped to yield the same result. To account for this, we **remove the factor of duplication by dividing by the number of duplicate permutations.** Namely, for a set of size $n$ with $m$ duplicates of one item in $n$, the number of permutations is then given by:
->$$
-> \frac{n!}{m!}
->$$
+>$$ \frac{n!}{m!}$$
 >Now if it had more than one duplicated item we again would just divide by the number of duplicate permutations.
 
 
@@ -129,7 +130,7 @@ $$
 >Let $A,B \subseteq \Omega$, $\mathbb{P}(B) > 0$, then:
 >$$
 >\mathbb{P}(A | B) = \frac{\mathbb{P}(A \cap B)}{\mathbb{P}(B)}
-$$
+>$$
 
 ### A Useful Result
 $$

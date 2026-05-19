@@ -118,6 +118,8 @@ Here the main loop will execute $n$ times for an array of size $n$, and indexOfM
 
 ## Insertion Sort
 
+!! do this
+
 
 
 
