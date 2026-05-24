@@ -70,7 +70,7 @@ $$
 
 Is said to have the $\text{Binom}(n, \theta)$ distribution. The graph of this distribution looks like:
 
-![[Pasted image 20260523210213.png]]
+![[Pasted image 20260523205857.png]]
 
 
 > [!Todo] Using the Binomial model 
