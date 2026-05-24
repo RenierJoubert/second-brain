@@ -18,7 +18,7 @@ Each address can only store one byte of data, if this is exceeded the data is di
 
 An *actual* parameter is a variable specified by the function caller. Where a *formal* parameter is a variable found in the signature of the function itself.
 
-![[content/images/Pasted image 20260515134702.png]]
+![[Pasted image 20260515134702.png]]
 
 Namely, *actual* parameters have actual values, where formal parameters are purely a specification.
 
@@ -28,17 +28,17 @@ Most parameters in C++ are *passed by value* ("call by value"), meaning the valu
 
 The actual and formal parameters are difference variables in memory even though they are named the same.
 
-![[content/images/Pasted image 20260515135033.png]]
+![[Pasted image 20260515135033.png]]
 
 Here `r` is first written into memory, then for the function call `circleArea(r)` the parameters first need to be written into memory and prepared, in this case  the actual parameter `r` is mapped to a `double`. 
 
 After this we can execute our code line by line. At this point `double pi = 3.1415` is written into memory. However we hit another function call `square(radius)` and it's parameters need to be prepared. The actual parameter is ==copied== to the formal parameter and `3.0` is written into memory again as the variable `x`. We terminate the `double` function returning `9.0` and the stack memory allocated to `double` is released and the `9.0` is assigned to the sq_r variable. Finally, the `circleArea` function will terminate after returning `sq_r * pi` and all memory allocated to `circleArea` is released and we end here:
 
-![[content/images/Pasted image 20260515135720.png]]
+![[Pasted image 20260515135720.png]]
 
 As the `area` variable is resolved.
 
-![[content/images/Pasted image 20260515135921.png]]
+![[Pasted image 20260515135921.png]]
 
 What does the code above look like in memory when we call it?
 
@@ -61,7 +61,7 @@ We need to use *call-by-reference* to get true access to `a` and `b`, instead of
 
 To **declare** a pointer we use a "\*" symbol. Namely, we write:
 
-![[content/images/Pasted image 20260515140929.png]]
+![[Pasted image 20260515140929.png]]
 
 Pointers still have their own memory address, but when you actually look inside that address it contains an address referencing another value at that address.
 
@@ -71,26 +71,26 @@ The *value* which a pointer points to can be accessed by "de-referencing" the po
 
 For example:
 
-![[content/images/Pasted image 20260515141240.png]]
+![[Pasted image 20260515141240.png]]
 
-![[content/images/Pasted image 20260515141302.png]]
+![[Pasted image 20260515141302.png]]
 
-![[content/images/Pasted image 20260515141335.png]]
+![[Pasted image 20260515141335.png]]
 
 Here we can change `x` by executing `x=38`. But we can also change the contents of `x`'s memory address by using `*p` and writing `*p=38` to change it to `38`. Essentially, with pointers we can be in a completely difference scope than `x` but as long as we know its address we can always de-reference `x` and change its value.
 
 We can also pass pointers as parameters, but the the pointer will be passed by value meaning the function will be operating with the memory address representative of the pointers value.
 
-![[content/images/Pasted image 20260515141911.png]]
+![[Pasted image 20260515141911.png]]
 
 Here `x` after `f1` is still 45, even though the `cout` shows `"f1 arg: 22"`. However, after `f2` executes `x` is `410` and the `cout` is `"f2 *arg: 410"`. This is another way we can do pass by reference.
 
 ## Pointing to a Pointer
 
 When assigning multiple pointers, the left hand side and right hand side must be the same.
-![[content/images/Pasted image 20260515142323.png]]
+![[Pasted image 20260515142323.png]]
 
-![[content/images/Pasted image 20260515142338.png]]
+![[Pasted image 20260515142338.png]]
 
 In essence, pointers are how we interact with the heap. Requesting memory from the heap is done using `new`.
 
@@ -98,7 +98,7 @@ In essence, pointers are how we interact with the heap. Requesting memory from t
 
 `delete` frees the memory at the address reference by it's pointer, where `delete[]` is used to free memory allocated to many variables.
 
-![[content/images/Pasted image 20260516170321.png]]
+![[Pasted image 20260516170321.png]]
 
 ### Memory Leaks
 
@@ -106,12 +106,12 @@ Failure to release the memory causes a memory leak error. This happens when you 
 
 For example, a memory leak can be caused by:
 
-![[content/images/Pasted image 20260515143657.png]]
+![[Pasted image 20260515143657.png]]
 
 
 ### Dangling Pointers
 
-![[content/images/Pasted image 20260515143904.png]]
+![[Pasted image 20260515143904.png]]
 
 > If you plan to keep your pointer around, you should set it to null after you de-reference and free it.
 
@@ -145,11 +145,11 @@ The data attribute of the node varies depending on what the node is intended to 
 
 For example:
 
-![[content/images/Pasted image 20260515150129.png]]
+![[Pasted image 20260515150129.png]]
 
 Where the list is terminated using a *null-pointer*.
 
-![[content/images/Pasted image 20260516170439.png]]
+![[Pasted image 20260516170439.png]]
 
 Here we can instead use the `->` notation instead in order to access a pointer's reference value without using cumbersome notation.
 ### Building a Linked List
@@ -179,7 +179,7 @@ p = p-> next;
 
 ```
 
-![[content/images/Pasted image 20260515151149.png]]
+![[Pasted image 20260515151149.png]]
 
 We can traverse the list with a loop also:
 
@@ -197,13 +197,13 @@ If we were to use `a` to traverse the list instead of `p` we would lose access t
 
 > We can insert elements into the middle of the list but this requires access to the position before we would like to do the insertion
 
-![[content/images/Pasted image 20260515151730.png]]
+![[Pasted image 20260515151730.png]]
 
 ### Linked List Removal
 
 > We need to have access to the node that is in-front of the node we wish to delete
 
-![[content/images/Pasted image 20260515152015.png]]
+![[Pasted image 20260515152015.png]]
 
 ## Linked Lists by Features
 
@@ -217,13 +217,13 @@ If we were to use `a` to traverse the list instead of `p` we would lose access t
 
 A tail pointer allows us to perform insertion at the back of the list in $O(1)$ which is much better than $\Theta(n)$! However it does not help us when inserting in the middle of the list or *removing* from the end of the list.
 
-![[content/images/Pasted image 20260515152901.png]]
+![[Pasted image 20260515152901.png]]
 
 ### Doubly Linked List
 
 > A doubly linked list is composed of nodes with 2 pointers, such that every node points to the node ahead of it, and the node behind it.
 
-![[content/images/Pasted image 20260515153127.png]]
+![[Pasted image 20260515153127.png]]
 
 However, they are more tricky to work with as we are dealing with double the amount of pointers.
 
@@ -233,11 +233,11 @@ However, they are more tricky to work with as we are dealing with double the amo
 
 For instance:
 
-![[content/images/Pasted image 20260515153328.png]]
+![[Pasted image 20260515153328.png]]
 
 ### Doubly Removal
 
-![[content/images/Pasted image 20260515153802.png]]
+![[Pasted image 20260515153802.png]]
 
 
 ## Linked Lists are Recursive
