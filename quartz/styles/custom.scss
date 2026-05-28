@@ -119,3 +119,7 @@ body[data-slug="index"] .meta {
 body[data-slug="index"] article {
   font-size: 1.2rem;
 }
+// get rid of inline code highlighting
+:not(pre) > code {
+  background-color: transparent !important;
+}
