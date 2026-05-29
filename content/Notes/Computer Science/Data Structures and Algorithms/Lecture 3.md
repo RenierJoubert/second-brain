@@ -154,7 +154,7 @@ Where the list is terminated using a *null-pointer*.
 Here we can instead use the `->` notation instead in order to access a pointer's reference value without using cumbersome notation.
 ### Building a Linked List
 
-> Linked lists are advantageous as we can always add another space for another element if needed, whereas an array is finite.
+> Linked lists are advantageous as we can always add another space for another element if needed, whereas an array is finite. Moreover, insertion into an array at a specific index can be expensive. 
 
 We can begin a linked list using:
 
@@ -211,6 +211,9 @@ If we were to use `a` to traverse the list instead of `p` we would lose access t
 | ------------- | -------------------- | -------------------- |
 | Doubly-Linked | Circular & Sentinels | Front + Back pointer |
 
+### Sentinels
+> Sentinels are 'dummy' nodes so to speak that dont hold any real data but just act as placeholders at the start and end of the list. This makes it so that we can use the same code to delete the start and end of our list as we do with any other node. Typically though we do **not** use sentinels and just use NULL pointers.
+
 ## Linked List Variations
 
 > A singly linked list with a head pointer has rather poor complexity when accessing the end of the list or when traversing, to combat this we can also implement a tail pointer at the end of the list instead of just a head pointer.
@@ -259,3 +262,5 @@ void PrintReverse(Node<LIT>* curr) {
 
 Which will only have a running time of $O(n)$.
 
+## Linked Lists vs Arrays
+> Binary search can be implemented more efficiently on an array and not on a linked list. Moreover, inserting an element at the end of an array runs in $O(1)$ time where it runs in $O(n)$ time on a singly linked list with only a head pointer. Finally accessing elements in array is much faster and can be done in $O(1)$ time compared to $O(n)$ time for a linked list. That being said, arrays are of finite size and resizing it down the line can also be very costly, additionally, linked lists are much less costly when inserting elements into specific indexes. For example, insertion at the first position of the linked list takes $O(1)$ time, but $O(n)$ for an array.
