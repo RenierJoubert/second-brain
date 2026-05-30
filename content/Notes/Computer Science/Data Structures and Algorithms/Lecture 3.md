@@ -26,7 +26,7 @@ However, formal parameters **must** match with actual parameters in order, numbe
 
 Most parameters in C++ are *passed by value* ("call by value"), meaning the value of the actual parameter is copied to the formal parameter when the function is called.
 
-The actual and formal parameters are difference variables in memory even though they are named the same.
+The actual and formal parameters are different variables in memory even though they are named the same.
 
 ![[Pasted image 20260515135033.png]]
 
@@ -44,10 +44,11 @@ What does the code above look like in memory when we call it?
 
 `a` is written into the stack, then `b` is written into the stack. When we supply them into the swap function they will be copied to formal parameters `x` and `y`. The first parameter gets a copy of `a` and the second parameter gets a copy of `b`, and these are both written into the memory stack. Then a variable `temp` is written to memory with the same value as `x`. Then, the value of `x` is changed to the value of `y`, then the value of `y` is changed to the value of `temp`. Finally the function will terminate and all addresses will be freed except for `a` and `b`. However, after all of this `a` and `b` are ==still not swapped.== So how do we swap them?
 
-We need to use *call-by-reference* to get true access to `a` and `b`, instead of call by value.
 
+> [!Tip] Call by reference
+> We need to use *call-by-reference* to get true access to `a` and `b`, instead of call by value.
+>
 > We can use call-by-reference by adding an "&" after the parameters data type in the signature
-
 
 ## Heap Memory (Dynamic Memory)
 
@@ -65,7 +66,7 @@ To **declare** a pointer we use a "\*" symbol. Namely, we write:
 
 Pointers still have their own memory address, but when you actually look inside that address it contains an address referencing another value at that address.
 
-Pointers can be assigned the address of an existing variable using the address operation (&).
+==Pointers can be assigned the address of an existing variable using the address operation (&).==
 
 The *value* which a pointer points to can be accessed by "de-referencing" the pointer using the "\*" operator.
 
@@ -94,7 +95,7 @@ When assigning multiple pointers, the left hand side and right hand side must be
 
 In essence, pointers are how we interact with the heap. Requesting memory from the heap is done using `new`.
 
-`new` allocates space in the heap and gives us back the first address of the allocated space.
+==`new` allocates space in the heap and gives us back the first address of the allocated space.==
 
 `delete` frees the memory at the address reference by it's pointer, where `delete[]` is used to free memory allocated to many variables.
 
@@ -122,7 +123,7 @@ For example, a memory leak can be caused by:
 template <class LIT>
 struct Node {
 	LIT data;
-	Node * next;
+	Node* next;
 	Node(LIT ndata, Node * nx=NULL):data(ndata),next(nx) {}
 };
 ```
@@ -151,7 +152,7 @@ Where the list is terminated using a *null-pointer*.
 
 ![[Pasted image 20260516170439.png]]
 
-Here we can instead use the `->` notation instead in order to access a pointer's reference value without using cumbersome notation.
+Here we can instead use the `->` notation instead of de-referencing with `*` and using the `.` in order to access a pointer's reference value without using cumbersome notation.
 ### Building a Linked List
 
 > Linked lists are advantageous as we can always add another space for another element if needed, whereas an array is finite. Moreover, insertion into an array at a specific index can be expensive. 
@@ -191,19 +192,26 @@ while (p != NULL) {
 }
 ```
 
-If we were to use `a` to traverse the list instead of `p` we would lose access to the start of the list and nothing on the stack will remember where the heap elements are creating a memory leak.
+
+> [!Danger] Memory leak
+> If we were to use `a` to traverse the list instead of `p` ==we would lose access to the start of the list== and nothing on the stack will remember where the heap elements are creating a memory leak.
 
 ### Inserting into a Linked List
 
-> We can insert elements into the middle of the list but this requires access to the position before we would like to do the insertion
+> We can insert elements into the middle of the list but this requires access to the position ==before== we would like to do the insertion.
 
 ![[Pasted image 20260515151730.png]]
 
+Because we need the position before which we would like to do the insertion, if we have a head or tail pointer, then respectively insertion time is $O(1)$ at the head and or tail.
 ### Linked List Removal
 
-> We need to have access to the node that is in-front of the node we wish to delete
+> We need to have access to the node that is ==in-front== of the node we wish to delete (after it)
 
 ![[Pasted image 20260515152015.png]]
+
+
+> [!Danger] Tail Removal
+> Because we need to access the node that is ==in front of the node we wish to delete,== this means that even with a tail-pointer, removal from the end of a linked list takes $O(1)$ time.
 
 ## Linked Lists by Features
 
@@ -263,4 +271,4 @@ void PrintReverse(Node<LIT>* curr) {
 Which will only have a running time of $O(n)$.
 
 ## Linked Lists vs Arrays
-> Binary search can be implemented more efficiently on an array and not on a linked list. Moreover, inserting an element at the end of an array runs in $O(1)$ time where it runs in $O(n)$ time on a singly linked list with only a head pointer. Finally accessing elements in array is much faster and can be done in $O(1)$ time compared to $O(n)$ time for a linked list. That being said, arrays are of finite size and resizing it down the line can also be very costly, additionally, linked lists are much less costly when inserting elements into specific indexes. For example, insertion at the first position of the linked list takes $O(1)$ time, but $O(n)$ for an array.
+> Binary search can be implemented more efficiently on an array and not on a linked list. Moreover, inserting an element at the end  or beginning of an array runs in $O(1)$ time where it runs in $O(n)$ time on a singly linked list with only a head pointer. Finally accessing elements in array is much faster and can be done in $O(1)$ time compared to $O(n)$ time for a linked list. That being said, arrays are of finite size and resizing it down the line can also be very costly, additionally, linked lists are much less costly when inserting elements into specific indexes. For example, insertion at the first position of the linked list takes $O(1)$ time, but $O(n)$ for an array.

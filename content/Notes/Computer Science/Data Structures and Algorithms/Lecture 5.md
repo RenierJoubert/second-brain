@@ -39,12 +39,22 @@ By recursion tree analysis we see that:
 
 ![[Pasted image 20260522134710.png]]
 
+
+> [!Tip] Space Complexity
+> Please observe here that the number of recursive calls made is $\log_{2}(n)$, hence the *space* complexity of merge sort is $O(\log(n))$.
+
+
 Where `c` is some constant that includes the cost of merging, the mid-point calculation, and the base-case check. And `b` is come constant representative of the base case check cost.
 
 However, this recursion tree analysis does always work this well. In some cases we can analyze using *recurrence*. In which if the algorithm is recursive, we can analyze it recursively.
 ![[Pasted image 20260522135455.png]]
 
 ![[Pasted image 20260523181403.png]]
+
+
+> [!Tip] Linked Lists vs Arrays
+> Using merge sort on a linked lists uses only $O(1)$ extra memory because we can merge by re-linking pointers. Whereas compared to arrays which use $O(n)$ extra memory, as it needs to allocate a temp array to hold elements while they are being copied.
+
 ## Proving Correctness
 
 > We claim that `MSort(arr, low, high)` sorts an array `arr[low..high]`. Let `n = high - low + 1`. We can prove this using *strong induction*
@@ -85,7 +95,7 @@ In the recursive case, $low < high$ and so $low \leq \frac{low + high}{2}<high$ 
 
 ![[Pasted image 20260522141550.png]]
 
-
+Note that no matter the circumstance, merge sort ==always== has a run time of $O(n\log(n))$
 ## Can We Do Better?
 
 > Unfortunately, it has been proven that nothing can do better than merge sort when it comes to general purpose sorting algorithms.
@@ -105,7 +115,7 @@ $$
 \log(2^h) & = \log(n!) \\
 h & = \lceil \log(n!) \rceil  \\
 & \geq \sum_{i=1}^n \log(i) \quad \bigg( \log(a \cdot b) = \log a + \log b\bigg)\\
-& \geq \sum_{i-1}^{n/2}\log\left( \frac{n}{2} \right) \\\
+& \geq \sum_{i=\frac{n}{2}}^{n}\log\left( i \right) \\\
 & \geq\frac{n}{2}\log\left( \frac{n}{2} \right) \\
 & \in \Omega(n\log(n))
 \end{align}
@@ -144,8 +154,8 @@ However, this only works for *ordered* arrays. We can implement the same techniq
 ![[Pasted image 20260522151215.png]]
 ![[Pasted image 20260522151236.png]]
 
-- The *height* of a given node $v$ is the length of the longest path from $v$ to a leaf, and the height of a tree is the height of the root node.
-- The *depth* of a node $v$ is the length of the path from $v$ to the root node. This is also sometimes called the level of the node.
+- The *==height==* of a given node $v$ is the length of the longest path from $v$ to a leaf, and the height of a tree is the height of the root node.
+- The *==depth==* of a node $v$ is the length of the path from $v$ to the root node. This is also sometimes called the level of the node.
 
 ![[Pasted image 20260522151721.png]]
 

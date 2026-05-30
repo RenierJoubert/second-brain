@@ -27,8 +27,8 @@ class Tree {
 > 2. `preOrder`
 > 3. `postOrder`
 
-### inOrder
-> inOrder traverses the tree by recursing through the left node subtree, then the root, then the right node subtree.
+### In Order
+> inOrder traverses the tree by recursing through the left node subtree, then the root, then the right node subtree. (Left, Root, Right)
 
 The inOrder traveral function is implemented as follows:
 ```cpp
@@ -45,19 +45,24 @@ void inOrder(Node* nd)
 
 Where the `visit` function will carry out whatever the purpose of the traversal is.
 
-### preOrder
-> preOrder traverses the tree by visiting first the root node, but then *recursing* into the left and right *subtrees*
+### Pre Order
+> preOrder traverses the tree by visiting first the root node, but then *recursing* into the left and right *subtrees*. (Root, Left, Right)
 
 ![[Pasted image 20260528001209.png]]
 
 In the above example, the order is 17 -> 13 -> 9 -> 11 -> 27 -> 20 -> 39.
 
-### postOrder
-> postOrder traverses the tree by recursing through the left *subtree*, then the right *subtree*, and then the root node.
+### Post Order
+> postOrder traverses the tree by recursing through the left *subtree*, then the right *subtree*, and then the root node. (Left, Right, Root)
 
 ![[Pasted image 20260528001354.png]]
 
 In the above example, the order is 11 -> 9 -> 16 -> 13 -> 20 -> 39 -> 27 -> 17
+
+## Level Order
+> Level Order traversing the tree left to right level by level.
+
+![[Pasted image 20260529221443.png]]
 
 ## Visiting
 > Visiting is just an operation to be done at the current node, this could be counting or arithmetic.

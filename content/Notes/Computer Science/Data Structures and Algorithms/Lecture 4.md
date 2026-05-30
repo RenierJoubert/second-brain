@@ -123,7 +123,7 @@ bool Stack<LIT>::IsEmpty() const {
 
 This implementation using an array actually has the same behaviour as the linked list implementation.
 
-Arrays in cpp have a fixed size at the time of creation, which means they can become full.
+Arrays in cpp have a fixed size at the time of creation, which means ==they can become full.==
 
 However, the vector we are using does have resizing functionality when the array becomes full. But resizing is relatively expensive so we would want to change our `push` function to alleviate this. Namely, we want specific control over how the vector resizes as if it doesn't resize smartly it can become computationally expensive over time.
 
@@ -156,10 +156,12 @@ In the worst case, the push operation when the array is full will have linear co
 
 In this example there will be $\log_{2}(n)$ resize events.
 
-So why would we consider an array for a stack implementation?
-- Depending on our usage we might want to improve our cache performance (caching is what cpu's and memory do to make access more efficient), as accessing from memory has latency and is expensive, as memory is typically stored far away from the cpu. So, to cache memory whenever we need retrieve from a particular memory address we also pull from all the surrounding addresses and store them in our cpu cache as they probably will be related, hence if we need a particular related address later we might not need to retrieve it again.
 
-With this in mind, because linked list nodes are scattered randomly in memory as it is implemented using pointers, but in an array they are all right next to each other in memory, when using an array stack implementation the cpu will likely cache the array nodes and hence the implementation could be faster even though its running time technically is greater than the linked list implementation.
+> [!Question] So why would we consider an array for a stack implementation?
+> 
+Depending on our usage we might want to improve our ==cache performance== (caching is what cpu's and memory do to make access more efficient), as accessing from memory has latency and is expensive, as memory is typically stored far away from the cpu. So, to cache memory whenever we need retrieve from a particular memory address we also pull from all the surrounding addresses and store them in our cpu cache as they probably will be related, hence if we need a particular related address later we might not need to retrieve it again.
+
+With this in mind, because ==linked list nodes are scattered randomly in memory== as it is implemented using pointers, but in an array they are all right next to each other in memory, when using an array stack implementation the cpu will likely cache the array nodes and hence the implementation could be faster even though its running time technically is greater than the linked list implementation.
 
 ### In Summary
 
@@ -233,7 +235,7 @@ bool Queue<T>::is_empty() const {
 }
 ```
 
-With this implementation $O(1)$ is guaranteed for all our operations
+With this implementation $O(1)$ is guaranteed for all our operations.
 
 ## Using an Array
 We could make the back of the queue the index of the current size of the array, and make the front of the queue at index 0. This makes inserting trivial, but what if we remove an item? We would either have to remove all the remaining items down or increment the front index, this is slow or in the latter we just waste space.
