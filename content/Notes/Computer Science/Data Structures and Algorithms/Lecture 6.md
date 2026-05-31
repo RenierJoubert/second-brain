@@ -22,13 +22,14 @@ class Tree {
 ```
 
 ## Traversal
-> There are three main traversal methods for binary trees
-> 1. `inOrder`
-> 2. `preOrder`
-> 3. `postOrder`
+> There are four main traversal methods for binary trees
+> 1. `In Order`
+> 2. `Pre Order`
+> 3. `Post Order`
+> 4. `Level Order`
 
 ### In Order
-> inOrder traverses the tree by recursing through the left node subtree, then the root, then the right node subtree. (Left, Root, Right)
+> In Order traverses the tree by recursing through the left node subtree, then the root, then the right node subtree. (Left, Root, Right)
 
 The inOrder traveral function is implemented as follows:
 ```cpp
@@ -46,14 +47,14 @@ void inOrder(Node* nd)
 Where the `visit` function will carry out whatever the purpose of the traversal is.
 
 ### Pre Order
-> preOrder traverses the tree by visiting first the root node, but then *recursing* into the left and right *subtrees*. (Root, Left, Right)
+> Pre Order traverses the tree by visiting first the root node, but then *recursing* into the left and right *subtrees*. (Root, Left, Right)
 
 ![[Pasted image 20260528001209.png]]
 
 In the above example, the order is 17 -> 13 -> 9 -> 11 -> 27 -> 20 -> 39.
 
 ### Post Order
-> postOrder traverses the tree by recursing through the left *subtree*, then the right *subtree*, and then the root node. (Left, Right, Root)
+> Post Order traverses the tree by recursing through the left *subtree*, then the right *subtree*, and then the root node. (Left, Right, Root)
 
 ![[Pasted image 20260528001354.png]]
 

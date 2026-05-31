@@ -95,7 +95,7 @@ When assigning multiple pointers, the left hand side and right hand side must be
 
 In essence, pointers are how we interact with the heap. Requesting memory from the heap is done using `new`.
 
-==`new` allocates space in the heap and gives us back the first address of the allocated space.==
+`new` allocates space in the heap and gives us back the first address of the allocated space.
 
 `delete` frees the memory at the address reference by it's pointer, where `delete[]` is used to free memory allocated to many variables.
 
@@ -198,20 +198,20 @@ while (p != NULL) {
 
 ### Inserting into a Linked List
 
-> We can insert elements into the middle of the list but this requires access to the position ==before== we would like to do the insertion.
+> We can insert elements into the middle of the list but this requires access to the position ==before== we would like to do the insertion. That is, we need access to the *preceding* node
 
 ![[Pasted image 20260515151730.png]]
 
 Because we need the position before which we would like to do the insertion, if we have a head or tail pointer, then respectively insertion time is $O(1)$ at the head and or tail.
 ### Linked List Removal
 
-> We need to have access to the node that is ==in-front== of the node we wish to delete (after it)
+> In order to delete a node, we need to have access to the node that ==precedes== the node we wish to delete. (Comes before it in the list).
 
 ![[Pasted image 20260515152015.png]]
 
 
 > [!Danger] Tail Removal
-> Because we need to access the node that is ==in front of the node we wish to delete,== this means that even with a tail-pointer, removal from the end of a linked list takes $O(1)$ time.
+> Because we need to access the node that is ==in front of the node we wish to delete,== this means that even with a tail-pointer, removal from the end of a linked list takes $O(n)$ time. As we will need to traverse the entire list from the head, up until the node before the node we wish to remove to complete the removal and update the pointers.
 
 ## Linked Lists by Features
 
@@ -271,4 +271,4 @@ void PrintReverse(Node<LIT>* curr) {
 Which will only have a running time of $O(n)$.
 
 ## Linked Lists vs Arrays
-> Binary search can be implemented more efficiently on an array and not on a linked list. Moreover, inserting an element at the end  or beginning of an array runs in $O(1)$ time where it runs in $O(n)$ time on a singly linked list with only a head pointer. Finally accessing elements in array is much faster and can be done in $O(1)$ time compared to $O(n)$ time for a linked list. That being said, arrays are of finite size and resizing it down the line can also be very costly, additionally, linked lists are much less costly when inserting elements into specific indexes. For example, insertion at the first position of the linked list takes $O(1)$ time, but $O(n)$ for an array.
+> Binary search can be implemented more efficiently on an array and not on a linked list. Moreover, inserting an element at the end of an array runs in $O(1)$ time (when the array is not full) where it runs in $O(n)$ time on a singly linked list with only a head pointer. Finally accessing elements in array is much faster and can be done in $O(1)$ time compared to $O(n)$ time for a linked list. That being said, arrays are of finite size and resizing it down the line can also be very costly, additionally, linked lists are much less costly when inserting elements into specific indexes. For example, insertion at the first position of the linked list takes $O(1)$ time, but $O(n)$ for an array.

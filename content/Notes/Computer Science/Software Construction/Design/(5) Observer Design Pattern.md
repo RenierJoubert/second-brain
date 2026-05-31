@@ -11,7 +11,7 @@ In essence, the observer pattern allows for one or more objects to watch the sta
 - The ==watcher== is referred to as the *concrete observer*
 - the ==watched== object is referred to as the *concrete subject*, OR often the *concrete observable*
 
-![[content/images/Pasted image 20260413002817.png]]
+![[Pasted image 20260413002817.png]]
 
 ## How Is It Setup?
 
@@ -22,7 +22,7 @@ In essence, the observer pattern allows for one or more objects to watch the sta
 ### Push and Pull Models
 
 When the subjects notifies it's observers it can also send an argument back to indicate the change (the push model), or it can send a reference to itself so that the observer can find out what changed for itself (the pull model).
-![[content/images/Pasted image 20260413012235.png]]
+![[Pasted image 20260413012235.png]]
 
 
 - Subject is regular class or abstract class

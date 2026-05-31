@@ -46,7 +46,7 @@ By recursion tree analysis we see that:
 
 Where `c` is some constant that includes the cost of merging, the mid-point calculation, and the base-case check. And `b` is come constant representative of the base case check cost.
 
-However, this recursion tree analysis does always work this well. In some cases we can analyze using *recurrence*. In which if the algorithm is recursive, we can analyze it recursively.
+However, this recursion tree analysis does not always work this well. In some cases we can analyze using *recurrence*. In which if the algorithm is recursive, we can analyze it recursively.
 ![[Pasted image 20260522135455.png]]
 
 ![[Pasted image 20260523181403.png]]

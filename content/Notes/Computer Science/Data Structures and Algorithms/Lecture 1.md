@@ -17,7 +17,7 @@ int mystery(vector<int>& arr, int q) {
 	for (int i = 0; i < arr.size(); i++) {
 		if (arr[i] == q)
 			return 1;
-		return -1;
+	return -1;
 }
 ```
 

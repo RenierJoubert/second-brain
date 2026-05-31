@@ -81,13 +81,10 @@ bool Stack<LIT>::IsEmpty() const {
 }
 ```
 
-And for this implementation we have constant time ($O(1)$) for our operations `push()` and `pop
+And for this implementation we have constant time ($O(1)$) for our operations `push()` and `pop`.
 
 ## Using an Array
-> We can make the most recently *occupied* index at the top of the stack.
-
-For example:
-![[Pasted image 20260520140604.png]]
+> Using an array, we can make the most recently *occupied* index the top of the stack.
 
 Which can be implemented as follows:
 ```cpp
@@ -160,8 +157,9 @@ In this example there will be $\log_{2}(n)$ resize events.
 > [!Question] So why would we consider an array for a stack implementation?
 > 
 Depending on our usage we might want to improve our ==cache performance== (caching is what cpu's and memory do to make access more efficient), as accessing from memory has latency and is expensive, as memory is typically stored far away from the cpu. So, to cache memory whenever we need retrieve from a particular memory address we also pull from all the surrounding addresses and store them in our cpu cache as they probably will be related, hence if we need a particular related address later we might not need to retrieve it again.
+>
 
-With this in mind, because ==linked list nodes are scattered randomly in memory== as it is implemented using pointers, but in an array they are all right next to each other in memory, when using an array stack implementation the cpu will likely cache the array nodes and hence the implementation could be faster even though its running time technically is greater than the linked list implementation.
+With this in mind, because ==linked list nodes are scattered randomly in memory== as they are implemented using pointers, but in an array they are all right next to each other in memory. As a result, when using an array stack implementation the cpu will likely cache the array nodes, and hence the implementation could be faster even though its running time technically is greater than the linked list implementation.
 
 ### In Summary
 
