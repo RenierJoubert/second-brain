@@ -61,7 +61,7 @@ x & \in [1, \infty) \implies 2x^{-3}\geq 0 \\
 $$
 Then we can show the second axiom:
 $$
-\int 2x^{-3}I_{[1, \infty)}(x)dx = \int_{1}^\infty 2x^{-3}dx = \frac{2x^{-2}}{-2}\bigg |^{x=\infty}_{x=0}=1
+\int 2x^{-3}I_{[1, \infty)}(x)dx = \int_{1}^\infty 2x^{-3}dx = \frac{2x^{-2}}{-2}\bigg |^{x=\infty}_{x=1}=1
 $$
 Now, what is $\mathbb{P}(0 < X < 2)$?
 $$

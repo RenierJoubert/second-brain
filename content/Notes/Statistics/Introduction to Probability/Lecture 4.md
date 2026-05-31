@@ -107,7 +107,7 @@ $$
 \begin{align}
 
 \mathbb{P}(B)  & = \mathbb{P}(B|A)\mathbb{P}(A) + \mathbb{P}(B|A^c)\mathbb{P}(A^c) \quad \text{using the L.T.P from above} \\
-\mathbb{P}(B)&=\mathbb{P}(B|A)+(1-\mathbb{P}(B^c|A^c)(1-\mathbb{P}(A))) 
+\mathbb{P}(B)&=\mathbb{P}(B|A)\mathbb{P}(A)+(1-\mathbb{P}(B^c|A^c)(1-\mathbb{P}(A))) 
 \end{align}
 $$
 And after solving for $\mathbb{P}(A)$ we recover $\mathbb{P}(A) = \frac{1}{7}$, now substituting this into the formula for $\mathbb{P}(A|B)$ above we see that:
@@ -136,7 +136,7 @@ $$
 \begin{align}
 \mathbb{P}(D_{you}=D_{car})=\mathbb{P}(win)=& \mathbb{P}(win | D_{host} =1)\mathbb{P}(D_{host}=1) \\ 
 +& \mathbb{P}(win|D_{host}=2)\mathbb{P}(D_{host}=2) \\
-+& \mathbb{P}(win | D_{host}=3)\mathbb{P}(D_{hoost}=3) \\
++& \mathbb{P}(win | D_{host}=3)\mathbb{P}(D_{host}=3) \\
 = & 0 + \frac{1}{3}\left( \frac{1}{2} \right) + \frac{1}{3}\left( \frac{1}{2} \right) \\
 = & \frac{1}{3}
 \end{align}

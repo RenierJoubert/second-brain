@@ -92,7 +92,7 @@ This would be a `postOrder` traversal with running time $\Theta(n)$.
 This way if we have the value of the node we are looking for, it drastically speeds up our search as if the current node is greater than the node we are looking for, search left, if less than the node we are looking for, search right. In the **worst case** we will make as many comparisons as the height of the tree + 1.
 
 ### Insertion
-The BST property needs to still hold pending insertion. Hence, the new node must be inserted in the correct position, this is done by performing a *search*. If the search ends at a null-terminated child, (left or right), make that child refer to the new node. This is also about the same cost as the search algorithm with $O(height)$.
+>The BST property needs to still hold pending insertion. Hence, the new node must be inserted in the correct position, this is done by performing a *search*. If the search ends at a null-terminated child, (left or right), make that child refer to the new node. This is also about the same cost as the search algorithm with $O(height)$.
 
 ### Maxima and Minima
 > Naturally, to find the *minimum* of a BST we can simply follow the left child links until there are no more. Similarly, to find the *maximum* of a BST we can follow the right child links until there are no more.
@@ -128,4 +128,4 @@ Furthermore, a node can also have a *successor*. The *successor* to a node is ==
 
 ![[Pasted image 20260528010235.png]]
 
-To do better however, we would ideally like our BST to be complete or *balanced*. Meaning, all leaves are about the same distance from the root, that is ==the height of a node's right subtree is **at most** 1 different from the height of it's left subtree.== Nevertheless, in order to guarantee a balanced BST we need to make the structure and the insertion and removal algorithms more complex, that is we need to use *red black trees*. 
+To do better however, we would ideally like our BST to be complete or *balanced*. Meaning, all leaves are about the same distance from the root, that is the height of a node's right subtree is **at most** 1 different from the height of it's left subtree. Nevertheless, in order to guarantee a balanced BST we need to make the structure and the insertion and removal algorithms more complex, that is we need to use *red black trees*. 

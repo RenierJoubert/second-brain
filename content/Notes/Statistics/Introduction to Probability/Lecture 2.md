@@ -23,10 +23,15 @@ Where $\beta$ is a collection of events.
 $$
 \mathbb{P}\left( \bigcup_{n=1}^\infty A_{n}\right) = \sum_{n=1}^\infty \mathbb{P}(A_{n})
 $$
-Formally, a sequence of events is disjoint (independent), when:
+Formally, a sequence of events is disjoint when:
 $$
 A_{i} \cap A_{j} = \emptyset \quad \text{if} \quad i \neq j
 $$
+
+
+> [!Danger] Disjoint vs Independent
+> Disjointedness and independence are two fundamentally different concepts and are not the same thing. Disjointedness implies a sequence of events are mutually exclusive, but independence implies one event happening or not happening has no impact on the probability of the other happening or not happening.
+
 ## Properties
 
 1. Complement: $\quad\mathbb{P}(A^c) = 1 - \mathbb{P}(A)$

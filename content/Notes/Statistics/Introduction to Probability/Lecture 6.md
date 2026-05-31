@@ -19,7 +19,7 @@ For discrete random variables, we call the set $\{ x : \mathbb{P}(X=x)>0 \}$ the
 > [!Theorem] PMF 
 > The probability mass function for some discrete random variable $X$ is the function $p_{X}: \mathbb{R} \to [0,1]$ defined by: 
 > $$
-> p_{X}=\mathbb{P}(X=x)
+> p_{X}(x)=\mathbb{P}(X=x)
 > $$
 
 For example, suppose the discrete random variable $X$ denotes your happiness on a given day, and suppose it rains 30% of the time, it is cloudy but not raining 30% of the time, and sunny 40% of the time, $X$ takes on values -6, 2, and 10 respectively. **What is the PMF of $X$**?
@@ -99,7 +99,7 @@ Recall the formula for calculating $\begin{pmatrix}n \\  m\end{pmatrix}$, "n cho
 
 Let $\lambda > 0$, then a RV $X$ with PMF given by:
 $$
-p_{X}(x, \lambda)= \frac{\lambda^x}{x!}e^{-\lambda}I_{\{ 0, 1, \cdots, n \}}(x)
+p_{X}(x, \lambda)= \frac{\lambda^x}{x!}e^{-\lambda}I_{\{ 0, 1, \cdots\}}(x)
 $$
 Is said to have the $\text{Poiss}(\lambda)$ distribution. Its distribution looks like this:
 ![[Pasted image 20260523211932.png]]
@@ -133,7 +133,7 @@ Hence, the Poisson distribution is maximized when $x = \lambda$.
 > [!Theorem] Geometric Distribution 
 > Suppose the probability of success is $\theta \in (0,1)$, a RV with a PMF given by:
 > $$
-> p_{X}(x, \theta)= (1-\theta)^x\theta I_{\{ 0, 1, 2, \cdots, n \}}(x)
+> p_{X}(x, \theta)= (1-\theta)^x\theta I_{\{ 0, 1, 2, \cdots\}}(x)
 > $$
 > Is said to have a $\text{Geom}(\theta)$ distribution.
 
@@ -157,7 +157,7 @@ Hence, the Poisson distribution is maximized when $x = \lambda$.
 > p_{X}(x, \theta, r) = \begin{pmatrix}
 > r - 1 + x \\
 > x
-> \end{pmatrix} \theta^r(1-\theta)^xI_{\{ 0, 1, 2, \cdots, n \}}(x)
+> \end{pmatrix} \theta^r(1-\theta)^xI_{\{ 0, 1, 2, \cdots\}}(x)
 > $$ 
 > Is said to have a $\text{NegBinom}(r, \theta)$ distribution
 
