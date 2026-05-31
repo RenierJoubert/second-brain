@@ -73,4 +73,127 @@ Here the lower bound of integration changes because the indicator function is on
 > [!Question] If we removed the indicator function, is $f_{X}$ still a density function?
 > No, because without the indicator function the, *support* of $f$ is all real numbers, hence $f(-1)=2(-1)^{-3}=-2$ is permitted which breaks the first probability axiom.  
 
-## Continuous Families
+## The Median
+> For continuous RVs, the *median* is the number $m$ s.t.
+> $$
+> \mathbb{P}(X < m)=\mathbb{P}(X > m) = \frac{1}{2}
+> $$
+## Continuous Distributions
+
+## Uniform
+> Let $L <R \in \mathbb{R}$. A RV with PDF:
+>$$
+>f_{X}(x, L, R) = \frac{1}{R-L}I_{[L, R]}(x)
+>$$
+> Has a $\text{Unif}(L, R)$ distribution.
+
+
+> [!Todo] Uniform median
+> If $X ~ \text{Unif}(L,R)$, what is the median of $X$?
+
+We know that for a uniform distribution the PDF is given by:
+$$
+f_{X}(x)=\frac{1}{R-L}I_{[L, R]}(x)
+$$
+and because $X$ is continuous we then have that:
+$$
+\begin{align}
+\mathbb{P}(X < m) = \frac{1}{2} = \int_{L}^m \frac{1}{R-L}&dx = \frac{x}{R-L}\bigg|_{{x=L}}^{x=m}= \frac{{m-L}}{R-L} \\
+\therefore \\
+m = &\frac{{R+L}}{2}
+\end{align}
+$$
+## Exponential
+> Let $\lambda > 0$. A RV $X$ with PDF
+> $$
+> f_{X}(x, \lambda)=\lambda e^{-\lambda x}I_{[0, \infty)}(x)
+> $$
+> Has an $\text{Exp}(\lambda)$ distribution with a rate of $\lambda$.
+
+![[Pasted image 20260530234241.png]]
+
+
+> [!Todo] Exponential Rates
+> A store recieves customers independently at an average rate of 12 customers per hour. Let $T$ be the waiting time in minutes between consecutive customer arrivals. What distribution does $T$ follow, and what is its rate $\lambda$? What is the probability that the next customer arrives in 3 minutes?
+
+We are given that the rate of customers is 12 per hour, which is equivalent to 1 customer every minute. Hence we have that $\lambda=\frac{1}{5}$, and that $T \sim \text{Exp}\left( \lambda=\frac{1}{5} \right)$.
+
+Moreover, to find the probability that the next customer arrives within 3 minutes we need to find $\mathbb{P}(T \leq 3)$ which is given by:
+
+$$
+\mathbb{P}(T \leq 3) = \int_{0}^3 \frac{1}{5}e^{\frac{1}{5}t}dt=0.4512
+$$
+## Gamma
+First, let us recall the *gamma function*,
+$$
+\Gamma(\alpha) = \int_{0}^\infty t^{\alpha-1}e^{-t}dt
+$$
+where $\alpha > 0$.
+
+
+> [!Tip] Some useful results
+>  - $\Gamma(\alpha+1)= \alpha \Gamma(\alpha)$
+>  - $\Gamma(n)=(n-1)! \quad$ when $\alpha$ is some integer $n$
+>  - $\Gamma\left( \frac{1}{2} \right)=\sqrt{(\pi) }$
+
+> Let $\alpha, \lambda > 0$. A RV $X$ with PDF
+>$$
+> f_{X}(x, \alpha, \lambda)= \frac{\lambda^\alpha}{\Gamma(\alpha)}x^{\alpha-1}e^{-\lambda x}I_{[0, \infty)}(x)
+>$$
+>Has a $\text{Gam}(\alpha, \lambda)$ distribution with a *shape* $\alpha$, and *rate* $\lambda$.
+
+
+> [!Tip] Gamma and Exponential 
+>$$
+> X ~ \text{Gam}(1, \lambda) \implies X ~ \text{Exp}(\lambda)
+>$$
+
+
+> [!Todo] Gamma Applications 
+> Suppose the time it takes to process an insurance claim follows $\text{Gam}\left( \alpha = 2, \lambda = \frac{1}{3} \right)$. What is the probability that the claim takes more than 6 hours to process? 
+
+Here we have that the RV $X \sim \text{Gam}\left( 2, \frac{1}{3} \right)$ and we are trying to find $\mathbb{P}(X \geq 6)$ which is given by:
+$$
+\mathbb{P}(X \geq 6)\int_{6}^\infty \frac{\left( \frac{1}{3} \right)^2x^{2-1}}{\Gamma(2)}e^{\frac{-1}{3}x}dx
+$$
+Simplifying we obtain:
+$$
+\frac{1}{9}\int_{6}^\infty xe^{\frac{-1}{3}x}dx
+$$
+Now using [[Integration By Parts]] we recover,
+$$
+\mathbb{P}(X \geq 6)=\frac{1}{9}\left[-3xe^{\frac{-1}{3}x}+3(-3)e^{\frac{-1}{3}x}\right]\bigg |_{x=6}^{x=\infty}\approx 0.4060
+$$
+## Kernel and Integration Constant
+> All PDFs/PMFs must integrate and sum to 1, and their functional form can be separated into two logical parts: the ==kernel== - that depends on the $x$, and the ==normalizing constant== - that depends on the parameters  and actually makes the function integrate/sum to 1.
+
+For example, in the $\text{Gam}(x, \alpha, \lambda)=\frac{\lambda^\alpha}{\Gamma(\alpha)}x^{\alpha-1}e^{-\lambda x}I_{[0, \infty)}(x)$ distribution,
+
+- The kernel is $x^{\alpha-1}e^{-\lambda x}I_{[0, \infty)}(x)$
+- The normalizing constant is $\frac{\lambda^\alpha}{\Gamma(\alpha)}$
+
+### Kernel Matching Problems
+
+What is,
+$$
+\int_{0}^\infty z^3 e^{-5z}dz?
+$$
+We can rewrite this integral as follows, noticing it looks similar to $\text{Gam}(\alpha=4, \lambda = 5)$
+$$
+\begin{align}
+& = \int_{0}^\infty z^{4-1}e^{-5z}dz \\
+& = \frac{\Gamma(4)}{5^4} \cdot \frac{5^4}{\Gamma(4)}\int^\infty_{0} z^{4-1}e^{-5z}dz \\
+& = \frac{\Gamma(4)}{5^4} \int^\infty_{0} \frac{5^4}{\Gamma(4)}z^{4-1}e^{-5z}dz \\
+& = \frac{\Gamma(4)}{5^4} \cdot 1 \\
+& = \frac{{3 \cdot 2 \cdot 1}}{5^4}=0.0096
+\end{align}
+$$
+
+## Normal
+> Let $\mu \in \mathbb{R}$, $\sigma > 0$. A RV $X$ with PDF
+>$$
+> f_{X}(x, \mu, \sigma^2) =\frac{1}{\sqrt{ 2\pi \sigma^2 }}\text{exp}\left( -\frac{(z-\mu)^2}{2\sigma^2} \right)
+>$$
+> Has a normal distribution, namely $X \sim N(\mu, \sigma^2)$.
+
+The normal distribution is especially important as most will know, for it is particularly excellent at modelling averages - this will be justified later more rigorously later. The distribution $Z \sim N(0, 1)$ is called the standard normal distribution, if $Z$ is ever written without context it should be understood to mean this. 
