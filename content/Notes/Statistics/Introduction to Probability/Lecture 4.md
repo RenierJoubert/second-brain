@@ -11,7 +11,8 @@ Recall the definition of probability from [[content/Notes/Statistics/Introductio
 
 
 > [!Tip] Corollary
-> The multiplication property can be expanded, such that if The multiplication property can be expanded, such that if $$\begin{aligned}
+> The multiplication property can be expanded, such that
+>  $$\begin{aligned}
 \mathbb{P}(A_1 \cap A_2 \cap \cdots \cap A_n)
   &= \mathbb{P}(A_n \mid A_1 \cap \cdots \cap A_{n-1}) \\
   &\quad \times\, \mathbb{P}(A_{n-1} \mid A_1 \cap \cdots \cap A_{n-2}) \\
