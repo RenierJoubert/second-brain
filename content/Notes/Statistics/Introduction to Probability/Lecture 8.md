@@ -134,7 +134,7 @@ $$
 > [!Tip] Normal Distribution CDF 
 > If $X \sim N(\mu, \sigma)$, then
 >$$
-> F_{X}(x) = \Phi\left( x - \frac{\mu}{\sigma} \right)
+> F_{X}(x) = \Phi\left(\frac{x - \mu}{\sigma} \right)
 >$$
 
 In the particular example above, our weights are given as simply 0.30, 0.60, and 0.10, hence our mixture CDF by using the tip above is simply given by:
@@ -210,8 +210,8 @@ $$
 
 
 > [!Tip] Useful results 
-> - $Y = X + c \implies F_{Y}(y) = F_{X}(x-c)$ 
-> - $Y = kX \implies F_{Y}(y)=F_{X}\left( \frac{x}{k} \right)$
+> - $Y = X + c \implies F_{Y}(y) = F_{X}(y-c)$ 
+> - $Y = kX \implies F_{Y}(y)=F_{X}\left( \frac{y}{k} \right)$
 
 ## Jacobian Method
 > For continuous random variables you can always use the distributive method, and sometimes this is easiest. But, we can also use the *Jacobian* method.

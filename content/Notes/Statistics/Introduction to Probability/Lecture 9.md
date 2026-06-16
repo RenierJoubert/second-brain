@@ -171,7 +171,7 @@ $$
 Finally, calculating $\mathbb{P}(X - 2Y > 0)$ we see that:
 $$
 \begin{align}
-\mathbb{P}(X - 2Y > 0) &  = \mathbb{P}\left( Y > \frac{x}{2} \right) \\
+\mathbb{P}(X - 2Y > 0) &  = \mathbb{P}\left( Y < \frac{x}{2} \right) \\
  & = \int_{0}^1 \int_{0}^{x/2} dydx \\
  & =\int_{0}^1 \frac{x}{2} dx \\
  & = \frac{1}{4}

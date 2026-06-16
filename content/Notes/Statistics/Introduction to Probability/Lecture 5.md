@@ -28,7 +28,7 @@ For example, let $A= \{ 1,2,3 \}$, $I_{A}(2)=1$ but $I_{A}(4)=0$.
 
 Notably, we can compose indicator functions of events to create a new indicator function. For example, let $A,B$ be events. Then the random variable:
 $$
-X = I_{A} \times A_{B}
+X = I_{A} \times I_{B}
 
 $$
 is too an indicator function of the event $A \cap B$ such that $X = I_{A \cap B}$.

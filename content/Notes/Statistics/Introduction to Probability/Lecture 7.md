@@ -120,7 +120,7 @@ $$
 Moreover, to find the probability that the next customer arrives within 3 minutes we need to find $\mathbb{P}(T \leq 3)$ which is given by:
 
 $$
-\mathbb{P}(T \leq 3) = \int_{0}^3 \frac{1}{5}e^{\frac{1}{5}t}dt=0.4512
+\mathbb{P}(T \leq 3) = \int_{0}^3 \frac{1}{5}e^{-\frac{1}{5}t}dt=0.4512
 $$
 ## Gamma
 First, let us recall the *gamma function*,
