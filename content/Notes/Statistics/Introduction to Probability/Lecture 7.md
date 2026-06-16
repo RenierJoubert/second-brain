@@ -116,7 +116,6 @@ $$
 > [!Todo] Exponential Rates
 > A store recieves customers independently at an average rate of 12 customers per hour. Let $T$ be the waiting time in minutes between consecutive customer arrivals. What distribution does $T$ follow, and what is its rate $\lambda$? What is the probability that the next customer arrives in 3 minutes?
 
-We are given that the rate of customers is 12 per hour, which is equivalent to 1 customer every 5 minutes. Hence we have that $\lambda=\frac{1}{5}$, and that $T \sim \text{Exp}\left( \lambda=\frac{1}{5} \right)$.
 
 Moreover, to find the probability that the next customer arrives within 3 minutes we need to find $\mathbb{P}(T \leq 3)$ which is given by:
 
