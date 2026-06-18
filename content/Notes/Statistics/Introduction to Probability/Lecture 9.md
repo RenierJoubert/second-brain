@@ -149,11 +149,12 @@ However it is still important to ensure the following conditions hold:
 2. $\sum p(x)=1$
 
 ## Continuous Marginal Distributions
-> Let $X, Y$ be continuous random variables with the PDF:
-> $$
- f_{X, Y}(x, y) = I_{[0, 1]}(x)I_{[0, 1]}(y) = I_{[0, 1]^2}(x, y)
->$$
-> Find $F(x, y) = \int_{0}^x \int_{0}^yf_{X, Y}(s, t)dtds$ for $0 \leq x, y \leq 1$, compute $F(0.3, 0.8)$, and finally, calculate $\mathbb{P}(X - 2Y > 0)$.
+
+Let $X, Y$ be continuous random variables with the PDF:
+$$
+f_{X, Y}(x, y) = I_{[0, 1]}(x)I_{[0, 1]}(y) = I_{[0, 1]^2}(x, y)
+$$
+Find $F(x, y) = \int_{0}^x \int_{0}^yf_{X, Y}(s, t)dtds$ for $0 \leq x, y \leq 1$, compute $F(0.3, 0.8)$, and finally, calculate $\mathbb{P}(X - 2Y > 0)$.
 
 Firstly, we have that:
 $$

@@ -124,3 +124,79 @@ $$
 So, $\mathbb{E}[X]=1$.
 
 ## Inequalities
+
+
+> [!Theorem] Markov's Inequality 
+> Let $X$ be a random variables such that $\mathbb{P}(X \geq 0) = 1$, then $\forall a > 0$,
+> $$
+> \mathbb{P}(X \geq a) \leq \frac{\mathbb{E}[X]}{a}
+> $$
+
+A proof of this inequality can be shown as follows, first let $Z = aI_{[a, \infty)}(x)$, then we have that $Z \leq X$ almost surely, thus by *monotonicity* we have that $\mathbb{E}[Z]\leq \mathbb{E}[X]$ and:
+$$
+\begin{align}
+
+\mathbb{E}[X]  & \geq \mathbb{E}[Z] \\
+ & = a\mathbb{P}(Z = a)+ 0\mathbb{P}(Z = 0) \\
+ & =a\mathbb{P}(Z=a) \\
+ & = a\mathbb{P}(X \geq a)
+\end{align}
+$$
+
+> [!Theorem] Chebyshev's Inequality 
+> $$
+> \begin{align}
+> \mathbb{P}(X - \mu| \geq a) & = \mathbb{P}((X - \mu)^2 \geq a^2) \\
+>  & = \frac{\mathbb{E}[(X - \mu)^2]}{a^2} \\
+>   & = \frac{\text{Var(X)}}{a^2}
+> \end{align}
+> $$
+
+Generally, for any random variable with mean $\mu$ and variance $\mu$, Chebyshev's inequality gives a tighter bound whenever $\mu>2$.
+
+
+> [!Todo] An example 
+> How many measurements should an astronomer make if they want the probability of a mis-measurement larger than 1 light-year to be no more than 0.01. The variance is 4 square light years. Recall that $\text{Var}(\overline X_{n})=\frac{\text{Var}(X)}{n}$
+
+$$
+\begin{align}
+\mathbb{P}([X_{n}-\mu]>1)  & \leq \frac{\frac{\text{Var}(X)}{n}}{1^2} \\
+ & = \frac{4}{n} \\
+ 0.01  & \geq \frac{4}{n} \\
+ &  \therefore \\
+ n  & \geq 400
+\end{align}
+$$
+
+> [!Theorem] Cauchy Schwarz Inequality 
+> Let $X,Y$ be two random variables with finite second moments, then
+> $$
+> |\mathbb{E}[XY]| \leq \sqrt{ \mathbb{E}[X^2]\mathbb{E}[Y^2] }
+> $$ 
+
+
+> [!Tip] Corollary 
+> The Cauchy Schwarz inequality implies
+> $$
+> |\text{Cov}(X, Y)| \leq \sqrt{ \text{Var}(X)\text{Var}(Y) }
+> $$ 
+
+
+> [!Theorem] Jensen's Inequality 
+> Let $X$ be a random variables with a finite mean and let $f$ be a [[Convex Sets and Functions|convex function]], then
+> $$
+> f(\mathbb{E}[X]) \leq \mathbb{E}[f(X)]
+> $$ 
+
+For an example, suppose your friend asks you to play a game, in which they pay you $49 to roll two standard 6 sided dice, wherein if you see $x$ pips you pay your friend $x^2$ dollars. You can play as many times as you want, how many times should you play?
+
+Here $f(x)=x^2$ is a convex function, and we can see by Jensen's inequality that:
+$$
+\mathbb{E}[X]^2 \leq \mathbb{E}[X^2]
+$$
+Hence we should not play as the expected payout $\mathbb{E}[X]^2$ is at most the cost to play.
+
+This is also a demonstration as to why the variance of a random variables is always non-negative given:
+$$
+\text{Var}(X) = \mathbb{E}[X^2] - \mathbb{E}[X]^2
+$$

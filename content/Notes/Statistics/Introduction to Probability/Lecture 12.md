@@ -73,7 +73,7 @@ Because calculating the EV for distributions is proven to be quite cumbersome, f
 > [!Theorem] Scalar Valued RV Function 
 > Let $g: \mathbb{R}^2 \to \mathbb{R}$ be a function, then if $X, Y$ are both discrete we have that:
 > $$
-> \mathbb{E}[g(X, Y)] \sum_{x} \sum_{y} g(x, y)p_{X, Y}(x, y) \quad \text{(pmf)}
+> \mathbb{E}[g(X, Y)]  = \sum_{x} \sum_{y} g(x, y)p_{X, Y}(x, y) \quad \text{(pmf)}
 > $$ 
 > Whereas if $X, Y$ are both absolutely continuous we have that:
 > $$
@@ -97,7 +97,7 @@ $$
 ## Variance
 
 
-> [!Therorem] Variance 
+> [!Theorem] Variance 
 > The **variance** of a random variable $X$ is defined such that
 > $$
 > \begin{align}
@@ -113,7 +113,7 @@ Conceptually, variance is a measure of the spread of the distribution of $X$ aro
 > [!Theorem] Standard Deviation 
 > The **standard deviation** of a random variable $X$ is defined such that
 > $$
-> \sigma_{X} = \sqrt{\text{Var}(X}
+> \sigma_{X} = \sqrt{\text{Var}(X)}
 > $$  
 
 ## Properties of Variance

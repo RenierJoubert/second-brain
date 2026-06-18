@@ -12,7 +12,8 @@ Recall the definition of probability from [[content/Notes/Statistics/Introductio
 
 > [!Tip] Corollary
 > The multiplication property can be expanded, such that
->  $$\begin{aligned}
+> $$
+> \begin{aligned}
 \mathbb{P}(A_1 \cap A_2 \cap \cdots \cap A_n)
   &= \mathbb{P}(A_n \mid A_1 \cap \cdots \cap A_{n-1}) \\
   &\quad \times\, \mathbb{P}(A_{n-1} \mid A_1 \cap \cdots \cap A_{n-2}) \\
@@ -20,8 +21,8 @@ Recall the definition of probability from [[content/Notes/Statistics/Introductio
   &\quad \times\, \mathbb{P}(A_3 \mid A_1 \cap A_2) \\
   &\quad \times\, \mathbb{P}(A_2 \mid A_1) \\
   &\quad \times\, \mathbb{P}(A_1)
-\end{aligned}$$
-> 
+\end{aligned}
+> $$
 
 An informal proof of this fact can be accomplished rather easily using the formula for the conditional probability of $\mathbb{P}(A_{1}|A_{2})$.
 
