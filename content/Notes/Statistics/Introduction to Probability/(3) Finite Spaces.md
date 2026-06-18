@@ -58,7 +58,7 @@ $$
 & = 1-0.4 = 0.6
 \end{align}
 $$
-[[content/Notes/Statistics/Introduction to Probability/Lecture 2|Boole's Inequality]]
+[[(2) Probability Functions|Boole's Inequality]]
 
 
 ## Uniform Probability on Finite Spaces 

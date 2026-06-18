@@ -59,7 +59,7 @@ $$
 > f_{X, Y}(x, y) = \frac{1}{x}e^{-x}I_{\{ 0 \leq y \leq x \}}(x, y)
 > $$
 
-We can then obtain the [[Lecture 9|marginal PDF]] of $X$ and find the conditional PDF of $Y$ given $X = x$ as follows:
+We can then obtain the [[(9) Joint and Marginal Distributions|marginal PDF]] of $X$ and find the conditional PDF of $Y$ given $X = x$ as follows:
 $$
 \begin{align}
 \text{marginal PDF, X:} \quad f_{X}(x)  & = \int f_{X, Y}(x, y)dy \\
@@ -120,7 +120,7 @@ However, this does not just follow for the CDF of $X$ and $Y$, but also the PMF 
 ![[Pasted image 20260615184439.png]]
 
 ## Sums of Independent Random Variables
-> In order to find the distribution of a sum of independent random variables we can use the distribution or Jacobian method seen in [[Lecture 8]]. However, specifically when the distributions are **independent** we can use **convolution**.
+> In order to find the distribution of a sum of independent random variables we can use the distribution or Jacobian method seen in [[(8) CDFs]]. However, specifically when the distributions are **independent** we can use **convolution**.
 
 
 > [!Tip] Convolution 
