@@ -2,7 +2,7 @@
 
 # Conditional and Bayesian Probability
 
-Recall the definition of probability from [[(3) Finite Spaces|(3) Finite Spaces]].
+Recall the definition of probability from [[(03) Finite Spaces|(3) Finite Spaces]].
 
 ## The Multiplication Property
 

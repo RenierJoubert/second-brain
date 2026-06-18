@@ -92,7 +92,7 @@ $$
   & = \frac{6}{32} \approx 0.1876
 \end{align}
 $$
-Recall the formula for calculating $\begin{pmatrix}n \\  m\end{pmatrix}$, "n choose m" from [[(3) Finite Spaces|Combinations]].
+Recall the formula for calculating $\begin{pmatrix}n \\  m\end{pmatrix}$, "n choose m" from [[(03) Finite Spaces|Combinations]].
 
 ## Poisson
 > The Poisson distribution is good for modelling counts of things, often per unit of time, where $\lambda$ is often the average number of events per unit time, and $X$ is the count of events in a particular unit of time.
