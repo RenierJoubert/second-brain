@@ -3,7 +3,7 @@
 # Conditional Distributions and Independence
 
 Topics covered include:
-1. Calculation of conditional distributions from a join distribution
+1. Calculation of conditional distributions from a joint distribution
 2. Relating independence to conditional and joint distributions
 
 ## Conditional Distributions
@@ -72,7 +72,7 @@ $$
 \end{align}
 $$
 ## An Overview of Types So Far
-> Let $X, Y$ have a **join distribution** $\mathbb{P}(X \in A, Y \in B)$. Then:
+> Let $X, Y$ have a **joint distribution** $\mathbb{P}(X \in A, Y \in B)$. Then:
 
 - We can find the joint CDF, PMF, or PDF of $X$ and $Y$
 - The **marginal** distribution of $X$ is the distribution of $X$ ignoring $Y$

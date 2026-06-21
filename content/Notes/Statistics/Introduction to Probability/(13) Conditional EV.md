@@ -147,7 +147,7 @@ $$
 > $$
 > \begin{align}
 > \mathbb{P}(X - \mu| \geq a) & = \mathbb{P}((X - \mu)^2 \geq a^2) \\
->  & = \frac{\mathbb{E}[(X - \mu)^2]}{a^2} \\
+>  & \leq \frac{\mathbb{E}[(X - \mu)^2]}{a^2} \\
 >   & = \frac{\text{Var(X)}}{a^2}
 > \end{align}
 > $$
