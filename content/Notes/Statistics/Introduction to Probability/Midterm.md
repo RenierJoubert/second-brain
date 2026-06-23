@@ -94,12 +94,6 @@ A regional sales manager at a company knows from historical data that each cold 
 
 **(a)** [5 points] Write out the CDF of X, F_X(x), explicitly calculating the required probabilities. Round any probabilities to the nearest thousandth (i.e., 0.123).
 
----
-
-****This is the end of the exam!****
-
----
-
 ## Distributions
 
 If X ~ Bern(θ), then $$p_X(x;\theta) = \theta^x(1-\theta)^{1-x} I_{{0,1}}(x) \text{ where } \theta \in (0,1)$$
@@ -120,4 +114,7 @@ If X ~ Exp(λ), then $$f_X(x;\lambda) = \lambda e^{-\lambda x} I_{[0,\infty)}(x)
 
 If X ~ Gam(α, λ), then $$f_Z(z;\alpha,\lambda) = \frac{\lambda^\alpha}{\Gamma(\alpha)}z^{\alpha-1}e^{-\lambda z} I_{[0,\infty)}(z) \text{ where } \alpha,\lambda > 0$$
 
-If X ~ N(μ, σ), then $$f_Z(z;\mu,\sigma^2) = \frac{1}{\sqrt{2\pi\sigma^2}}\exp\left{-\frac{(z-\mu)^2}{2\sigma^2}\right} \text{ where } \mu \in \mathbb{R}, \sigma > 0$$
+If X ~ N(μ, σ), then
+$$
+f_Z(z;\mu,\sigma^2) = \frac{1}{\sqrt{2 \pi \sigma^2 }}\exp{-\frac{(z-\mu)^2}{2\sigma^2}} \quad \text{such that} \quad\mu \in \mathbb{R}, \sigma > 0
+$$
