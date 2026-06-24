@@ -7,7 +7,7 @@
 
 The operations implemented in a priority queue are as follows:
 1. `create`
-2. `destroy
+2. `destroy`
 3. `insert`
 4. `removeMin` or `removeMax`
 5. `isEmpty`
@@ -99,11 +99,18 @@ Basically we delete our given root node, then immediately replace it with right 
 
 For example, if we wanted to remove 98 from the following tree:
 ![[Pasted image 20260623192427.png]]
+
 We first swap it with 17, so we would swap index 0 and index 12 (the last index occupied) in our array as follows:
+
 ![[Pasted image 20260623192510.png]]
+
+
 Now, we let 17 bubble down, in that we replace it with it's largest valued child, which in this case is 86, here we use $2i+1$ to get $2\cdot 0 + 1 =1$ which is the index corresponding to 17's left node which 86, so after obtaining this we swap 86 and 17 as follows:
+
 ![[Pasted image 20260623192717.png]]
+
 This repeats until our partially ordered property holds:
+
 ![[Pasted image 20260623192752.png]]
 
 ## Removal Complexity
