@@ -29,7 +29,7 @@ class Tree {
 > 4. `Level Order`
 
 ### In Order
-> In Order traverses the tree by recursing through the left node subtree, then the root, then the right node subtree. (Left, Root, Right)
+> In Order traverses the tree by recursing through the left node subtree, then the root, then the right node subtree. (Left, Root, Right). Note that an In Order traversal provides the nodes in **increasing** order.
 
 The inOrder traveral function is implemented as follows:
 ```cpp
