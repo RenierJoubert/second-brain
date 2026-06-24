@@ -67,7 +67,9 @@ So we set 32's (x) right child to 40's (temp) left child and detach temp's left 
 
 Now because 32 is sliding down and 40 no longer has a left child, we make 32 (x) the left child of 40 (temp), also because 40 is taking 32's spot, 40 now needs to be connected to 32's parent, so we make 40 (temp) the left child of 32's (x) parent.
 ![[Pasted image 20260623151336.png]]
+
 After this our rotation is complete and we are left with the following tree:
+
 ![[Pasted image 20260623151357.png]]
 
 ### Right-Rotation Example
@@ -79,9 +81,13 @@ Here we are doing a right rotation of 47, so we are sliding 47 down to the right
 
 When we side 47 down and then slide 32 up, the 40 tree will collide with the 47 tree, but conveniently the 47 tree no longer has a left child so we can put the 40 tree as 47's left child as follows:
 ![[Pasted image 20260623152148.png]]
+
 Then, because 32 will be the new parent of 47 we need to make 47 the right child of 32 as follows:
+
 ![[Pasted image 20260623152230.png]]
+
 Once we make 32 the new root we are finished with our rotation and the new tree looks like this:
+
 ![[Pasted image 20260623152304.png]]
 
 ## AVL Nodes
@@ -108,6 +114,7 @@ So firstly how do we identify imbalance? Well, we know that tree is imbalanced i
 ![[Pasted image 20260623153001.png]]
 
 Namely, there are a very limited number of imbalances that structure can take, for example there are exactly 4 cases, (but this is really two symmetric pairs).
+
 ![[Pasted image 20260623153229.png]]
 
 To fix these imbalances we perform the following:
