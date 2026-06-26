@@ -27,16 +27,25 @@ export const defaultContentPageLayout: PageLayout = {
       }),
       condition: (page) => page.fileData.slug !== "index",
     }),
-    Component.Search(),
+    Component.ConditionalRender({
+      component: Component.Search(),
+      condition: (page) => page.fileData.slug !== "index",
+    }),
     Component.ArticleTitle(),
-    Component.ContentMeta(),
+    Component.ConditionalRender({
+      component: Component.ContentMeta(),
+      condition: (page) => page.fileData.slug !== "index",
+    }),
     Component.ConditionalRender({
       component: Component.MobileOnly(Component.Graph()),
-      condition: (page) => page.fileData.slug !== "index", // hide graph on mobile index
+      condition: (page) => page.fileData.slug !== "index",
     }),
   ],
   left: [
-    Component.DesktopOnly(Component.Graph()),
+    Component.ConditionalRender({
+      component: Component.DesktopOnly(Component.Graph()),
+      condition: (page) => page.fileData.slug !== "index",
+    }),
   ],
   right: [
     Component.Backlinks(),
