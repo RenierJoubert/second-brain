@@ -70,5 +70,9 @@ export const defaultListPageLayout: PageLayout = {
     Component.ArticleTitle(),
   ],
   left: [],
-  right: [],
+  right: [
+    Component.Explorer({
+      title: "Explore",
+      useSavedState: true,
+    }),],
 }
