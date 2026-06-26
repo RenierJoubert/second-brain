@@ -77,7 +77,6 @@
         transform: none;
         background: var(--lightgray);
         border-color: var(--secondary);
-
         .nav-text { color: var(--dark); }
       }
 
@@ -97,26 +96,130 @@ body[data-slug="index"] .meta {
   display: none !important;
 }
 
-// Increase home page font size
-body[data-slug="index"] article {
-  font-size: 1.2rem;
-}
-
 // Get rid of inline code highlighting
 :not(pre) > code {
   background-color: transparent !important;
 }
 
-// ─── INDEX PAGE — DESKTOP ONLY ────────────────────────────────────────────────
+// ─── GLOBAL EXPLORER STYLE ────────────────────────────────────────────────────
+
+.explorer > button#explorer-toggle,
+.explorer > .explorer-title,
+button.explorer-toggle,
+[class*="explorer"] > button:first-child {
+  display: none !important;
+}
+
+#explorer-content,
+.explorer-content,
+[id^="explorer"] {
+  display: block !important;
+  visibility: visible !important;
+  max-height: none !important;
+  overflow: visible !important;
+}
+
+.explorer ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.explorer li {
+  font-family: var(--codeFont);
+  font-size: 0.8rem;
+  line-height: 2.0;
+  padding: 0;
+  margin: 0;
+}
+
+.explorer li > a,
+.explorer li > .folder-button,
+.explorer li > button {
+  font-family: var(--codeFont);
+  font-size: 0.8rem;
+  color: var(--darkgray);
+  text-decoration: none;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  display: inline;
+
+  &:hover { color: var(--dark); }
+  svg { display: none !important; }
+}
+
+.explorer > ul > li::before {
+  content: "├─ ";
+  color: var(--lightgray);
+  font-family: var(--codeFont);
+  font-size: 0.8rem;
+}
+
+.explorer > ul > li:last-child::before {
+  content: "└─ ";
+  color: var(--lightgray);
+}
+
+.explorer ul ul li {
+  padding-left: 1.1rem;
+
+  &::before {
+    content: "├─ ";
+    color: var(--lightgray);
+    font-family: var(--codeFont);
+    font-size: 0.8rem;
+  }
+
+  &:last-child::before { content: "└─ "; }
+}
+
+// ─── NON-INDEX: SIDEBAR SCROLLS WITH PAGE ────────────────────────────────────
+
+body:not([data-slug="index"]) {
+  .right.sidebar,
+  .left.sidebar {
+    position: static !important;
+    height: auto !important;
+    overflow: visible !important;
+    max-height: none !important;
+    pointer-events: none;
+
+    a, button, input, label, [role="button"] {
+      pointer-events: auto;
+    }
+  }
+
+  #explorer-content,
+  .explorer-content,
+  [id^="explorer"] {
+    max-height: none !important;
+    overflow: visible !important;
+    height: auto !important;
+  }
+}
+
+// ─── GRAPH OVERLAY: ALWAYS ON TOP ─────────────────────────────────────────────
+
+.graph-outer,
+#graph-outer,
+[class*="graph-outer"],
+.modal,
+.overlay,
+[class*="overlay"] {
+  pointer-events: auto !important;
+  z-index: 9999 !important;
+}
+
+// ─── INDEX PAGE: SHARED (ALL SIZES) ───────────────────────────────────────────
 
 @keyframes blink {
   0%, 100% { opacity: 1; }
   50%       { opacity: 0; }
 }
 
-// ── These must live outside the @media block because .page wraps #quartz-body ─
-// ── and needs to be reset before any absolute positioning can work correctly ──
-
+// .page is DOM parent of #quartz-body — must be root-scoped
 body[data-slug="index"] .page {
   position: relative !important;
   overflow: visible !important;
@@ -126,15 +229,20 @@ body[data-slug="index"] .page {
   width: 100% !important;
 }
 
-// Hide the Quartz footer on index — social links live in index.md instead
+// Hide Quartz footer on index — social links live in index.md
 body[data-slug="index"] footer {
   display: none !important;
 }
 
+body[data-slug="index"] hr {
+  display: none !important;
+}
+
+// ─── INDEX PAGE — DESKTOP ─────────────────────────────────────────────────────
+
 @media (min-width: 1200px) {
   body[data-slug="index"] {
 
-    // ── 1. Break the default 3-column grid ──────────────────────────────────
     #quartz-body {
       display: block !important;
       position: relative !important;
@@ -143,12 +251,10 @@ body[data-slug="index"] footer {
       max-width: 100%;
     }
 
-    // ── 2. Kill left sidebar entirely ───────────────────────────────────────
     #quartz-body > .left.sidebar {
       display: none !important;
     }
 
-    // ── 3. Main content: true top-left ───────────────────────────────────────
     #quartz-body > .center {
       display: block !important;
       position: absolute !important;
@@ -160,16 +266,12 @@ body[data-slug="index"] footer {
       max-width: none !important;
     }
 
-    // Zero out article inner spacing so content truly hugs the corner
     #quartz-body > .center article {
-
       padding: 1.5rem 0 4rem 1rem !important;
-
       margin: 0 !important;
       max-width: none !important;
     }
 
-    // ── 4. Prompt line with blinking cursor ──────────────────────────────────
     .index-prompt {
       font-family: var(--codeFont);
       font-size: 0.85rem;
@@ -186,7 +288,6 @@ body[data-slug="index"] footer {
       }
     }
 
-    // ── 5. Bio text ──────────────────────────────────────────────────────────
     #quartz-body > .center .popover-hint p {
       font-family: var(--codeFont) !important;
       font-size: 1.0rem !important;
@@ -202,7 +303,6 @@ body[data-slug="index"] footer {
       }
     }
 
-    // ── 6. Social icon links ─────────────────────────────────────────────────
     .index-links {
       display: flex;
       gap: 1rem;
@@ -219,10 +319,6 @@ body[data-slug="index"] footer {
       }
     }
 
-    // ── 7. Hide hr ───────────────────────────────────────────────────────────
-    hr { display: none !important; }
-
-    // ── 8. Right sidebar: fixed full-height column on the right edge ─────────
     #quartz-body > .right.sidebar {
       position: fixed !important;
       top: 0;
@@ -240,12 +336,131 @@ body[data-slug="index"] footer {
       flex: unset;
     }
 
-    // ── 9. Hide backlinks on index ───────────────────────────────────────────
+    #quartz-body > .right.sidebar .backlinks {
+      display: none !important;
+    }
+  }
+}
+
+// ─── INDEX PAGE — MOBILE ──────────────────────────────────────────────────────
+
+@media (max-width: 1199px) {
+  body[data-slug="index"] {
+
+    // Stack bio + explorer vertically
+    #quartz-body {
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: stretch !important;
+      width: 100% !important;
+      padding: 0 !important;
+      position: static !important;
+    }
+
+    #quartz-body > .left.sidebar {
+      display: none !important;
+    }
+
+    // Bio content block
+    #quartz-body > .center {
+      position: static !important;
+      width: 100% !important;
+      max-width: 100% !important;
+      padding: 2.5rem 1.4rem 1.2rem 1.4rem !important;
+      margin: 0 !important;
+      box-sizing: border-box !important;
+    }
+
+    #quartz-body > .center article {
+      padding: 0 !important;
+      margin: 0 !important;
+      max-width: 100% !important;
+      width: 100% !important;
+      font-size: 1rem !important; // override the global 1.2rem that causes overflow
+    }
+
+    // Prompt
+    .index-prompt {
+      font-family: var(--codeFont);
+      font-size: 0.78rem;
+      color: var(--gray);
+      margin: 0 0 0.5rem 0;
+      display: block;
+
+      .cursor {
+        display: inline-block;
+        animation: blink 1s step-start infinite;
+        color: var(--gray);
+        margin-left: 0.2rem;
+      }
+    }
+
+    // Bio text — constrained to screen width, no overflow
+    #quartz-body > .center .popover-hint p,
+    #quartz-body > .center article p {
+      font-family: var(--codeFont) !important;
+      font-size: 0.88rem !important;
+      line-height: 1.7 !important;
+      color: var(--darkgray) !important;
+      max-width: 100% !important;
+      word-break: break-word !important;
+      overflow-wrap: break-word !important;
+      margin: 0 !important;
+
+      a {
+        color: var(--gray);
+        text-decoration: none;
+        border-bottom: 1px solid var(--lightgray);
+        &:hover { color: var(--dark); }
+      }
+    }
+
+    // Social links
+    .index-links {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1.2rem;
+
+      a {
+        color: var(--gray);
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        &:hover { color: var(--dark); }
+        svg { display: block; }
+      }
+    }
+
+    // Explorer below bio — full width, static flow
+    #quartz-body > .right.sidebar {
+      position: static !important;
+      width: 100% !important;
+      max-width: 100% !important;
+      height: auto !important;
+      min-height: unset !important;
+      padding: 0.8rem 1.4rem 3rem 1.4rem !important;
+      margin: 0 !important;
+      display: block !important;
+      background: transparent !important;
+      overflow: visible !important;
+      border: none !important;
+      box-sizing: border-box !important;
+      grid-area: unset !important;
+      flex: unset !important;
+      z-index: auto !important;
+      pointer-events: auto !important; // override the non-index pointer-events: none
+    }
+
+    // Re-enable pointer events on the sidebar itself for mobile index
+    #quartz-body > .right.sidebar * {
+      pointer-events: auto !important;
+    }
+
     #quartz-body > .right.sidebar .backlinks {
       display: none !important;
     }
 
-    // ── 10. Explorer: hide the toggle button, always show tree ───────────────
+    // Force explorer open — hide toggle, show content
     #quartz-body > .right.sidebar .explorer > button#explorer-toggle,
     #quartz-body > .right.sidebar .explorer > .explorer-title,
     #quartz-body > .right.sidebar button.explorer-toggle,
@@ -260,9 +475,10 @@ body[data-slug="index"] footer {
       visibility: visible !important;
       max-height: none !important;
       overflow: visible !important;
+      height: auto !important;
     }
 
-    // ── 11. Tree items: terminal style ───────────────────────────────────────
+    // Tree items
     #quartz-body > .right.sidebar .explorer ul {
       list-style: none;
       padding: 0;
@@ -316,214 +532,7 @@ body[data-slug="index"] footer {
         font-size: 0.8rem;
       }
 
-      &:last-child::before {
-        content: "└─ ";
-      }
+      &:last-child::before { content: "└─ "; }
     }
-  }
-}
-
-// Hide the toggle button title everywhere
-.explorer > button#explorer-toggle,
-.explorer > .explorer-title,
-button.explorer-toggle,
-[class*="explorer"] > button:first-child {
-  display: none !important;
-}
-
-// Always show the tree
-#explorer-content,
-.explorer-content,
-[id^="explorer"] {
-  display: block !important;
-  visibility: visible !important;
-  max-height: none !important;
-  overflow: visible !important;
-}
-
-// Tree list reset
-.explorer ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.explorer li {
-  font-family: var(--codeFont);
-  font-size: 0.8rem;
-  line-height: 2.0;
-  padding: 0;
-  margin: 0;
-}
-
-// Links and buttons inside tree items
-.explorer li > a,
-.explorer li > .folder-button,
-.explorer li > button {
-  font-family: var(--codeFont);
-  font-size: 0.8rem;
-  color: var(--darkgray);
-  text-decoration: none;
-  background: none;
-  border: none;
-  padding: 0;
-  cursor: pointer;
-  display: inline;
-
-  &:hover { color: var(--dark); }
-  svg { display: none !important; }
-}
-
-// Top-level prefix characters
-.explorer > ul > li::before {
-  content: "├─ ";
-  color: var(--lightgray);
-  font-family: var(--codeFont);
-  font-size: 0.8rem;
-}
-
-.explorer > ul > li:last-child::before {
-  content: "└─ ";
-  color: var(--lightgray);
-}
-
-// Nested items
-.explorer ul ul li {
-  padding-left: 1.1rem;
-
-  &::before {
-    content: "├─ ";
-    color: var(--lightgray);
-    font-family: var(--codeFont);
-    font-size: 0.8rem;
-  }
-
-  &:last-child::before {
-    content: "└─ ";
-  }
-}
-
-body:not([data-slug="index"]) {
-  .right.sidebar,
-  .left.sidebar {
-    position: static !important;
-    height: auto !important;
-    overflow: visible !important;
-    max-height: none !important;
-  }
-
-  #explorer-content,
-  .explorer-content,
-  [id^="explorer"] {
-    max-height: none !important;
-    overflow: visible !important;
-    height: auto !important;
-  }
-}
-
-body:not([data-slug="index"]) {
-  .left.sidebar,
-  .right.sidebar {
-    overflow: visible !important;
-    pointer-events: none;
-
-    // Re-enable pointer events only on interactive elements inside
-    a, button, input, label, [role="button"] {
-      pointer-events: auto;
-    }
-  }
-}
-
-// ─── INDEX PAGE — MOBILE ──────────────────────────────────────────────────────
-
-@media (max-width: 1199px) {
-  body[data-slug="index"] {
-
-    // ── Reset any desktop absolute positioning ──────────────────────────────
-    #quartz-body {
-      display: flex !important;
-      flex-direction: column !important;
-      align-items: center !important;
-      padding: 0 !important;
-    }
-
-    #quartz-body > .left.sidebar {
-      display: none !important;
-    }
-
-    // ── Center the content block ────────────────────────────────────────────
-    #quartz-body > .center {
-      position: static !important;
-      width: 100% !important;
-      max-width: 480px !important;
-      padding: 3rem 1.6rem 1.5rem 1.6rem !important;
-      margin: 0 auto !important;
-      text-align: left !important;
-    }
-
-    #quartz-body > .center article {
-      padding: 0 !important;
-      margin: 0 !important;
-    }
-
-    // ── Bio text ────────────────────────────────────────────────────────────
-    #quartz-body > .center .popover-hint p {
-      font-family: var(--codeFont) !important;
-      font-size: 0.95rem !important;
-      line-height: 1.75 !important;
-      color: var(--darkgray) !important;
-      max-width: none !important;
-    }
-
-    // ── Prompt ──────────────────────────────────────────────────────────────
-    .index-prompt {
-      font-family: var(--codeFont);
-      font-size: 0.82rem;
-      color: var(--gray);
-      margin: 0 0 0.6rem 0;
-      display: block;
-    }
-
-    // ── Social links ────────────────────────────────────────────────────────
-    .index-links {
-      display: flex;
-      gap: 1rem;
-      margin-top: 1.4rem;
-
-      a {
-        color: var(--gray);
-        display: flex;
-        align-items: center;
-        text-decoration: none;
-        &:hover { color: var(--dark); }
-        svg { display: block; }
-      }
-    }
-
-    // ── Right sidebar: below the bio, full width, static ───────────────────
-    #quartz-body > .right.sidebar {
-      position: static !important;
-      width: 100% !important;
-      max-width: 480px !important;
-      height: auto !important;
-      padding: 0 1.6rem 3rem 1.6rem !important;
-      margin: 0 auto !important;
-      display: block !important;
-      background: transparent !important;
-      overflow: visible !important;
-      border: none !important;
-    }
-
-    // ── Hide backlinks still ────────────────────────────────────────────────
-    #quartz-body > .right.sidebar .backlinks {
-      display: none !important;
-    }
-
-    // ── Hide footer ─────────────────────────────────────────────────────────
-    footer {
-      display: none !important;
-    }
-
-    hr { display: none !important; }
   }
 }
