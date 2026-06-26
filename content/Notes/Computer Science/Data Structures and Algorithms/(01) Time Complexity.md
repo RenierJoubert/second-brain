@@ -17,6 +17,7 @@ int mystery(vector<int>& arr, int q) {
 	for (int i = 0; i < arr.size(); i++) {
 		if (arr[i] == q)
 			return 1;
+	}
 	return -1;
 }
 ```
@@ -35,9 +36,9 @@ Given an array of 16 elements. What is the function doing and how long will it t
 
 > How many/which lines are executed?
 > 
-In this particular example (we used an array of size 16 in class), in the worst case the check: `i < arr.size()` occurs 16 (n+1, where n is the length of the array, which is 15 in this case) times. and `i++` also occurs 16 (also n+1 ) times. Additionally the check: `arr[i] == q` happens only 15 times (n times in this case). Finally the return value will only occur once. Thus $T(n)$ is given by:
+In this particular example (we used an array of size 16 in class), in the worst case the check: `i < arr.size()` occurs 17 times (n+1 times where n=16 is the array size: i=0..15 pass, i=16 fails). `i++` occurs 16 times (n times — only executes when the loop body runs). Additionally the check: `arr[i] == q` happens 16 times (n times). Finally the `return -1` will only occur once. Thus $T(n)$ is given by:
 $$
-T(n)= (n+1)+(n+1)+(n+1)+1=3n+6 \in O(n)
+T(n)= (n+1)+n+n+1=3n+2 \in O(n)
 $$
 
 ## Asymptotic and Big-O Notation
@@ -160,7 +161,7 @@ Moreover, when the loop variable is added or subtracted, then the time complexit
 ### A Final Example
 
 ```cpp
-int i, j:
+int i, j;
 for (i =1; i < 9*n; i = i*2) {
 	for (j = n*n; j > 0; j--) {
 	...
@@ -170,7 +171,7 @@ for (i =1; i < 9*n; i = i*2) {
 
 Here the overall time complexity will be in $O(n^2\log n)$.
 
-**Be weary about conditional loops**
+**Be wary about conditional loops**
 
 ```cpp
 for (int i = 0; i < n*n*n; i++) {

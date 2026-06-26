@@ -10,7 +10,7 @@ So many edges can a graph have?
 	Well if a graph is *connected*, then there is $n-1$ edges at a minimum, if the graph is not connected then the there is 0 edges at a minimum. Well what about the maximum? Well, in a *connected simple graph*, the maximum number of edges is given by:
 
 $$
-m = \sum_{i=1}^n i = \frac{n(n-1)}{2}
+m = \sum_{i=1}^{n-1} i = \frac{n(n-1)}{2}
 $$
 We can see this relation through the following diagram:
 ![[Pasted image 20260622142317.png]]
@@ -182,13 +182,13 @@ For example,
 4. Mark B as visited and check it's neighbours
 5. A has already been visited, C has not been visited, visit C and mark edge as discovery, start DFS from C
 6. Mark C as visited and check it's neighbours
-7. B has already been visited, A has already been visited but it's edge is unmarked so mark it's edge as a cross edge, D has not been visited, visit D and mark edge as discovery, start DFS from D
+7. B has already been visited, A has already been visited but it's edge is unmarked so mark it's edge as a **back edge** (in undirected DFS, edges to already-visited vertices are back edges, not cross edges), D has not been visited, visit D and mark edge as discovery, start DFS from D
 8. Mark D as visited and check it's neighbours
-9. A has already been visited but it's edge is unmarked so mark it's edge as a cross edge, no more neighbours to check so exit into previous function call (BFS of C)
+9. A has already been visited but it's edge is unmarked so mark it's edge as a **back edge**, no more neighbours to check so exit into previous function call (DFS of C)
 10. Check neighbours of C
-11. E has not been visited, visit E and mark it's edge as a discovery and start BFS from E.
+11. E has not been visited, visit E and mark it's edge as a discovery and start DFS from E.
 12. Mark E as visited and check it's neighbours
-13. A has been visited but it's edge is unmarked so mark it as a cross edge, C has been visited so do nothing. No more neighbours to check so return to C
+13. A has been visited but it's edge is unmarked so mark it as a **back edge**, C has been visited so do nothing. No more neighbours to check so return to C
 14. DFS from C terminates to B
 15. DFS from B terminates to A
 16. DFS from A terminates

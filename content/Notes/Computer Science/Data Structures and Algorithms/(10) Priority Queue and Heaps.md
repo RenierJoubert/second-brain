@@ -124,7 +124,7 @@ This repeats until our partially ordered property holds:
 > To create a heap we need to first create an empty heap, then for each item, insert it into the heap. Ultimately the cost of this comes out to $O(n\log n)$ as are iterating over an unordered array of size $n$ and inserting them with a complexity of $O(\log n)$. But is there a better way?
 
 ## Floyd's Method
-Starting with an un-ordered array we can use *Floyd's method*, that is we can create a heap from an unordered array by repeatedly calling heapify-down on the elements in the upper half of the array (left half) because the lower half are leaf nodes which are already heaps, hence we start with index $\frac{n}{2}$ and work up to index 0 (from the last non-leaf node to the root). 
+Starting with an un-ordered array we can use *Floyd's method*, that is we can create a heap from an unordered array by repeatedly calling heapify-down on the elements in the upper half of the array (left half) because the lower half are leaf nodes which are already heaps, hence we start with index $\left\lfloor\frac{n-1}{2}\right\rfloor$ (the last non-leaf node, 0-indexed) and work up to index 0 (the root). Note: in C++ this is `(size - 1) / 2` using integer division. 
 
 This can be demonstrated as follows (note we start at index 6 as this is the middle of the array)
 ![[Pasted image 20260623193957.png]]
@@ -134,11 +134,26 @@ This can be demonstrated as follows (note we start at index 6 as this is the mid
 ![[Pasted image 20260623194105.png]]
 ![[Pasted image 20260623194112.png]]
 ## Building Complexity
-> When heapify-down is called on **half the array**, the cost has complexity $O(height)=O(\log n)$ per heapify down and it would appear that the build cost is $O(n\log n)$, ==but its actually just== $O(n)$ because the upper bound on the number of edges in a tree with $n$ nodes is $n-1$ but we will never even come close to this, hence **the worst case number of swaps is** $O(n)$.
+> When heapify-down is called on **half the array**, the cost per call is $O(\text{height of node})$, not a uniform $O(\log n)$. Most nodes near the bottom have small height, so the total work is far less than $O(n\log n)$.
+
+The exact bound comes from summing the heights across all levels:
+$$
+\sum_{h=0}^{\lfloor \log n \rfloor} \frac{n}{2^{h+1}} \cdot h = O(n)
+$$
+So **Floyd's method builds a heap in $\Theta(n)$**, not $O(n \log n)$. This is a tighter result than repeatedly inserting $n$ items.
 
 ## Heapsort
 > First build the heap from some unordered array, then remove the largest element (index 0) and swap it with the last element in the array and rearrange the heap, repeat until the array is fully sorted.
 ![[Pasted image 20260605152047.png]]
 ![[Pasted image 20260623195308.png]]
 ![[Pasted image 20260605152057.png]]
+
+### Heapsort Complexity
+| Case | Time | Space |
+|------|------|-------|
+| Best | $O(n\log n)$ | $O(1)$ |
+| Worst | $O(n\log n)$ | $O(1)$ |
+| Average | $O(n\log n)$ | $O(1)$ |
+
+Heapsort is **in-place** ($O(1)$ auxiliary space) and has a guaranteed $O(n\log n)$ in all cases. Unlike merge sort it does not need a temporary array. However, it is **not stable** (equal elements may change relative order) and has poor cache performance compared to quicksort due to non-sequential memory access.
 

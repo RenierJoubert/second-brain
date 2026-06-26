@@ -43,7 +43,7 @@ N_{h} & > 2 \cdot 2 N_{h-4} \\
  & > 2^k \cdot N_{h-2k} \\
  & > 2^{h/2} \quad \text{for} \quad k = \frac{h}{2} \\
  & \therefore \\
- h & < \log(N_{h}) \quad h \in O(\log n) &   
+ & \log(N_{h}) > \frac{h}{2} \implies h < 2\log(N_{h}) \quad h \in O(\log n) &   
 \end{align}
 $$
 ### AVL Rotations

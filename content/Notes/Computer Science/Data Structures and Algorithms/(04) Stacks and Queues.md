@@ -17,7 +17,7 @@ class stack {
 	bool isEmpty() const;
 	void Push(const LIT& e); // insert at top of stack
 	LIT Pop(); // remove and return from top of stack
-private;
+private:
 };
 ```
 
@@ -131,7 +131,7 @@ Notably resizing requires:
 
 So, over a sequence of $n$ pushes if we naively increase our array size by 1 each time, we will have done this many copies:
 $$
-\sum_{i=1}^{n-1}n=\frac{n(n-1)}{2} \in O(n^2)
+\sum_{i=1}^{n-1}i=\frac{n(n-1)}{2} \in O(n^2)
 $$
 And we will have done $n$ insertions. Hence, our *amortized* cost for 1 `push()` is linear in $O(n)$.
 
@@ -147,7 +147,7 @@ Now, over a sequence of $n$ pushes, the number of copies we will have done is gi
 $$
 1+2+4+8+\cdots + \frac{n}{8}+\frac{n}{4}+\frac{n}{2} = n
 $$
-And the total number of insertions is also just $n$. Hence the total cost is $2n$ but our *amortized* cost will be constant time in $(1)$.
+And the total number of insertions is also just $n$. Hence the total cost is $2n$ but our *amortized* cost will be constant time in $O(1)$.
 
 In the worst case, the push operation when the array is full will have linear cost, but on average the cost is still constant.
 

@@ -128,4 +128,4 @@ Furthermore, a node can also have a *successor*. The *successor* to a node is ==
 
 ![[Pasted image 20260528010235.png]]
 
-To do better however, we would ideally like our BST to be complete or *balanced*. Meaning, all leaves are about the same distance from the root, that is the height of a node's right subtree is **at most** 1 different from the height of it's left subtree. Nevertheless, in order to guarantee a balanced BST we need to make the structure and the insertion and removal algorithms more complex, that is we need to use *red black trees*. 
+To do better however, we would ideally like our BST to be complete or *balanced*. Meaning, all leaves are about the same distance from the root, that is the height of a node's right subtree is **at most** 1 different from the height of it's left subtree. Nevertheless, in order to guarantee a balanced BST we need to make the structure and the insertion and removal algorithms more complex, that is we need to use *AVL trees* (covered next). 

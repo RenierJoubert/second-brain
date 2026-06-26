@@ -118,7 +118,41 @@ Here the main loop will execute $n$ times for an array of size $n$, and indexOfM
 
 ## Insertion Sort
 
-!! do this
+> Insertion sort builds a sorted sub-array from left to right. At each step it takes the next unsorted element and **shifts** it leftward into its correct position among the already-sorted elements.
+
+### The Algorithm
+```cpp
+void InsertionSort(vector<int>& arr) {
+    for (int i = 1; i < arr.size(); i++) {
+        int key = arr[i];
+        int j = i - 1;
+        while (j >= 0 && arr[j] > key) {
+            arr[j + 1] = arr[j];
+            j--;
+        }
+        arr[j + 1] = key;
+    }
+}
+```
+
+### Complexity
+| Case | Time | Space |
+|------|------|-------|
+| Best (already sorted) | $O(n)$ | $O(1)$ |
+| Worst (reverse sorted) | $O(n^2)$ | $O(1)$ |
+| Average | $O(n^2)$ | $O(1)$ |
+
+### The Invariant Property
+> Before iteration `i`, `arr[0..i-1]` contains the first `i` elements of the original array, **sorted in ascending order**.
+
+**Base case:** `i=1`. The sub-array `arr[0..0]` has one element and is trivially sorted.
+
+**Inductive step:** Assume `arr[0..k-1]` is sorted. The inner `while` loop shifts elements of `arr[0..k-1]` that are greater than `arr[k]` one position right, then inserts `arr[k]` into the gap. After processing index `k`, `arr[0..k]` is sorted.
+
+**Termination:** When `i = arr.size()`, `arr[0..n-1]` — the entire array — is sorted.
+
+> [!Tip] Key properties
+> Insertion sort is **stable** (equal elements keep their original relative order) and **adaptive** (nearly-sorted input runs closer to $O(n)$). It is often used for small arrays or as the base case in hybrid sorts.
 
 
 

@@ -113,11 +113,11 @@ $$
 \log*(n) = \begin{cases} 0 \quad n \leq 1 \\  1 + \log * \log(n) \quad n > 1\end{cases}
 $$
 
-This function essentially "counts" how many times you can take $\log(n)$ before you hit the base case. For example, lets take the iterative $\log(n)$ of $n = 2^{65523}$ as follows:
+This function essentially "counts" how many times you can take $\log(n)$ before you hit the base case. For example, lets take the iterative $\log(n)$ of $n = 2^{65536}$ as follows:
 
 $$
 \begin{align}
-\log(2^{65536}) = 65536 \implies \log(65536) = 16 & \implies \log(16) = 14 \implies \log(4) = 2 \implies \log(2) = 1 \\
+\log(2^{65536}) = 65536 \implies \log(65536) = 16 & \implies \log(16) = 4 \implies \log(4) = 2 \implies \log(2) = 1 \\
  & \therefore \log*(2^{65536}) = 5
 \end{align}
 $$
@@ -148,7 +148,7 @@ Now, if each edge is an **ordered pair**, that is $(A, B) \neq (B, A)$, then the
 - Simple path: a path with no repeated vertices
 - Cycle: a path with the same start and end vertex
 - Simple graph: no self loops *or* multi-edges
-- Subgraph of $G = (V, E): (V' \subseteq V, E \subseteq E)$ and $(u, v) \in E' \implies u, v \in V'$
+- Subgraph of $G = (V, E): (V' \subseteq V, E' \subseteq E)$ and $(u, v) \in E' \implies u, v \in V'$
 - Complete graph: each vertex is directly connected to every other vertex (maximum number of edges)
 - Connected graph: a path exists between every pair of vertices
 - Connected component: a maximally connected subgraph
