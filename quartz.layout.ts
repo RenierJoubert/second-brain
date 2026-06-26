@@ -49,12 +49,11 @@ export const defaultContentPageLayout: PageLayout = {
   ],
   right: [
     Component.Backlinks(),
-    Component.DesktopOnly(
-      Component.Explorer({
-        title: "Explore",
-        useSavedState: true,
-      }),
-    ),
+    Component.Explorer({
+      title: "Explore",
+      useSavedState: true,
+    }),
+    
   ],
 }
 
