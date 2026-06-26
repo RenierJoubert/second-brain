@@ -1,6 +1,6 @@
 #cs #cs221 
 
-## Measuring and comparing algorithms
+## Measuring and Comparing Algorithms
 
 > Time and space complexity
 

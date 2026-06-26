@@ -25,7 +25,7 @@ Here hash tables are not a suitable implementation for a PQ because hash tables 
 
 ## Binary Heaps 
 
-> A binary *heap* is a [[content/Notes/Computer Science/Data Structures and Algorithms/Lecture 6| binary tree]] with **two** properties
+> A binary *heap* is a [[(06) Intro to Trees and BST| binary tree]] with **two** properties
 
 1. Heaps are complete, meaning all levels except the bottom must be filled in, and the bottom leaves are as far left as possible.
 2. Heaps are partially ordered, meaning for a `max heap` the value of a node is at least as large as its children's values (meaning the largest value in the tree is the root), and for a `min heap` the value of a node is no greater than its children's values (meaning the smallest value in the tree is the root).

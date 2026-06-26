@@ -2,7 +2,7 @@
 
 # Graph Implementation and Traversal
 
-First recall the basic terminology from [[Lecture 11|graphs]].
+First recall the basic terminology from [[(11) Disjoint Sets and Graphs|graphs]].
 ## Graph Theory Needed for Analysis
 > The running times are often reported in terms of $n$ (the number of vertices, $|v|$), but they often depend on $m$ (the number of edges).
 

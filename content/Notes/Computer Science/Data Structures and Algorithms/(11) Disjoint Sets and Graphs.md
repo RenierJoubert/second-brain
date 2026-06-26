@@ -130,7 +130,7 @@ Thus in an uptree implementation of disjoint sets that uses **smart union find w
 > A graph $G$ is a collection of *vertices* (or nodes) connected by *edges*. Namely, a graph is a part of sets such that
 >$$
  G = (V, E)
-$$
+>$$
 
 Where:
 - $V$ is a set of vertices $\{ v_{1}, v_{2}, \cdots, v_{n} \}$
