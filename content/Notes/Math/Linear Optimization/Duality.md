@@ -203,8 +203,8 @@ But what about when we only know $x^*$ and not both? Well we cant confirm using 
 >
 >$$
 >\begin{align}
->\lambda^*_ix^*_{n+i} = 0 \quad \forall i\in{1\to n}\\
->x^*_j\lambda^*_{m+j}=0 \quad \forall j \in{1\to j}
+>\lambda^*_ix^*_{n+i} = 0 \quad \forall i\in{1\to m}\\
+>x^*_j\lambda^*_{m+j}=0 \quad \forall j \in{1\to n}
 >\end{align}
 >$$
 

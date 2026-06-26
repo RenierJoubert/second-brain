@@ -6,7 +6,7 @@ Economic indicators are statistics that allow analysts, investors, and policymak
 - **Leading indicators** — change _before_ the economy shifts (forward-looking signal)
 - **Lagging indicators** — change _after_ the economy shifts (confirmation)
 - **Coincident indicators** — change _at the same time_ as the economy
-- 
+
 ---
 
 ## 1. Economic Growth

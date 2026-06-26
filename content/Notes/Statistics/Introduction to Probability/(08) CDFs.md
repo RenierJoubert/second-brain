@@ -31,9 +31,9 @@ We can see that it is never decreasing.
 
 $$
 \begin{align}
-F_{X}(x) & = \int_{-\infty}^x\lambda e^{-\lambda x}I_{[0, \infty)}xdx \\
- & = \int_{0}^xx\lambda e^{-\lambda x}I_{[0, \infty)}xdx  \\
- & = \frac{\lambda e^{-\lambda x}}{-\lambda}\bigg |_{x=0}^{x}=1-e^{-\lambda x}
+F_{X}(x) & = \int_{-\infty}^x\lambda e^{-\lambda t}I_{[0, \infty)}(t)dt \\
+ & = \int_{0}^x\lambda e^{-\lambda t}dt  \\
+ & = \frac{\lambda e^{-\lambda t}}{-\lambda}\bigg |_{t=0}^{x}=1-e^{-\lambda x}
 \end{align}
 $$
 $$

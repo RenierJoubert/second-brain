@@ -71,5 +71,5 @@ $$
 $$
 Simplifying we recover:
 $$
-\int x^2e^{ x }dx = x^2e^x - 2xe^xdx - 2e^x + C
+\int x^2e^{ x }dx = x^2e^x - 2xe^x + 2e^x + C
 $$
