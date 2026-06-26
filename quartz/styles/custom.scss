@@ -361,14 +361,18 @@ body[data-slug="index"] hr {
       display: none !important;
     }
 
-    // Bio content block
+    // Bio content block — centered at top on mobile
     #quartz-body > .center {
       position: static !important;
       width: 100% !important;
       max-width: 100% !important;
       padding: 2.5rem 1.4rem 1.2rem 1.4rem !important;
-      margin: 0 !important;
+      margin: 0 auto !important;
       box-sizing: border-box !important;
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: center !important;
+      text-align: center !important;
     }
 
     #quartz-body > .center article {
@@ -377,6 +381,7 @@ body[data-slug="index"] hr {
       max-width: 100% !important;
       width: 100% !important;
       font-size: 1rem !important; // override the global 1.2rem that causes overflow
+      text-align: center !important;
     }
 
     // Prompt
@@ -468,6 +473,12 @@ body[data-slug="index"] hr {
       display: none !important;
     }
 
+    #quartz-body > .right.sidebar .explorer {
+      overflow: visible !important;
+      height: auto !important;
+      order: unset !important;
+    }
+
     #quartz-body > .right.sidebar #explorer-content,
     #quartz-body > .right.sidebar .explorer-content,
     #quartz-body > .right.sidebar [id^="explorer"] {
@@ -476,6 +487,13 @@ body[data-slug="index"] hr {
       max-height: none !important;
       overflow: visible !important;
       height: auto !important;
+      // These mobile styles from explorer.scss position the content as a
+      // full-screen overlay (position: absolute; top: 0; left: 0). Override
+      // them so the explorer renders inline below the bio instead.
+      position: static !important;
+      transform: none !important;
+      padding: 0 !important;
+      z-index: auto !important;
     }
 
     // Tree items
