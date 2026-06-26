@@ -19,7 +19,7 @@
   --color: #888784;
   --border: #888784;
   --bg: #88878414;
-  --callout-icon: url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 7v14'/%3E%3Cpath d='M16 12h2'/%3E%3Cpath d='M16 8h2'/%3E%3Cpath d='M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z'/%3E%3Cpath d='M6 12h2'/%3E%3Cpath d='M6 8h2'/%3E%3C/svg%3E");
+  --callout-icon: url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2020/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 7v14'/%3E%3Cpath d='M16 12h2'/%3E%3Cpath d='M16 8h2'/%3E%3Cpath d='M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z'/%3E%3Cpath d='M6 12h2'/%3E%3Cpath d='M6 8h2'/%3E%3C/svg%3E");
 }
 
 // Global font size
@@ -101,23 +101,9 @@ body[data-slug="index"] .meta {
   background-color: transparent !important;
 }
 
-// ─── GLOBAL EXPLORER STYLE ────────────────────────────────────────────────────
-
-.explorer > button#explorer-toggle,
-.explorer > .explorer-title,
-button.explorer-toggle,
-[class*="explorer"] > button:first-child {
-  display: none !important;
-}
-
-#explorer-content,
-.explorer-content,
-[id^="explorer"] {
-  display: block !important;
-  visibility: visible !important;
-  max-height: none !important;
-  overflow: visible !important;
-}
+// ─── EXPLORER STYLES ──────────────────────────────────────────────────────────
+// Tree connector styles apply everywhere the explorer is shown inline:
+// desktop right sidebar and index page mobile inline view.
 
 .explorer ul {
   list-style: none;
@@ -135,7 +121,7 @@ button.explorer-toggle,
 
 .explorer li > a,
 .explorer li > .folder-button,
-.explorer li > button {
+.explorer li > button:not(.mobile-explorer):not(.desktop-explorer) {
   font-family: var(--codeFont);
   font-size: 0.8rem;
   color: var(--darkgray);
@@ -175,44 +161,21 @@ button.explorer-toggle,
   &:last-child::before { content: "└─ "; }
 }
 
-// ─── NON-INDEX: SIDEBAR SCROLLS WITH PAGE ────────────────────────────────────
-
-body:not([data-slug="index"]) {
-  .right.sidebar,
-  .left.sidebar {
-    position: static !important;
-    height: auto !important;
-    overflow: visible !important;
-    max-height: none !important;
-    pointer-events: none;
-
-    a, button, input, label, [role="button"] {
-      pointer-events: auto;
-    }
+// Desktop: hide the expand/collapse toggle button and keep explorer always open.
+// On mobile, Quartz's native hamburger (button.mobile-explorer) handles the overlay.
+@media (min-width: 1200px) {
+  button.desktop-explorer {
+    display: none !important;
   }
 
-  #explorer-content,
-  .explorer-content,
-  [id^="explorer"] {
+  .explorer-content {
+    display: block !important;
     max-height: none !important;
     overflow: visible !important;
-    height: auto !important;
   }
 }
 
-// ─── GRAPH OVERLAY: ALWAYS ON TOP ─────────────────────────────────────────────
-
-.graph-outer,
-#graph-outer,
-[class*="graph-outer"],
-.modal,
-.overlay,
-[class*="overlay"] {
-  pointer-events: auto !important;
-  z-index: 9999 !important;
-}
-
-// ─── INDEX PAGE: SHARED (ALL SIZES) ───────────────────────────────────────────
+// ─── INDEX PAGE — SHARED (ALL SIZES) ───────────────────────────────────────────
 
 @keyframes blink {
   0%, 100% { opacity: 1; }
@@ -347,7 +310,7 @@ body[data-slug="index"] hr {
 @media (max-width: 1199px) {
   body[data-slug="index"] {
 
-    // Stack bio + explorer vertically
+    // Stack bio + explorer vertically, no left sidebar
     #quartz-body {
       display: flex !important;
       flex-direction: column !important;
@@ -361,7 +324,7 @@ body[data-slug="index"] hr {
       display: none !important;
     }
 
-    // Bio content block — centered at top on mobile
+    // Bio content block — centered at top
     #quartz-body > .center {
       position: static !important;
       width: 100% !important;
@@ -380,7 +343,7 @@ body[data-slug="index"] hr {
       margin: 0 !important;
       max-width: 100% !important;
       width: 100% !important;
-      font-size: 1rem !important; // override the global 1.2rem that causes overflow
+      font-size: 1rem !important;
       text-align: center !important;
     }
 
@@ -400,7 +363,7 @@ body[data-slug="index"] hr {
       }
     }
 
-    // Bio text — constrained to screen width, no overflow
+    // Bio text
     #quartz-body > .center .popover-hint p,
     #quartz-body > .center article p {
       font-family: var(--codeFont) !important;
@@ -436,7 +399,7 @@ body[data-slug="index"] hr {
       }
     }
 
-    // Explorer below bio — full width, static flow
+    // Right sidebar: show inline below bio (static flow, full width)
     #quartz-body > .right.sidebar {
       position: static !important;
       width: 100% !important;
@@ -453,10 +416,9 @@ body[data-slug="index"] hr {
       grid-area: unset !important;
       flex: unset !important;
       z-index: auto !important;
-      pointer-events: auto !important; // override the non-index pointer-events: none
+      pointer-events: auto !important;
     }
 
-    // Re-enable pointer events on the sidebar itself for mobile index
     #quartz-body > .right.sidebar * {
       pointer-events: auto !important;
     }
@@ -465,38 +427,34 @@ body[data-slug="index"] hr {
       display: none !important;
     }
 
-    // Force explorer open — hide toggle, show content
-    #quartz-body > .right.sidebar .explorer > button#explorer-toggle,
-    #quartz-body > .right.sidebar .explorer > .explorer-title,
-    #quartz-body > .right.sidebar button.explorer-toggle,
-    #quartz-body > .right.sidebar [class*="explorer"] > button:first-child {
+    // Hide the hamburger — explorer shows inline, not as an overlay
+    #quartz-body > .right.sidebar button.mobile-explorer {
       display: none !important;
     }
 
+    // Force explorer open inline: cancel the mobile overlay positioning
+    // (explorer.scss puts explorer-content at position:absolute;top:0;left:0 on mobile)
     #quartz-body > .right.sidebar .explorer {
       overflow: visible !important;
       height: auto !important;
       order: unset !important;
     }
 
-    #quartz-body > .right.sidebar #explorer-content,
     #quartz-body > .right.sidebar .explorer-content,
+    #quartz-body > .right.sidebar #explorer-content,
     #quartz-body > .right.sidebar [id^="explorer"] {
       display: block !important;
       visibility: visible !important;
       max-height: none !important;
       overflow: visible !important;
       height: auto !important;
-      // These mobile styles from explorer.scss position the content as a
-      // full-screen overlay (position: absolute; top: 0; left: 0). Override
-      // them so the explorer renders inline below the bio instead.
       position: static !important;
       transform: none !important;
       padding: 0 !important;
       z-index: auto !important;
     }
 
-    // Tree items
+    // Tree items in the inline index explorer
     #quartz-body > .right.sidebar .explorer ul {
       list-style: none;
       padding: 0;
@@ -513,7 +471,7 @@ body[data-slug="index"] hr {
 
     #quartz-body > .right.sidebar .explorer li > a,
     #quartz-body > .right.sidebar .explorer li > .folder-button,
-    #quartz-body > .right.sidebar .explorer li > button {
+    #quartz-body > .right.sidebar .explorer li > button:not(.mobile-explorer) {
       font-family: var(--codeFont);
       font-size: 0.8rem;
       color: var(--darkgray);

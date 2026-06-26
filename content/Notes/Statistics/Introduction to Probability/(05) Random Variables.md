@@ -18,10 +18,13 @@ $$
 
 
 > [!THeorem] Indicator Function
-> The indicator function can be thought as a sort of step function or impulse. The indicator function however is also a **random variable** and hence a function mapping from $\Omega \to \mathbb{R}$. The indicator function is as follows: $$I_{A}(\omega)= \begin{cases}
+> The indicator function can be thought as a sort of step function or impulse. The indicator function however is also a **random variable** and hence a function mapping from $\Omega \to \mathbb{R}$. The indicator function is as follows: 
+> $$
+> I_{A}(\omega)= \begin{cases}
 > 1 \quad \omega \in A \\
 > 0 \quad \text{otherwise}
-> \end{cases}$$
+> \end{cases}
+> $$
  
 
 For example, let $A= \{ 1,2,3 \}$, $I_{A}(2)=1$ but $I_{A}(4)=0$.
