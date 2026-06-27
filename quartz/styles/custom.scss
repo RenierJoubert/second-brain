@@ -101,6 +101,12 @@ body[data-slug="index"] .meta {
   background-color: transparent !important;
 }
 
+// Give display math enough vertical room so tall exponents aren't clipped
+.katex-display {
+  padding: 0.6em 0;
+  overflow-y: visible;
+}
+
 // ─── EXPLORER STYLES ──────────────────────────────────────────────────────────
 // Tree connector styles apply everywhere the explorer is shown inline:
 // desktop right sidebar and index page mobile inline view.
@@ -172,6 +178,16 @@ body[data-slug="index"] .meta {
     display: block !important;
     max-height: none !important;
     overflow: visible !important;
+  }
+}
+
+// Desktop non-index: shift right sidebar left and let it scroll with the page
+@media (min-width: 1200px) {
+  body:not([data-slug="index"]) .sidebar.right {
+    padding-left: 0.5rem;
+    position: static !important;
+    height: auto !important;
+    overflow-y: visible !important;
   }
 }
 
@@ -285,8 +301,8 @@ body[data-slug="index"] hr {
     #quartz-body > .right.sidebar {
       position: fixed !important;
       top: 0;
-      right: 0;
-      width: 220px;
+      right: 2rem;
+      width: 300px;
       height: 100vh;
       padding: 2rem 1.8rem 2rem 1.4rem;
       display: flex !important;
@@ -324,7 +340,7 @@ body[data-slug="index"] hr {
       display: none !important;
     }
 
-    // Bio content block — centered at top
+    // Bio content block 
     #quartz-body > .center {
       position: static !important;
       width: 100% !important;
