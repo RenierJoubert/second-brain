@@ -1,4 +1,4 @@
-#stats #math #stats302
+#stats #math #math302
 
 # Probability Functions
 

@@ -1,4 +1,4 @@
-#stats #math #stat302 
+#stats #math #math302
 
 # Continuous Random Variables
 

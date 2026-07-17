@@ -13,6 +13,12 @@
 - [blazingly fast pdf reader](https://sioyek.info/)
 
 ---
+
+## Reading
+
+- [slop and the dead internet](https://babbo.dev/articles/intentio/)
+
+---
 ## Misc
 
 - [monero](https://www.getmonero.org/)
