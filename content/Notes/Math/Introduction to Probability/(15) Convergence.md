@@ -123,7 +123,7 @@ $$
 $$
 
 > [!Todo] An example 
-> Suppose a struggling restaurant has daily sales on any given day as a random variable with a mean of $2500 and sd of $500, what is the approximate value that the total sales for 30 days will be over $80,000?
+> Suppose a struggling restaurant has daily sales on any given day as a random variable with a mean of \$2500 and sd of \$500, what is the approximate value that the total sales for 30 days will be over \$80,000?
 > 
 
 $$
