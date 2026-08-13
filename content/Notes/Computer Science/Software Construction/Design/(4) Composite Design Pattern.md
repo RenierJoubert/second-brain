@@ -28,7 +28,7 @@ The pattern consists of three classes:
 2. The Leaf: ==No children==
 3. The Component: ==The super class that is extended by the first two classes==, this can be an ==interface, abstract, or regular class==
 
-![[composite-1.png]]
+![[public/Images/composite-1.png]]
 - The Composite has a collection of Components, so that the Composite class can loop through those Components without keeping track of whether the Component is actually a Composite or a Leaf.
 - The Composite also has an addComponent method so that Components can be added to its contents.
 - Without the Component super class abstraction, the Composite would have to maintain different lists for each kind of element in its contents, and would need to provide individual methods for adding contents, and displaying contents for each kind of content.

@@ -90,7 +90,7 @@ n\log(n^2) = 2n\log(n) & \implies n\log n
 $$
 
 
-![[screenshot-2026-05-12_13-44-45.png]]
+![[public/Images/screenshot-2026-05-12_13-44-45.png]]
 
 ## Dominance
 
