@@ -89,8 +89,7 @@
   }
 }
 
-// Hide title and metadata on index.md
-body[data-slug="index"] h1,
+// Hide metadata on index.md
 body[data-slug="index"] .content-meta,
 body[data-slug="index"] .meta {
   display: none !important;
@@ -191,340 +190,102 @@ body[data-slug="index"] .meta {
   }
 }
 
-// ─── INDEX PAGE — SHARED (ALL SIZES) ───────────────────────────────────────────
-
-@keyframes blink {
-  0%, 100% { opacity: 1; }
-  50%       { opacity: 0; }
-}
+// ─── INDEX PAGE ───────────────────────────────────────────────────────────────
+// Only the "Vault" title and the explorer, centered on the page at all sizes.
 
 // .page is DOM parent of #quartz-body — must be root-scoped
 body[data-slug="index"] .page {
-  position: relative !important;
-  overflow: visible !important;
   margin: 0 !important;
   padding: 0 !important;
   max-width: 100% !important;
   width: 100% !important;
 }
 
-// Hide Quartz footer on index — social links live in index.md
-body[data-slug="index"] footer {
-  display: none !important;
-}
-
-body[data-slug="index"] hr {
-  display: none !important;
-}
-
-// ─── INDEX PAGE — DESKTOP ─────────────────────────────────────────────────────
-
-@media (min-width: 1200px) {
-  body[data-slug="index"] {
-
-    #quartz-body {
-      display: block !important;
-      position: relative !important;
-      min-height: 100vh;
-      padding: 0;
-      max-width: 100%;
-    }
-
-    #quartz-body > .left.sidebar {
-      display: none !important;
-    }
-
-    #quartz-body > .center {
-      display: block !important;
-      position: absolute !important;
-      top: 0 !important;
-      left: 0 !important;
-      width: 58% !important;
-      padding: 2rem 0 4rem 2rem !important;
-      margin: 0 !important;
-      max-width: none !important;
-    }
-
-    #quartz-body > .center article {
-      padding: 1.5rem 0 4rem 1rem !important;
-      margin: 0 !important;
-      max-width: none !important;
-    }
-
-    .index-prompt {
-      font-family: var(--codeFont);
-      font-size: 0.85rem;
-      color: var(--gray);
-      margin: 0 0 0.6rem 0;
-      line-height: 1.4;
-      display: block;
-
-      .cursor {
-        display: inline-block;
-        animation: blink 1s step-start infinite;
-        color: var(--gray);
-        margin-left: 0.2rem;
-      }
-    }
-
-    #quartz-body > .center .popover-hint p {
-      font-family: var(--codeFont) !important;
-      font-size: 1.0rem !important;
-      line-height: 1.75 !important;
-      color: var(--darkgray) !important;
-      max-width: 54ch;
-
-      a {
-        color: var(--gray);
-        text-decoration: none;
-        border-bottom: 1px solid var(--lightgray);
-        &:hover { color: var(--dark); }
-      }
-    }
-
-    .index-links {
-      display: flex;
-      gap: 1rem;
-      margin-top: 1.6rem;
-
-      a {
-        color: var(--gray);
-        display: flex;
-        align-items: center;
-        text-decoration: none;
-        transition: color 0.15s ease;
-        &:hover { color: var(--dark); }
-        svg { display: block; }
-      }
-    }
-
-    #quartz-body > .right.sidebar {
-      position: fixed !important;
-      top: 0;
-      right: 2rem;
-      width: 300px;
-      height: 100vh;
-      padding: 2rem 1.8rem 2rem 1.4rem;
-      display: flex !important;
-      flex-direction: column;
-      gap: 0;
-      overflow-y: auto;
-      background: var(--light);
-      z-index: 20;
-      grid-area: unset;
-      flex: unset;
-    }
-
-    #quartz-body > .right.sidebar .backlinks {
-      display: none !important;
-    }
+body[data-slug="index"] {
+  footer,
+  hr,
+  article,
+  .page-footer,
+  #quartz-body > .sidebar {
+    display: none !important;
   }
-}
 
-// ─── INDEX PAGE — MOBILE ──────────────────────────────────────────────────────
+  #quartz-body {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    min-height: 100dvh;
+    width: 100% !important;
+    padding: 2rem 16px !important;
+    box-sizing: border-box;
+  }
 
-@media (max-width: 1199px) {
-  body[data-slug="index"] {
+  #quartz-body > .center {
+    // base.scss sets min-width: 100% on .center, which defeats centering
+    width: auto !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
 
-    // Stack bio + explorer vertically, no left sidebar
-    #quartz-body {
-      display: flex !important;
-      flex-direction: column !important;
-      align-items: stretch !important;
-      width: 100% !important;
-      padding: 0 !important;
-      position: static !important;
-    }
+  .page-header,
+  .popover-hint {
+    margin: 0 !important;
+  }
 
-    #quartz-body > .left.sidebar {
-      display: none !important;
-    }
+  // Stack title over explorer, both centered horizontally
+  .popover-hint {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 
-    // Bio content block 
-    #quartz-body > .center {
-      position: static !important;
-      width: 100% !important;
-      max-width: 100% !important;
-      padding: 2.5rem 1.4rem 1.2rem 1.4rem !important;
-      margin: 0 auto !important;
-      box-sizing: border-box !important;
-      display: flex !important;
-      flex-direction: column !important;
-      align-items: center !important;
-      text-align: center !important;
-    }
+  h1.article-title {
+    display: block !important;
+    text-align: center;
+    margin: 0 0 1.2rem 0;
+    font-family: var(--headerFont) !important;
+  }
 
-    #quartz-body > .center article {
-      padding: 0 !important;
-      margin: 0 !important;
-      max-width: 100% !important;
-      width: 100% !important;
-      font-size: 1rem !important;
-      text-align: center !important;
-    }
+  // Same font as the rest of the site (buttons don't inherit font by default)
+  .explorer,
+  .explorer * {
+    font-family: var(--bodyFont) !important;
+  }
 
-    // Prompt
-    .index-prompt {
-      font-family: var(--codeFont);
-      font-size: 0.78rem;
-      color: var(--gray);
-      margin: 0 0 0.5rem 0;
-      display: block;
+  // Explorer always open inline: no toggle buttons, no mobile overlay
+  .explorer {
+    display: flex !important;
+    order: unset !important;
+    margin: 0 !important;
+    height: auto !important;
+    overflow: visible !important;
+    align-self: center !important;
+    flex: 0 0 auto !important;
+    width: max-content;
+    max-width: 100%;
+  }
 
-      .cursor {
-        display: inline-block;
-        animation: blink 1s step-start infinite;
-        color: var(--gray);
-        margin-left: 0.2rem;
-      }
-    }
+  .explorer button.mobile-explorer,
+  .explorer button.desktop-explorer {
+    display: none !important;
+  }
 
-    // Bio text
-    #quartz-body > .center .popover-hint p,
-    #quartz-body > .center article p {
-      font-family: var(--codeFont) !important;
-      font-size: 0.88rem !important;
-      line-height: 1.7 !important;
-      color: var(--darkgray) !important;
-      max-width: 100% !important;
-      word-break: break-word !important;
-      overflow-wrap: break-word !important;
-      margin: 0 !important;
-
-      a {
-        color: var(--gray);
-        text-decoration: none;
-        border-bottom: 1px solid var(--lightgray);
-        &:hover { color: var(--dark); }
-      }
-    }
-
-    // Social links
-    .index-links {
-      display: flex;
-      gap: 1rem;
-      margin-top: 1.2rem;
-
-      a {
-        color: var(--gray);
-        display: flex;
-        align-items: center;
-        text-decoration: none;
-        &:hover { color: var(--dark); }
-        svg { display: block; }
-      }
-    }
-
-    // Right sidebar: show inline below bio (static flow, full width)
-    #quartz-body > .right.sidebar {
-      position: static !important;
-      width: 100% !important;
-      max-width: 100% !important;
-      height: auto !important;
-      min-height: unset !important;
-      padding: 0.8rem 1.4rem 3rem 1.4rem !important;
-      margin: 0 !important;
-      display: block !important;
-      background: transparent !important;
-      overflow: visible !important;
-      border: none !important;
-      box-sizing: border-box !important;
-      grid-area: unset !important;
-      flex: unset !important;
-      z-index: auto !important;
-      pointer-events: auto !important;
-    }
-
-    #quartz-body > .right.sidebar * {
-      pointer-events: auto !important;
-    }
-
-    #quartz-body > .right.sidebar .backlinks {
-      display: none !important;
-    }
-
-    // Hide the hamburger — explorer shows inline, not as an overlay
-    #quartz-body > .right.sidebar button.mobile-explorer {
-      display: none !important;
-    }
-
-    // Force explorer open inline: cancel the mobile overlay positioning
-    // (explorer.scss puts explorer-content at position:absolute;top:0;left:0 on mobile)
-    #quartz-body > .right.sidebar .explorer {
-      overflow: visible !important;
-      height: auto !important;
-      order: unset !important;
-    }
-
-    #quartz-body > .right.sidebar .explorer-content,
-    #quartz-body > .right.sidebar #explorer-content,
-    #quartz-body > .right.sidebar [id^="explorer"] {
-      display: block !important;
-      visibility: visible !important;
-      max-height: none !important;
-      overflow: visible !important;
-      height: auto !important;
-      position: static !important;
-      transform: none !important;
-      padding: 0 !important;
-      z-index: auto !important;
-    }
-
-    // Tree items in the inline index explorer
-    #quartz-body > .right.sidebar .explorer ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-
-    #quartz-body > .right.sidebar .explorer li {
-      font-family: var(--codeFont);
-      font-size: 0.8rem;
-      line-height: 2.0;
-      padding: 0;
-      margin: 0;
-    }
-
-    #quartz-body > .right.sidebar .explorer li > a,
-    #quartz-body > .right.sidebar .explorer li > .folder-button,
-    #quartz-body > .right.sidebar .explorer li > button:not(.mobile-explorer) {
-      font-family: var(--codeFont);
-      font-size: 0.8rem;
-      color: var(--darkgray);
-      text-decoration: none;
-      background: none;
-      border: none;
-      padding: 0;
-      cursor: pointer;
-      display: inline;
-
-      &:hover { color: var(--dark); }
-      svg { display: none !important; }
-    }
-
-    #quartz-body > .right.sidebar .explorer > ul > li::before {
-      content: "├─ ";
-      color: var(--lightgray);
-      font-family: var(--codeFont);
-      font-size: 0.8rem;
-    }
-
-    #quartz-body > .right.sidebar .explorer > ul > li:last-child::before {
-      content: "└─ ";
-      color: var(--lightgray);
-    }
-
-    #quartz-body > .right.sidebar .explorer ul ul li {
-      padding-left: 1.1rem;
-
-      &::before {
-        content: "├─ ";
-        color: var(--lightgray);
-        font-family: var(--codeFont);
-        font-size: 0.8rem;
-      }
-
-      &:last-child::before { content: "└─ "; }
-    }
+  .explorer .explorer-content {
+    display: block !important;
+    visibility: visible !important;
+    position: static !important;
+    transform: none !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    max-height: none !important;
+    overflow: visible !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    background: transparent !important;
+    z-index: auto !important;
   }
 }

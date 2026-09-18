@@ -32,6 +32,14 @@ export const defaultContentPageLayout: PageLayout = {
       condition: (page) => page.fileData.slug !== "index",
     }),
     Component.ArticleTitle(),
+    // Index page
+    Component.ConditionalRender({
+      component: Component.Explorer({
+        title: "Explore",
+        useSavedState: true,
+      }),
+      condition: (page) => page.fileData.slug === "index",
+    }),
     Component.ConditionalRender({
       component: Component.ContentMeta(),
       condition: (page) => page.fileData.slug !== "index",
@@ -46,7 +54,6 @@ export const defaultContentPageLayout: PageLayout = {
       component: Component.DesktopOnly(Component.Graph()),
       condition: (page) => page.fileData.slug !== "index",
     }),
-    // Mobile non-index: hamburger in left sidebar (uses native Quartz sticky overlay)
     Component.ConditionalRender({
       component: Component.MobileOnly(Component.Explorer({
         title: "Explore",
@@ -56,19 +63,17 @@ export const defaultContentPageLayout: PageLayout = {
     }),
   ],
   right: [
-    Component.Backlinks(),
-    // Desktop: always-visible tree explorer in right sidebar
-    Component.DesktopOnly(Component.Explorer({
-      title: "Explore",
-      useSavedState: true,
-    })),
-    // Mobile index page only: inline explorer below bio (positioned via CSS)
     Component.ConditionalRender({
-      component: Component.MobileOnly(Component.Explorer({
+      component: Component.Backlinks(),
+      condition: (page) => page.fileData.slug !== "index",
+    }),
+
+    Component.ConditionalRender({
+      component: Component.DesktopOnly(Component.Explorer({
         title: "Explore",
         useSavedState: true,
       })),
-      condition: (page) => page.fileData.slug === "index",
+      condition: (page) => page.fileData.slug !== "index",
     }),
   ],
 }
@@ -86,14 +91,12 @@ export const defaultListPageLayout: PageLayout = {
     Component.ArticleTitle(),
   ],
   left: [
-    // Mobile: hamburger in left sidebar
     Component.MobileOnly(Component.Explorer({
       title: "Explore",
       useSavedState: true,
     })),
   ],
   right: [
-    // Desktop: always-visible tree explorer in right sidebar
     Component.DesktopOnly(Component.Explorer({
       title: "Explore",
       useSavedState: true,
