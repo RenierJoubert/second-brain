@@ -4,7 +4,7 @@
 
 > [!question]- Negate "for all $x$, there exists $y$ such that $x>y$"
 >$$
-> \forall x, \exists \quad y \quad \text{s.t.} x >y 
+> \exists x, \text{s.t.} \forall y, x\leq y
 >$$
 
 
@@ -13,25 +13,25 @@
 > \text{Contrapositive:} \quad x^2 \leq x \implies x \leq 1
 >$$
 >$$
->\text{Converse:} \quad x^2 > x \implies x< 1
+>\text{Converse:} \quad x^2 > x \implies x> 1
 >$$
 
 
-> [!question]- Define $\sim$ on $\mathbb Z$ by $x \sim y$ if $x-y$ is even. Prove this is an equivalence relation, and that if $x \in\mathbb X$ then $x \sim x^2$.
+> [!question]- Define $\sim$ on $\mathbb Z$ by $x \sim y$ if $x-y$ is even. Prove this is an equivalence relation, and that if $x \in\mathbb Z$ then $x \sim x^2$.
 > To prove this is an equivalence I will show three things:
 >
 >1. The relation is reflexive such that $x \sim x$
 >2. The relation is symmetric such that $x \sim y \implies y \sim x$
 >3. The relation is transitive such that $x \sim y \land y \sim z \implies x \sim z$
 >
->Reflexivity: $x-x=0$ and $0=2n$ for $n= 0$. So $x$ is reflexive as the relation holds with itself.
+>Reflexivity: $x-x=0$ and $0=2n$ for $n= 0$. So $\sim$ is reflexive as the relation holds with itself.
 >
 >Symmetry: Assume $x-y=2n$ for some $n \in \mathbb Z$. Then, $y-x=-2n$ which is still even. Hence $y\sim x$ and the relation is symmetric.
 >
-> Transitivity: Assume $x\sim y \land y sim z$. This means $x - y = 2n_{1}$ and $y - z =2n_{2}$ for $n_{1},n_{2} \in \mathbb Z$. Adding these equations together we obtain the following: $(x-y)+(y-z) = 2n_{1}+2n_{2}$. We can simplify this to get: $x-z=2n_{3}$. So $x\sim z$ and the relation is transitive. 
+> Transitivity: Assume $x\sim y \land y \sim z$. This means $x - y = 2n_{1}$ and $y - z =2n_{2}$ for $n_{1},n_{2} \in \mathbb Z$. Adding these equations together we obtain the following: $(x-y)+(y-z) = 2n_{1}+2n_{2}$. We can simplify this to get: $x-z=2n_{3}$. So $x\sim z$ and the relation is transitive. 
 > 
 > I will prove $x \sim x^2$ by cases:
-> 1. Assume $x$ is even such that $x=2n$ for some $n \in\mathbb Z$. Hence, $x^2=(2n)^2=4n^2$. Then, $2n-4n^2=2(n-2n^2)$ and $(2n-n^2)\in\mathbb Z$ so their difference is even. Thus, $x \sim x^2$ holds for even $x$.
+> 1. Assume $x$ is even such that $x=2n$ for some $n \in\mathbb Z$. Hence, $x^2=(2n)^2=4n^2$. Then, $2n-4n^2=2(n-2n^2)$ and $(n-2n^2)\in\mathbb Z$ so their difference is even. Thus, $x \sim x^2$ holds for even $x$.
 > 2. Assume $x$ is odd such that $x = 2n+1$ for some $n \in \mathbb Z$. So, $x^2=(2n+1)^2=4n^2+4n +1$. Then, $(2n+1)-(4n^2+4n+1)=2(-2n^2-n)$, and $(-2n^2-n)\in\mathbb Z$ so $2(-2n^2-n)$ is even. Thus, $x \sim x^2$ holds for odd $x$.
 
 
@@ -50,7 +50,7 @@
 >	\begin{align}
 >	\frac{d}{dx}x^{n+1} & =(n+1)x^{(n+1)-1} \\
 >	\frac{d}{dx}(x^n \cdot x)  & = (n+1)x^n \\
->	nx^{n-1} \cdot x + x^n \cdot 1  & = (n+1)x^n \quad \text{using the chain rule and out inductive hypothetis} \\
+>	nx^{n-1} \cdot x + x^n \cdot 1  & = (n+1)x^n \quad \text{using the product rule and our inductive hypothesis} \\
 >	nx^n+x^n & = (n+1)x^n \\
 >	(n+1)x^n & =(n+1)x^n
 >	\end{align}
@@ -63,7 +63,7 @@
 >$$
 > 	ac=a \cdot \frac{b}{g}=b \cdot \frac{a}{g} = bd
 >$$
->We know that $g|b$ and $g|a$ by definition, so $c,d \in \mathbb Z$. Also, $c,d$ are coprime, because if any common factors were left after division this would contradict that $g$ is greatest, for $g \cdot e$ where $e$ is some other factor would be then be greatest. Hence there always exists non-zero coprime integers $c,d$ such that $ac=bd$.
+>We know that $g|b$ and $g|a$ by definition, so $c,d \in \mathbb Z$. Also, $c,d$ are coprime, because if any common factors were left after division this would contradict that $g$ is greatest, for $g \cdot e$ where $e$ is some other factor would then be greatest. Hence there always exists non-zero coprime integers $c,d$ such that $ac=bd$.
 
 
 > [!question]- Suppose there exists non-zero integers $a,b$ such that $\sqrt{ 2 }=\frac{a}{b}$. Prove that there exists non-zero coprime integers $c,d$ such that $2c^2=d^2$. 
