@@ -19,6 +19,3 @@
 - [slop and the dead internet](https://babbo.dev/articles/intentio/)
 
 ---
-## Misc
-
-- [monero](https://www.getmonero.org/)
