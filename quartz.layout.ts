@@ -5,12 +5,10 @@ import * as Component from "./quartz/components"
 export const sharedPageComponents: SharedLayout = {
   head: Component.Head(),
   header: [],
-  afterBody: [
-  ],
+  afterBody: [],
   footer: Component.Footer({
     links: {
       GitHub: "https://github.com/renierjoubert",
-      LinkedIn: "https://www.linkedin.com/in/renier-joubert/",
     },
   }),
 }
@@ -55,10 +53,12 @@ export const defaultContentPageLayout: PageLayout = {
       condition: (page) => page.fileData.slug !== "index",
     }),
     Component.ConditionalRender({
-      component: Component.MobileOnly(Component.Explorer({
-        title: "Explore",
-        useSavedState: true,
-      })),
+      component: Component.MobileOnly(
+        Component.Explorer({
+          title: "Explore",
+          useSavedState: true,
+        }),
+      ),
       condition: (page) => page.fileData.slug !== "index",
     }),
   ],
@@ -69,10 +69,12 @@ export const defaultContentPageLayout: PageLayout = {
     }),
 
     Component.ConditionalRender({
-      component: Component.DesktopOnly(Component.Explorer({
-        title: "Explore",
-        useSavedState: true,
-      })),
+      component: Component.DesktopOnly(
+        Component.Explorer({
+          title: "Explore",
+          useSavedState: true,
+        }),
+      ),
       condition: (page) => page.fileData.slug !== "index",
     }),
   ],
@@ -91,15 +93,19 @@ export const defaultListPageLayout: PageLayout = {
     Component.ArticleTitle(),
   ],
   left: [
-    Component.MobileOnly(Component.Explorer({
-      title: "Explore",
-      useSavedState: true,
-    })),
+    Component.MobileOnly(
+      Component.Explorer({
+        title: "Explore",
+        useSavedState: true,
+      }),
+    ),
   ],
   right: [
-    Component.DesktopOnly(Component.Explorer({
-      title: "Explore",
-      useSavedState: true,
-    })),
+    Component.DesktopOnly(
+      Component.Explorer({
+        title: "Explore",
+        useSavedState: true,
+      }),
+    ),
   ],
 }
