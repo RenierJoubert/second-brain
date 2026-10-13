@@ -9,13 +9,9 @@ The unit of addressing is a byte (8 bits). Every byte of memory has a unique add
 
 Most data will not fit in a single byte. So, the CPU accesses memory in contiguous, power-of-two style chunks of bytes. The address of these chunks is just the first address in the chunk.
 
-!! put in primitive data types ss here
+![[Pasted image 20261005225439.png]]
 
-Because memory addresses work in powers of two, we use a power of two representation to name addresses. This could be binary, octal, but now we use hexadecimal. (instead of writing out 32 bits for an adress, we can just write out 8 hexadecimal digits which is just base 16). These dont need to be stored, and act purely as identifiers. If we do need to end up storing addreseses then we can use pointers. 
-
-!! put in slide ss here
-
-!! put in binary to hexit conversion slide
+Because memory addresses work in powers of two, we use a power of two representation to name addresses. This could be binary, octal, but now we use hexadecimal. (instead of writing out 32 bits for an address, we can just write out 8 hexadecimal digits (8 hexits) which is just base 16 and each hexit is 4 bits). These dont need to be stored, and act purely as identifiers. If we do need to end up storing addressees then we can use pointers. 
 
 When calculating, we should work in hex directly, as converting back and forth is tedious and slow. 
 
