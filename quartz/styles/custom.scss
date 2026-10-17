@@ -190,7 +190,7 @@ body[data-slug="index"] .meta {
   }
 }
 
-// ─── INDEX PAGE ───────────────────────────────────────────────────────────────
+// Index Page:
 // Only the "Vault" title and the explorer, centered on the page at all sizes.
 
 // .page is DOM parent of #quartz-body — must be root-scoped
@@ -244,6 +244,7 @@ body[data-slug="index"] {
 
   h1.article-title {
     display: block !important;
+    font-size: 3.5rem;
     text-align: center;
     margin: 0 0 1.2rem 0;
     font-family: var(--headerFont) !important;

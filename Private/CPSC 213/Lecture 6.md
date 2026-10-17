@@ -40,7 +40,7 @@ The answer is E because no information is given on whether these arrays are stat
 Moreover, we can even have pointers to pointers. Namely, `int **p` declares a pointer `p` that points to an int pointer. Also, when declaring multiple variables on one line, we need to apply the pointer stars individually to each variable.
 
 ### Pointer Arithmetic
-> We can add integers to a pointer to get a new address, when we do this the integer `i` is multiplied by the type size of the pointer before adding. For example, if `int *a` then `(a+i)` is `4i` bytes ahead of `a`. Subtraction is similar and returns the number of elements of that type between the given operand addresses.
+> We can add integers to a pointer to get a new address, when we do this the integer `i` is multiplied by the type size of the pointer before adding. For example, if `int *a` then `(a+i)` is `4i` bytes ahead of `a`. Subtraction is similar and returns the number of elements of that type between the given operand addresses. Pointer arithmetic works in the count of elements! So we divide by that elements size.
 
 
 > [!Tip] Pointer Arithmetic Equality 

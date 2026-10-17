@@ -23,7 +23,7 @@ const config: QuartzConfig = {
       fontOrigin: "googleFonts",
       cdnCaching: true,
       typography: {
-        header: "Red Hat Mono",
+        header: "IM Fell DW Pica",
         body: "Red Hat Mono",
         code: "Red Hat Mono",
       },
