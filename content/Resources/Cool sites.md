@@ -18,4 +18,4 @@
 
 - [slop and the dead internet](https://babbo.dev/articles/intentio/)
 
----
+

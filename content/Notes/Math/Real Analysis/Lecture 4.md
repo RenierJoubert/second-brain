@@ -22,4 +22,31 @@ If $\{ \cal{K}_{\alpha} \}_{\alpha \in A}$ is a set of close sets then $\bigcap_
 ## An Open Interval $(a, b)$ Is Open
 
 > [!theorem]- Proof 
-> Let $x \in (a, b)$ so $a< x< b$. By Archimedes we have that $\exists n_{1} \in \mathbb{N}$ 
+> Let $x \in (a, b)$ so $a< x< b$. By Archimedes we have that $\exists n_{1} \in \mathbb{N}$  s.t. $\frac{1}{n_{1}}<b-x$ and $\exists n_{2} \in \mathbb{N}$ s.t. $\frac{1}{n_{2}}<x-a$. Finally, let $r = \min\left( \frac{1}{n_{1}}, \frac{1}{n_{2}} \right)$ then $(x-r, x+r) \subseteq (a, b)$.
+
+
+## A Closed Interval $[a, b]$ Is Closed
+
+> [!theorem]- Proof 
+> To prove this it suffices to show that $[a, b]^c$ is open. $[a, b]^c=(-\infty, a) \cup (b, \infty)$. The union of two open sets is open so we are done.
+
+
+## Open Sets are Open Under Finite Intersections
+If $\cal{U_{1}}, \cdots, \cal{U_{k}}$ are open then $\bigcap_{j=1}^k \cal{U}_{j}$ is open.
+
+
+> [!theorem]- Proof 
+> Let $x \in \bigcap_{j=1}^k \cal{U}_{j}$ then $x \in \cal{U}_{j}$ for each $j \in \{ 1, \cdots, k \}$. For each $j$ $\exists r_{j}$ s.t. $(x-r_{j}, x+r_{j}) \subseteq \cal{U}_{j}$. Now, let $r  = \min\{ r_{1}, \cdots, r_{k} \}>0$, then $(x-r, x+r) \subseteq \cal{U}_{j}$ for each $j$ and $(x-r,x+r) \subseteq \bigcap_{j=1}^k \cal{U}_{j}$
+
+## ELFS
+> Show that closed sets are closed under finite unions. 
+
+## Boundedness
+>TFAE:
+
+A set $A \subseteq \mathbb{R}$ is bounded if $\exists a,b  \in \mathbb{R}$ s.t. $A  \subseteq [a, b]$.
+
+A set $A \subseteq \mathbb{R}$ is bounded if $\exists M >0$ s.t. $A \subseteq [-M, M]$.
+
+A set $A \subseteq \mathbb{R}$ is bounded if $\exists M > 0$ s.t. $A \subseteq (-M, M)$.
+

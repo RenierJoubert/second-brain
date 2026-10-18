@@ -14,7 +14,7 @@ We can either declare a struct statically with `struct D d0;` or dynamically wit
 To access a static struct we use `.` notation: `d0.e = d0.f;`. But for a dynamic struct we use `->` notation: `d1->e = d1->f;`.
 
 ### Allocation
-> Static structs are allocated by the compiler but dynamic structs are allocated at runtime, the pointer to the struct could be static or dynamic, but the struct is always allocated using malloc:
+> Static structs are allocated by the compiler but dynamic structs are allocated at runtime, the pointer to the struct could be static or dynamic, but the struct is always allocated using malloc. Something to note is, the address of a struct can either be static or dynamic, because we can access structs with pointers, but the size of a struct is static because it depends on the type of the struct which is known at runtime.
 
 ![[Pasted image 20261001124146.png]]
 
@@ -36,7 +36,7 @@ Note that the offset to each variable from the base address of the struct **is s
 Note that anything goes with structs. They can contain other structs, arrays, or pointers.
 
 ### Struct Size and Alignment
-> Member variables of primitive types are aligned according to their size, but the overall struct is aligned according to the largest members' alignments. The size of a struct must be a multiple of it's alignment, so the size of a struct must be a multiple of it's largest member size. Structs can mix types but padding might be added in or after the members.
+> Member variables of primitive types are aligned according to their size, but the overall struct is aligned according to the largest members' alignments. The size of a struct must be a multiple of it's alignment, so the size of a struct must be a multiple of it's largest member's alignment, which is usually the element's size for primitive types, BUT for a struct containing another struct, the outer struct's alignment is not a multiple of the inner struct's size, but of it's alignment which is the alignment of that struct's largest element and so on... Structs can mix types but padding might be added in or after the members.
 
 ![[Pasted image 20261006230713.png]]
 
