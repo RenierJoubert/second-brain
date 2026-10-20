@@ -70,14 +70,14 @@ If $f(x) \to L$ and $h(x) \to L$ as $x \to a$ then $\lim_{ x \to a }g(x)=L$.
 
 > [!theorem]- Proof 
 > $f(x) \to L$ so $\exists \delta_{f}$ s.t. $|x-a|<\delta_{f}$ then $|f(x)-L|<\varepsilon$. Similarly, $h(x) \to L$ so $\exists \delta_{h}$  s.t. $|x-a|<\delta_{h}$ then $|g(x)-L|< \varepsilon$. So let $\delta = \min\{ \delta_{f}, \delta_{h} \}$ then whenever $|x-a|<\delta$ we have that:
+> $$
+> L-\varepsilon< f(x)\leq h(x)<L + \varepsilon
+> $$
+> Hence, 
 >$$
- L-\varepsilon< f(x)\leq h(x)<L + \varepsilon
->$$
->Hence, 
->$$
->L - \varepsilon < g(x) < L + \varepsilon
->$$
->and $\lim_{ x \to a }g(x)=L$.
+> L - \varepsilon < g(x) < L + \varepsilon
+> $$
+> and $\lim_{ x \to a }g(x)=L$.
 
 
 
