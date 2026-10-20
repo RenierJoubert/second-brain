@@ -81,12 +81,11 @@ If $(x_{n})_{n} \subseteq [a, b]$ and $x_{n}\to L$, then $L \in [a,b]$.
 
 
 ## Cauchy Sequences
-> We might not know $L$ ahead of time, but we can show that the terms of a sequence get arbitrarily close together. It is also not that difficult to prove that if a sequence does converge, then it is necessary for the terms to get arbitrarily close together. For example, if $\exists N \in \mathbb{N}$ s.t. $|x_{n}-L|< \frac{\varepsilon}{2}$ and $|x_{m}-L|< \frac{\varepsilon}{2}$ for all $n,m>N$. Then, by triangle inequality we have that:
->$$
+
+We might not know $L$ ahead of time, but we can show that the terms of a sequence get arbitrarily close together. It is also not that difficult to prove that if a sequence does converge, then it is necessary for the terms to get arbitrarily close together. For example, if $\exists N \in \mathbb{N}$ s.t. $|x_{n}-L|< \frac{\varepsilon}{2}$ and $|x_{m}-L|< \frac{\varepsilon}{2}$ for all $n,m>N$. Then, by triangle inequality we have that:
+$$
 |x_{n}-x_{m}|\leq |x_{n}-L|+|x_{m}-L|< \varepsilon
 $$
->
->
 
 We say that a sequence $(x_{n})$ is Cauchy if $\forall \varepsilon>0$, $\exists N \in \mathbb{N}$ s.t. $\forall n,m\geq N$, $|x_{n}-x_{m}|<\varepsilon$.
 
