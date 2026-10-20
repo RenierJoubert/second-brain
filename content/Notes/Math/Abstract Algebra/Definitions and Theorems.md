@@ -139,7 +139,7 @@ Consider $\langle g \rangle = g, g^2, g^3, \cdots$ if $G$ is finite then there m
 If the order of an element $g$ in $G$ is equal to the number of elements in $G$. Namely, if $\#g=|G|$. Then, if $G$ is finite we have that $\langle g \rangle = G$. That is, if the number of elements created by $g$ is equal to the size of $G$, and $G$ is finite, then because $\langle g \rangle \subseteq G$ they must be equal. 
 
 ## Every Cyclic Group is Abelian
-Let $\langle g \rangle = G$, $\forall x,y \in G$ we can write them as $g^a, g^b$. Then, $g^a * g^b= g^{a+b}=g^b * g^a$.
+Let $\langle g \rangle = G$, $\forall x,y \in G$ we can write them as $g^a, g^b$. Then, $g^a * g^b= g^{a+b}=g^b * g^a$. Namely cyclic $\implies$ abelian, so if a group is not abelian, then it is not cyclic. 
 
 ## Every Subgroup of a Cyclic Group is Cyclic
 Let $G = \langle g \rangle$ and $H \leq G$. If $H = \{ e \}$ then $H = \langle e \rangle$ which is cyclic. Otherwise, $H$ contains some $g^k$ with $k \neq 0$, and because $H$ is a subgroup it also contains the inverse $g^{-k}$. One of $k, -k$ is positive, so $H$ contains a positive power of $g$. Let $m$ be the minimal natural s.t. $g^m \in H$. We show that $H = \langle g^m \rangle$.
@@ -162,7 +162,7 @@ A group $G$ is said to be finitely generated if there exists a finite $X \subset
 
 
 ## $GL_{2}(\mathbb{R})$
-This is the general linear group of invertible $2 \times 2$ real valued matrices. Namely $2 \times 2$ matrices with a non-zero determinant.
+This is the general linear group of invertible $2 \times 2$ real valued matrices. Namely $2 \times 2$ matrices with a non-zero determinant. Note that all scalar $2 \times 2$ matrices commute!
 
 ## $SL_{2}(\mathbb{R})$
 This is the special linear group of $2 \times 2$ real valued matrices with a determinant of 1.
