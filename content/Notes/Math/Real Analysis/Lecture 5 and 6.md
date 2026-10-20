@@ -1,3 +1,5 @@
+#math 
+
 # Sequences and Convergence
 
 ## Convergence
@@ -8,7 +10,7 @@ Let $(a_{n})_{n\in \mathbb{N}}$ be a sequence of real numbers. We say that $a_{n
 
 1. $(a_{n}+b_{n})\to a +b$
 2. $a_{n}b_{n}\to ab$
-3. $\frac{a_{n}}{b_{n}}\to \frac{a}{b}$
+3. $\frac{a_{n}}{b_{n}}\to \frac{a}{b}$ where $b_{n}, b \neq 0$
 
 We can prove the sum fairly easily. Namely, let $\varepsilon >0$, then $\exists N_{1} \in \mathbb{N}$ s.t. $\forall n \geq N_{1}$, $|a_{n}-a|< \frac{\varepsilon}{2}$.
 Similarly, $|b_{n}-b|< \frac{\varepsilon}{2}$. Using the triangle inequality we get:
@@ -22,7 +24,7 @@ $$
 But these are equivalent, and the first shows that $a_{n}+b_{n}\to a + b$.
 
 ## A Convergent Sequence is Bounded
-Let $(a_{n})_{n \in \mathbb{N}}$ be a convergent sequence s.t. $a_{n}\to L$. Then, $\forall \varepsilon >0, \exists N \in \mathbb{N}$ s.t. $\forall n\geq N, |a_{n}-L|<\varepsilon$. Hence $|a_{n}|\leq|L| + \varepsilon$ for all $\varepsilon>0$ if $n\geq N$. This holds for all but *finitely* many $n$. Fortunately, we can take the maximum of a finite number of terms, namely let:
+Let $(a_{n})_{n \in \mathbb{N}}$ be a convergent sequence s.t. $a_{n}\to L$. Then, $\forall \varepsilon >0, \exists N \in \mathbb{N}$ s.t. $\forall n\geq N, |a_{n}-L|<\varepsilon$. Hence $|a_{n}|\leq|L| + \varepsilon$ for all $\varepsilon>0$ if $n\geq N$ where the condition between $N$ and $\varepsilon$ holds. This holds for all but *finitely* many $n$. Fortunately, we can take the maximum of a finite number of terms, namely let:
 $$
 M = \max\{ |a_{1}|, \cdots|a_{N-1}|, |L|+\varepsilon \}
 $$
@@ -51,9 +53,9 @@ Walk through $(a_n)$ in order and maybe delete some terms, but keep infinitely m
 ## Bolzano-Weierstrass Theorem
 > Every bounded sequence has a convergent subsequence.
 
-More formally, let $(x_{n})$ be a sequence contained in $[a,b]$, then there exists a subsequence $(x_{n_{k}})_{k}$ and $L \in \mathbb{R}$ s.t. $|x_{n_{k}}-L| < \varepsilon$.
+More formally, let $(x_{n})$ be a sequence contained in $[a,b]$, then there exists a subsequence $(x_{n_{k}})_{k}$ and $L \in \mathbb{R}$ s.t. $x_{n_{k}}\to L$.
 
- First, we know that $(x_{n_{}})$ has a monotonic subsequence. Without loss of generality, assume this subsequence is monotonic increasing. This subsequence is then bounded above by $b$, hence it converges because a bounded monotonic sequence converges. 
+ First, we know that $(x_{n})$ has a monotonic subsequence. Without loss of generality, assume this subsequence is monotonic increasing. This subsequence is then bounded above by $b$, hence it converges because a bounded monotonic sequence converges. 
 
 Note that B-W gives the existence, but tells us nothing about the limit itself.
 
@@ -81,12 +83,30 @@ If $(x_{n})_{n} \subseteq [a, b]$ and $x_{n}\to L$, then $L \in [a,b]$.
 ## Cauchy Sequences
 > We might not know $L$ ahead of time, but we can show that the terms of a sequence get arbitrarily close together. It is also not that difficult to prove that if a sequence does converge, then it is necessary for the terms to get arbitrarily close together. For example, if $\exists N \in \mathbb{N}$ s.t. $|x_{n}-L|< \frac{\varepsilon}{2}$ and $|x_{m}-L|< \frac{\varepsilon}{2}$ for all $n,m>N$. Then, by triangle inequality we have that:
 >$$
- |x_{n}-x_{m}|\leq |x_{n}-L|+|x_{m}-L|< \varepsilon
+|x_{n}-x_{m}|\leq |x_{n}-L|+|x_{m}-L|< \varepsilon
 $$
 >
 >
 
 We say that a sequence $(x_{n})$ is Cauchy if $\forall \varepsilon>0$, $\exists N \in \mathbb{N}$ s.t. $\forall n,m\geq N$, $|x_{n}-x_{m}|<\varepsilon$.
 
-Cauchy is a weaker notion of convergence, that is, if a sequence is convergent,  then it is Cauchy. But, if a sequence is Cauchy, it does not imply that it is convergent. 
+## A Cauchy Sequence Is Bounded
+
+
+> [!theorem]- Proof 
+> Let $(x_{n})$ be a Cauchy sequence, that is $\forall \varepsilon>0$, $\exists N \in \mathbb{N}$ s.t. $\forall n,m\geq N$, $|x_{n}-x_{m}|<\varepsilon$. Fix $\varepsilon$ to some $L>0$ so $\varepsilon = L$. Then, $\forall n\geq N$ we have that by triangle inequality
+>$$
+> |x_{n}|\leq|x_{n}-x_{N}|+|x_{N}|
+>$$
+> And so $|x_{n}|\leq L + |x_{N}|$ for all $n\geq N$. Then, for all $n<N$ we can take the maximum s.t. $|x_{n}|\leq \max\{ L+|{x_{N}}|, |x_{1}|, \cdots, |x_{N-1}| \}$.
+
+
+## HW: If a Cauchy Sequence's Subsequence Converges, then The Sequence Converges
+
+> [!danger]- When Cauchy Is Not Convergent 
+> Sometimes Cauchy is not as "nice" as a convergent sequence. For example,  think about a sequence that approximates $\sqrt{ 2 }$, this sequence converges in $\mathbb{R}$ so it is Cauchy, but it does not converge in $\mathbb Q$. So, we can have a sequence in a set $A$ that is Cauchy, but that does not converge to any $\alpha \in A$. This happens in the rationals, but it does not happen in the reals. We say that the reals are **complete.**
+
+## Completeness
+We say that a set $A \subseteq \mathbb{R}$ is complete if every Cauchy sequence $(a_{n}) \in A$ converges to some point $\alpha \in A$.
+
 

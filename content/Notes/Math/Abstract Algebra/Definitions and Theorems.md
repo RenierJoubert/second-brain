@@ -80,7 +80,9 @@ Given some natural $n$, the unit group of numbers mod $n$ is as follows:
 $$
 (\mathbb Z / n \mathbb Z)^{\times}= \{ a\in \mathbb Z/n\mathbb Z : \gcd(a, n) =1 \}
 $$
-Namely, the set of numbers mod $n$ with a multiplicative inverse are just the numbers mod $n$ that are coprime with $n$. For example, $(\mathbb Z / 10 \mathbb Z)^{\times}=\{ 1,3,7,9 \}$ where $1$ is the identity element under multiplication. So, the inverse of 1 is 1, the inverse of 3 is 7, the inverse of 7 is 3, and the inverse of 9 is 9.
+Namely, the set of numbers mod $n$ with a multiplicative inverse are just the numbers mod $n$ that are coprime with $n$. For example, $(\mathbb Z / 10 \mathbb Z)^{\times}=\{ 1,3,7,9 \}$ where $1$ is the identity element under multiplication. So, the inverse of 1 is 1, the inverse of 3 is 7, the inverse of 7 is 3, and the inverse of 9 is 9. 
+
+Remember when we are discussing the set $(\mathbb{Z} / n\mathbb{Z})^{\times}$ we are talking about the binary operation of multiplication.
 
 ## Euler's Totient Function
 The number of elements in $(\mathbb Z / n \mathbb Z)^{\times}$ (its order) is given by the Euler Totient Function $\Phi(n)$ which is defined for the prime factorization of $n$ where $n=p_{1}^{\alpha_{1}}\cdots p_{k}^{\alpha_{k}}$ s.t. $p_{1},p_{2},\cdots,p_{k}$ are distinct primes and $\alpha_{1}, \alpha_{2}, \cdots, \alpha_{k}$ are natural numbers. The function is defined as follows:

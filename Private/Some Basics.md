@@ -47,7 +47,7 @@
 
 
 > [!theorem]- Kernel, Range, and Rank 
-> The **kernel** of a linear transformation $A \in L(V, W)$ where $L(V, W)$ is the set of all linear transformation from $V$ to $W$ is defined $\text{ker}A=\{ v\in V : Av=0 \}$.
+> The **kernel** of a linear transformation $A \in L(V, W)$ where $L(V, W)$ is the set of all linear transformations from $V$ to $W$ is defined $\text{ker}A=\{ v\in V : Av=0 \}$.
 > 
 > The **range** of $A$ is defined $\text{ran}A=\{ Av : v \in V \}$.
 > 
@@ -67,9 +67,9 @@
 >$$
 > \text{A is invertible} \iff \text{A is one-to-one and onto} 
 >$$
-> Wherein , $A$ is one-to-one if it is *injective*, namely every element in it's range is mapped to by **at most** one element in the domain. 
+> Wherein , $A$ is one-to-one if it is *injective*, namely every element in its range is mapped to by **at most** one element in the domain. 
 > 
-> $A$ is onto if it is *surjective*, namely every element in it's range is mapped to by **at least** one element in the domain.
+> $A$ is onto if it is *surjective*, namely every element in its range is mapped to by **at least** one element in the domain.
 > 
 > If $A$ is both *injective* and *surjective* then $A$ is *bijective* and invertible. That is, every element in the domain maps to an element in the range, and every element in the range is mapped to by an element in the domain. 
 > ![[Pasted image 20260728134722.png]]

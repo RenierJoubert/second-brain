@@ -7,10 +7,10 @@ The supremum of a set $A$ is the least upper bound of that set. Namely, $x=\text
 The infimum of a set $A$ is the greatest lower bound of that set. Namely $x=\text{inf(A)}$ if $x\leq a$ for all $a \in A$, and $x\geq y$ for every lower bound $y$.
 
 ## Least Upper Bound Property
-The least upper bound property states that for a set $A$, if it is non-empty and bounded above, then it's supremum exists.
+The least upper bound property states that for a set $A$, if it is non-empty and bounded above, then its supremum exists.
 
 ## Greatest Lower Bound Property
-The greatest lower bound property states that if a set $A$ is non-empty and bounded below, then it's infimum exists. 
+The greatest lower bound property states that if a set $A$ is non-empty and bounded below, then its infimum exists. 
 
 ## Archimedean property of  $\mathbb Q$
 Given any two rational (or real) numbers $x> 0$ and $y>0$, you can always find a natural number $n\in \mathbb N$ such that $nx >y$.

@@ -1,7 +1,7 @@
 #math 
 
 ## Open vs. Closed Sets
-> We say a set $\cal{U} \subseteq \mathbb{R}$ is open if for all $x \in \cal{U}, \exists r >0$ s.t. $(x-r, x+r) \subseteq \cal{U}$. Namely, if the r-ball for all $x$ is contained in $\cal{U}$ then the set $\cal{U}$ is open. On the contrary, we say a set $\cal{K} \subseteq \mathbb{R}$ is closed if it's complement $\cal{K}^c=\mathbb{R}-\cal{K}$ is open.
+> We say a set $\cal{U} \subseteq \mathbb{R}$ is open if for all $x \in \cal{U}, \exists r >0$ s.t. $(x-r, x+r) \subseteq \cal{U}$. Namely, if the r-ball for all $x$ is contained in $\cal{U}$ then the set $\cal{U}$ is open. On the contrary, we say a set $\cal{K} \subseteq \mathbb{R}$ is closed if its complement $\cal{K}^c=\mathbb{R}-\cal{K}$ is open.
 
 ## Open Sets are Open Under Union
 If $\{ \cal{U}_{\alpha} \}_{\alpha \in A}$ is a set of open sets in $\mathbb{R}$ then the union $\bigcup_{\alpha \in A}\cal{U}_{\alpha}$ is also open.
@@ -12,7 +12,7 @@ If $\{ \cal{U}_{\alpha} \}_{\alpha \in A}$ is a set of open sets in $\mathbb{R}$
 
 
 ## Closed Sets are Closed Under Intersection
-If $\{ \cal{K}_{\alpha} \}_{\alpha \in A}$ is a set of close sets then $\bigcap_{\alpha \in A}\cal{K}_{\alpha}$ is closed. 
+If $\{ \cal{K}_{\alpha} \}_{\alpha \in A}$ is a set of closed sets then $\bigcap_{\alpha \in A}\cal{K}_{\alpha}$ is closed. 
 
 
 > [!theorem]- Proof 
