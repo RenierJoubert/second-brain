@@ -16,7 +16,7 @@ $$
 
 > [!theorem]- Proof 
 > If $L<1$ then pick some $L<r<1$. By the definition of the limit, there exists some $N$ such that for all $n\geq N$ we have $\sqrt[n]{ |a_{n}| }\leq r$ so $|a_{n}|\leq r^n$. Since $|r|<1$ the geometric series $\sum r^n$ converges. Hence by the comparison test $a_{n}$ converges absolutely.
-> If $L>1$ then pick some $1<r<L$ such that there exists some $N$ so for all $n\geq N$ we have $\sqrt[n]{ |a_{n}| }\geq r$. Again we see that the geometric series $\sum r^n$ will diverge so by comparison test we can see that $a_{n}$ will diverge.
+> If $L>1$ then pick some $1<r<L$ such that there exists some $N$ so for all $n\geq N$ we have $\sqrt[n]{ |a_{n}| }\geq r$. So $|a_{n}| \geq r^n \geq 1$ for all $n \geq N$, which means $a_{n} \not\to 0$, so $\sum a_{n}$ diverges by the necessary condition ($\sum a_{n}$ converges $\implies a_{n} \to 0$). (Comparing with $\sum r^n$ would only show $\sum |a_{n}|$ diverges, which is not enough.)
 > If $L=1$ then we see that the harmonic series and alternating harmonic series both satisfy $L=1$ so this case is inconclusive.
 
 ## Ratio Test
@@ -98,7 +98,7 @@ Then, the series $\sum c_{n}$ converges and equals the product of $\sum a_{n}$ a
 (Proof in HW5)
 
 ## Any Rearrangement is Equal
-> If a series is absolutely convergent, then any rearrangement of its infinite terms is equal and converges to the same sum. So, any absolutely convergent series can be rearranged not only to a different sum, but to equal any value you want because its sum is stable under the reordering of terms.
+> If a series is absolutely convergent, then any rearrangement of its infinite terms is equal and converges to the same sum. So, an absolutely convergent series can never be rearranged to a different sum, because its sum is stable under the reordering of terms. (Contrast this with conditionally convergent series below, which can be rearranged to equal any value you want.)
 
 (Will do proof later)
 
@@ -118,12 +118,12 @@ $\sum a_{n}$ is conditionally convergent, so $\sum |a_{n}|= \infty$. Notice that
 $$
 \sum |a_{n}| = \sum(a_{n}^+ + a_{n}^-) < \infty
 $$
-But this contradicts conditional convergence. So one of them must diverge. If $a_{n}^-$ diverges then:
+But this contradicts conditional convergence. So one of them must diverge. Suppose only one diverges, say $\sum a_{n}^-$ diverges while $\sum a_{n}^+$ converges. Then:
 $$
 \sum a_{n} - \sum a_{n}^+ = - \sum a_{n}^- = -\infty
 $$
 Which is a contradiction because the sum of two convergent series is a real number. The other case is similar.
 
-(The proof for the Riemann Rearrangement theorem is long and I dont have time right now). But, the basic idea is basically that if you want your convergent series to equal some $L \in \mathbb{R}$, then you cake take positive terms and sum them up to that $L$, then add the first negative term of series such that the sum dips below $L$, continuing adding positive terms until $L$ is reached and then add the second negative term of the series so that the sum dips below $L$ and so forth. 
+(The proof for the Riemann Rearrangement theorem is long and I dont have time right now). But, the basic idea is basically that if you want your convergent series to equal some $L \in \mathbb{R}$, then you can take positive terms and sum them until you pass $L$, then add negative terms until the sum dips below $L$, then add positive terms until you pass $L$ again, then negative terms until you dip below $L$, and so forth. The lemma guarantees you never run out of either sign, and since $a_{n} \to 0$ the overshoots shrink to 0, so the partial sums converge to $L$. 
 
 To get divergence, add enough terms to reach $1$, then add 1 negative term, then add enough positive terms to get 2, then add another negative term, and so forth...

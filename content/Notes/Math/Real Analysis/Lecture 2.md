@@ -34,5 +34,5 @@ Well, the real numbers are an ordered field, and they contain $\mathbb Q$. But, 
 The reals fill the holes of $\mathbb Q$ because for example take the set $A = \{ x \in \mathbb{R} : x^2 < 2 \}$. The LUB property of the real numbers states that the supremum exists, and in this case it equals $\sqrt{ 2 }$.
 
 ## The Uniqueness of the Real Numbers
-> If $(X, +, \times, <)$ is any ordered field then it is indistinguishable from $(\mathbb{R}, +, \times, <)$. Namely, the real numbers are the only possible way that the rational numbers can be extended while still preserving all the structure of $\mathbb Q$ and filling all the holes. 
+> If $(X, +, \times, <)$ is any ordered field with the least upper bound property then it is indistinguishable from $(\mathbb{R}, +, \times, <)$. Namely, the real numbers are the only possible way that the rational numbers can be extended while still preserving all the structure of $\mathbb Q$ and filling all the holes. 
 

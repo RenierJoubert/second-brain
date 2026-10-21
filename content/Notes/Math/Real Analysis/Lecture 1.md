@@ -13,7 +13,7 @@ What's particularly interesting is that the well-ordering principle is equivalen
 
 ## Induction $\iff$ Well-Ordering
 
-$(\implies)$ Assume the hypothesis of induction such that $P(1)$ and $P(k) \implies P(k +1)$ is true. I want to show that $P(n)$ is true for all $n \in \mathbb N$. So, lets take all bad values where $P(n)$ is not true and put them in some set $B=\{ n \in \mathbb N : \sim P(n) \}$. Now, if $B$ is non-empty then the well ordering principle of the natural numbers implies that it has a least element $k$, hence $k-1 \not\in B$. But this yields that $\sim P(k) \land P(k-1)$ and contradicts the inductive hypothesis. So $B$ must be empty. The reverse direction is ELFS.
+(Well-Ordering $\implies$ Induction) Assume the hypothesis of induction such that $P(1)$ and $P(k) \implies P(k +1)$ is true. I want to show that $P(n)$ is true for all $n \in \mathbb N$. So, lets take all bad values where $P(n)$ is not true and put them in some set $B=\{ n \in \mathbb N : \sim P(n) \}$. Now, if $B$ is non-empty then the well ordering principle of the natural numbers implies that it has a least element $k$. Since $P(1)$ is true, $k \neq 1$, so $k-1 \in \mathbb N$, and $k-1 \not\in B$ because $k$ is least. But this yields that $\sim P(k) \land P(k-1)$ and contradicts the inductive hypothesis. So $B$ must be empty. The reverse direction is ELFS.
 
 ## Fields
 > A field $F$ is an algebraic object with the following properties

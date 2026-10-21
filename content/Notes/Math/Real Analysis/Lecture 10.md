@@ -11,7 +11,7 @@
 
 ## Limits
 
-Let $f$ be a function defined on a punctured nbhd of a point $a \in \mathbb{R}$, note that $f(a)$ need not exist. We say that the limit of $f$ as $x$ approaches $a$ is $L$ if $\forall\varepsilon>0$, $\exists \delta>0$ s.t. $|x-a|< \delta$ then $|f(x)-L|<\varepsilon$. 
+Let $f$ be a function defined on a punctured nbhd of a point $a \in \mathbb{R}$, note that $f(a)$ need not exist. We say that the limit of $f$ as $x$ approaches $a$ is $L$ if $\forall\varepsilon>0$, $\exists \delta>0$ s.t. $0<|x-a|< \delta$ then $|f(x)-L|<\varepsilon$. (The $0<$ matters: it makes the $\delta$-ball punctured, so the value $f(a)$ plays no role.)
 
 This is equivalent to saying:
 - "f is within $\varepsilon$ of $L$ in the punctured $\delta$-ball of $a$".
@@ -46,7 +46,7 @@ $(2 \implies 1)$:
 
 We prove the contrapositive. That is, we want to show that there exists a sequence $(x_{n})$ such that $x_{n} \ne a$ and $x_{n} \to a$ but $f(x_{n}) \not\to L$.
 
-So, $\exists \varepsilon>0$ s.t. $\forall \delta>0$ there exists $x$ with $|x-a|<\delta$ and $x \ne a$ s.t. $|f(x)-L|\geq \varepsilon$. Fix this value of $\varepsilon w$ and  take $\delta_{n}=\frac{1}{n}$, then there exists $x_{n}$ s.t. $x_{n} \ne a$ and $|x_{n}-a|< \frac{1}{n}$, $|f(x)-L|\geq \varepsilon$.
+So, $\exists \varepsilon>0$ s.t. $\forall \delta>0$ there exists $x$ with $|x-a|<\delta$ and $x \ne a$ s.t. $|f(x)-L|\geq \varepsilon$. Fix this value of $\varepsilon$ and take $\delta_{n}=\frac{1}{n}$, then there exists $x_{n}$ s.t. $x_{n} \ne a$ and $|x_{n}-a|< \frac{1}{n}$, $|f(x_{n})-L|\geq \varepsilon$. So $x_{n} \to a$ (by Archimedes, $\frac{1}{n}$ eventually beats any tolerance) with every $x_{n} \neq a$, but $|f(x_{n})-L|\geq\varepsilon$ for every $n$, so $f(x_{n}) \not\to L$.
 
 
 ## Arithmetic of Limits
@@ -63,15 +63,15 @@ $$
 All of these properties follow by taking the function's sequence equivalent and using the corresponding property of sequences. Or we can just use $\varepsilon / \delta$.
 
 ## The Squeeze Theorem
-> Let $f,g,h$ be functions on $\mathbb{R}$ such that $f(x)\leq g(x)\leq h(x)$.
+> Let $f,g,h$ be functions on $\mathbb{R}$ such that $f(x)\leq g(x)\leq h(x)$ (everywhere except perhaps $x=a$).
 
 If $f(x) \to L$ and $h(x) \to L$ as $x \to a$ then $\lim_{ x \to a }g(x)=L$.
 
 
 > [!theorem]- Proof 
-> $f(x) \to L$ so $\exists \delta_{f}$ s.t. $|x-a|<\delta_{f}$ then $|f(x)-L|<\varepsilon$. Similarly, $h(x) \to L$ so $\exists \delta_{h}$  s.t. $|x-a|<\delta_{h}$ then $|g(x)-L|< \varepsilon$. So let $\delta = \min\{ \delta_{f}, \delta_{h} \}$ then whenever $|x-a|<\delta$ we have that:
+> Let $\varepsilon>0$. $f(x) \to L$ so $\exists \delta_{f}$ s.t. $0<|x-a|<\delta_{f}$ then $|f(x)-L|<\varepsilon$. Similarly, $h(x) \to L$ so $\exists \delta_{h}$  s.t. $0<|x-a|<\delta_{h}$ then $|h(x)-L|< \varepsilon$. So let $\delta = \min\{ \delta_{f}, \delta_{h} \}$ then whenever $0<|x-a|<\delta$ we have that:
 > $$
-> L-\varepsilon< f(x)\leq h(x)<L + \varepsilon
+> L-\varepsilon< f(x)\leq g(x) \leq h(x)<L + \varepsilon
 > $$
 > Hence, 
 >$$

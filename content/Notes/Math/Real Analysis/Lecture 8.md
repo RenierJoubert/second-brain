@@ -26,11 +26,11 @@ Now, notice that $2S_{N}-S_{N}$ is as follows:
 
 $$
 \begin{align}
-2S_{N}-S_{N} & =\left( 2+ 1 + \frac{1}{2} + \cdots +\frac{1}{2^{N+1}} \right)-\left( 1+\frac{1}{2}+\cdots+  \frac{1}{2^N} \right) \\
- & =2 +\frac{1}{2^{N+1}}
+2S_{N}-S_{N} & =\left( 2+ 1 + \frac{1}{2} + \cdots +\frac{1}{2^{N-1}} \right)-\left( 1+\frac{1}{2}+\cdots+  \frac{1}{2^N} \right) \\
+ & =2 -\frac{1}{2^{N}}
 \end{align}
 $$
-And so $\lim_{ N \to \infty }S_{N}=2$ so we conclude $S \to 2$.
+So $S_{N} = 2 - \frac{1}{2^N}$, and so $\lim_{ N \to \infty }S_{N}=2$ so we conclude $S = 2$.
 
 ### Harmonic Series
 $$
@@ -45,11 +45,11 @@ We can see that this series diverges if we group the terms are follows. The idea
 $$
 S_{}=1+\frac{1}{2}+\left( \frac{1}{3}+\frac{1}{4} \right)+\left( \frac{1}{5}+\frac{1}{6}+\frac{1}{7}+\frac{1}{8} \right)+\cdots
 $$
-Now, notice each term in the first group is $\geq \frac{1}{4}$ and there are 2 terms, similarly, each term in the second group is $\geq \frac{1}{8}$ and there are 4 terms. So, we have an infinite number of groups of the form
+Now, notice each term in the first group is $\geq \frac{1}{4}$ and there are 2 terms, similarly, each term in the second group is $\geq \frac{1}{8}$ and there are 4 terms. So, we have an infinite number of groups: the $k$-th group $\frac{1}{2^{k-1}+1}+\cdots+\frac{1}{2^k}$ has $2^{k-1}$ terms, each $\geq \frac{1}{2^k}$, so
 $$
-\geq2^{k-1} \cdot \left( \frac{1}{2^k} + \frac{1}{2^k} \right)=\frac{2^{k-1}}{2^{k+1}}=\frac{1}{2}
+\text{group}_{k} \geq 2^{k-1} \cdot \frac{1}{2^k}=\frac{1}{2}
 $$
-So all of the groups are $\geq \frac{1}{2}$. Hence, $S_{N}=1+\frac{1}{2} \cdot k$ where $k \in \mathbb{Z}$ s.t. $2^k\leq N$. Hence $\lim_{ N \to \infty }=\infty$ so $S$ diverges.
+So all of the groups are $\geq \frac{1}{2}$. Hence, $S_{2^k}\geq 1+\frac{k}{2}$ for every $k \in \mathbb{N}$, and $S_{N}$ is increasing. Hence $\lim_{ N \to \infty }S_{N}=\infty$ so $S$ diverges.
 
 Basically, even though the terms of the harmonic series do eventually go to zero, they do so too slowly.
 
@@ -70,15 +70,15 @@ S = \sum_{n=1}^\infty (-1)^{n+1} \cdot \frac{1}{n}
 $$
 This series does converge. We can prove it by considering $S_{2n}$ and $S_{2n+1}$.
 $$
-S_{2n} = 1 +\left( -\frac{1}{2}+\frac{1}{3} \right) + \left( -\frac{1}{4} +\frac{1}{5}\right) + \cdots - \frac{1}{2^n}
+S_{2n} = 1 +\left( -\frac{1}{2}+\frac{1}{3} \right) + \left( -\frac{1}{4} +\frac{1}{5}\right) + \cdots - \frac{1}{2n}
 $$
-Notice all of the grouped terms are negative and $\frac{1}{2^n}$ is negative. But, rearranging the terms
+Notice all of the grouped terms are negative and so is the final $-\frac{1}{2n}$, so $S_{2n} \leq 1$: the even partial sums are bounded above by 1. But, regrouping the terms (same order, different brackets)
 
 
 $$
 S_{2n} = \left( 1-\frac{1}{2} \right) + \left( \frac{1}{3}-\frac{1}{4} \right)+ \cdots+\left( \frac{1}{2n-1}-\frac{1}{2n} \right)
 $$
-we see that now all the grouped terms are positive. So, $S_{2n}$ is decreasing, but each term is positive so $S_{2n}\geq 0$. Hence 0 is a lower bound and $S_{2n}$ is decreasing so it converges. Moreover,
+we see that now all the grouped terms are positive. So, $S_{2n}$ is increasing, since $S_{2n+2} = S_{2n} + \left( \frac{1}{2n+1}-\frac{1}{2n+2} \right) > S_{2n}$. Hence $S_{2n}$ is increasing and bounded above by 1, so it converges. Moreover,
 $$
 S_{n} = \begin{cases}
 S_{2k} \quad k = \frac{n}{2} \quad \text{if n even} \\
@@ -164,9 +164,9 @@ converges if and only if $|r|<1$.
 ## Convergence of P-series
 The p-series:
 $$
-\sum_{n=1}^\infty \frac{1}{p^n}
+\sum_{n=1}^\infty \frac{1}{n^p}
 $$
-converges if and only if $p>1$.
+converges if and only if $p>1$. (Careful: $\sum \frac{1}{p^n}$ would be a geometric series.)
 
 (Proof in HW5)
 

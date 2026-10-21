@@ -24,9 +24,9 @@ $$
 But these are equivalent, and the first shows that $a_{n}+b_{n}\to a + b$.
 
 ## A Convergent Sequence is Bounded
-Let $(a_{n})_{n \in \mathbb{N}}$ be a convergent sequence s.t. $a_{n}\to L$. Then, $\forall \varepsilon >0, \exists N \in \mathbb{N}$ s.t. $\forall n\geq N, |a_{n}-L|<\varepsilon$. Hence $|a_{n}|\leq|L| + \varepsilon$ for all $\varepsilon>0$ if $n\geq N$ where the condition between $N$ and $\varepsilon$ holds. This holds for all but *finitely* many $n$. Fortunately, we can take the maximum of a finite number of terms, namely let:
+Let $(a_{n})_{n \in \mathbb{N}}$ be a convergent sequence s.t. $a_{n}\to L$. Fix $\varepsilon = 1$. Then $\exists N \in \mathbb{N}$ s.t. $\forall n\geq N, |a_{n}-L|<1$. Hence, by the triangle inequality, $|a_{n}|\leq |a_{n}-L| + |L| < |L| + 1$ for all $n\geq N$. This holds for all but *finitely* many $n$. Fortunately, we can take the maximum of a finite number of terms, namely let:
 $$
-M = \max\{ |a_{1}|, \cdots|a_{N-1}|, |L|+\varepsilon \}
+M = \max\{ |a_{1}|, \cdots|a_{N-1}|, |L|+1 \}
 $$
 Then, $|a_{n}|\leq M$ for all $n \in \mathbb{N}$ and it is bounded. 
 
@@ -40,7 +40,7 @@ Let $(a_{n})$ be a bounded and monotone increasing sequence, meaning $a_{n}\leq 
 
 
 > [!theorem]- Proof 
-> Let $L=\text{sup}(a_{n})$, then $a_{n}\leq L$ for all $n \in \mathbb{N}$ and any $x<L$ is not an upper bound, so $L-\varepsilon$ is not an upper bound. Therefore, $L-\varepsilon < a_{n} \leq L < L +\varepsilon$. Moreover, for all $n\geq N$, $a_{N}\leq a_{n}$ so $a_{N}\leq a_{n}\leq L<L+\varepsilon$ and $|a_{n}-L|<\varepsilon$ for all $n\geq N$.
+> Let $L=\text{sup}(a_{n})$, then $a_{n}\leq L$ for all $n \in \mathbb{N}$ and any $x<L$ is not an upper bound, so for any $\varepsilon>0$, $L-\varepsilon$ is not an upper bound. Therefore, there is some $N$ with $L-\varepsilon < a_{N} \leq L < L +\varepsilon$. Moreover, for all $n\geq N$, $a_{N}\leq a_{n}$ so $a_{N}\leq a_{n}\leq L<L+\varepsilon$ and $|a_{n}-L|<\varepsilon$ for all $n\geq N$.
 
 ## Subsequences
 Let $(a_{n})$ be a sequence of real numbers. A subsequence of $(a_{n})$ is a new sequence $(a_{n_{k}})_{k}$ indexed by $k$ with strictly increasing indices $n_{1}< n_{2}<n_{3}<\cdots$. $k$ is the index in the subsequence, and $n_{k}$ is the index in the original sequence. 
