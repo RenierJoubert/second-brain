@@ -121,7 +121,7 @@ And from the Cauchy Criterion and the definition of partial sums:
 $$
 |S_{m}-S_{n}| =  \left | \sum_{k=n+1}^m a_{k} \right | \leq \sum_{k=n+1}^m |a_{k}| < \varepsilon
 $$
-Hence, the partial sum of the series is Cauchy, and $\mathbb{R}$ is complete so partial sum converges, thus the series converges and absolute convergence implies convergence.
+Hence, the sequence of partial sums of the series is Cauchy, and $\mathbb{R}$ is complete so the partial sum converges, thus the series converges and absolute convergence implies convergence.
 
 Note that $\left | \sum_{n=1}^\infty a_{n} \right| \leq \sum_{n=1}^\infty |a_{n}|$ is obtained from just using triangle inequality on the partial sums and then taking the limit $N \to \infty$.
 
