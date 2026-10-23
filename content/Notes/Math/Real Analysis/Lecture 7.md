@@ -1,6 +1,8 @@
 #math 
 
-## Cleveland!!
+
+
+> [!quote] Cleveland!! 
 > "If a group of you stick together, and some of you go to Cleveland, you all go to Cleveland"
 
 Ie, if $(x_{n})$ is Cauchy and $(x_{n_{k}})\to L$ then $x_{n}\to L$.
@@ -8,7 +10,7 @@ Ie, if $(x_{n})$ is Cauchy and $(x_{n_{k}})\to L$ then $x_{n}\to L$.
 ## Open Intervals Are Not Complete
 Take the interval $(a, b)$ and $x_{n}=a+\frac{1}{n}$. Then $x_{n} \in (a, b)$ (once $\frac{1}{n} < b-a$; drop the first few terms) but $x_{n} \to a$ but $a \not\in (a, b)$.
 
-## MT: Show Any Cauchy Sequence is Eventually Constant (Finite Set)
+## A Cauchy Sequence is Eventually Constant in a Finite Set
 
 ## Closed Sets Are Complete
 Let $A = [a,b]$ and $(x_{n})\in A$ be Cauchy. Then, we know $(x_{n})$ converges because $\mathbb{R}$ is complete, so $x_{n} \to \alpha$. We need to show that $\alpha \in A$.

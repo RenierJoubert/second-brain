@@ -2,7 +2,7 @@
 
 # Real Analysis So Far: An Essay
 
-This essay retells the first half of MATH 319 (Lectures 1–11, text Ch 1 to §3.2, §2.6, HW5–6) as one connected story. The same results are laid out one by one, with textbook numbers, in [[content/Notes/Math/Real Analysis/Course Recap|Course Recap]].
+This essay retells the first half of MATH 319 (Lectures 1–11, text Ch 1 to §3.2, §2.6, HW5–6) as one connected story. The same results are laid out one by one, with textbook numbers, in [[Course Recap|Course Recap]].
 
 ## The Question
 
