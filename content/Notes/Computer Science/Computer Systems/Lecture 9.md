@@ -47,6 +47,8 @@ To fix this we should write `quiz->name = strdup(name)` so that the current valu
 ![[Pasted image 20261015183318.png]]
 
 In this example, we learn that if we want to release an object we must first release everything that object might be pointing to first.
+
+![[Pasted image 20261029231456.png]]
 ## Garbage Collection
 > In Java objects are deallocated implicitly and free is never called, instead the runtime system tracks every object reference, and the garbage collector runs periodically to deallocate unreachable objects. Note that Java only reclaims unreachable objects, and that unused or unneeded objects that keep references are not reclaimed. 
 

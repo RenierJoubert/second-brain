@@ -166,3 +166,79 @@ This is the general linear group of invertible $2 \times 2$ real valued matrices
 
 ## $SL_{2}(\mathbb{R})$
 This is the special linear group of $2 \times 2$ real valued matrices with a determinant of 1.
+
+## Presentation
+We can add in conditions to the generator(s) of a group: $\langle a, b | a^2 = e, b^3 = e, ab = ba \rangle$ etc. For example, we can capture the structure of a group like $\mathbb{Z} / 4 \mathbb{Z}$ this way and use $\langle a | a^4 = e \rangle = \{ e, a, a^2, a^3 \}$. Essentially, the presentation of a group describes the group in terms of generators and relations. Formally, let $S$ be a set of generators, and $R$ be a set of relations, we can then describe a group $G$ as $G = \langle S | R \rangle$. Note that for any group, **its presentation is NOT unique**.
+
+## Dihedral Groups
+The dihedral group of order $2n$ is denoted $D_{2n}$ and is the group of symmetries of a regular n-gon (a polygon with n sides). Its presentation is as follows:
+$$
+D_{2n}= \langle r, s | r^n = e, s^2 = e,  s r=r^{-1}s \rangle
+$$
+In which $r$ is a rotation, and $s$ is a reflection. Every element of this group can be expressed as $s^jr^k$ where $j=0,1$ and $k=0, 1, \cdots, n-1$. Note that $|D_{2n}|=2n$.
+
+## Homomorphism
+Let $(G, *)$ and $(H, \circ)$ be groups. A function $f: G \to H$ is a homomorphism, if $\forall x, y \in G$, $f(x*y)=f(x)\circ f(y)$. For example, the determinant is a homomorphism. The set of all these functions is $\text{Hom}(G, H)$.
+
+If $f$ is a homomorphism then:
+
+1. $f(e_{G})=e_{H}$
+2. $\forall g \in G$, $n \in \mathbb{N}$, $f(g^n)=f(g)^n$
+3. $\forall g \in G$, $f(g^{-1})=f(g)^{-1}$
+
+## Isomorphism
+If a function $f: G \to H$ is a homomorphism, but it is also bijective, then $f$ is an isomorphism. If such a function exists we write $G \simeq H$ and say $G$ and $H$ are isomorphic groups. If $f$ is an isomorphism, then $f^{-1}$ is also an isomorphism. The set of all these functions is $\text{Iso}(G, H)$.
+
+If $f$ is an isomorphism then:
+
+1. $|G|=|H|$ (there is a bijection between them)
+2. $G$ is abelian $\iff$ $H$ is abelian
+3. $\forall g \in G$, $|g|=|f(g)|$
+4. If $K \leq G$ then $f(K)\leq H$
+
+
+> [!Danger] $\text{Hom}(G, H)$ and $\text{Iso}(G, H)$ cannot be groups under function composition.
+> A function's inverse would be contained in a different set $(H, G)$. Assuming $G \ne H$.
+
+## Endomorphism
+A homomorphism from $G$ to itself is called an endomorphism. The set of all these functions is $\text{End}(G)$. Note that $\text{End}(G)$ may not be a group under function composition since some functions might not be invertible.
+
+## Automorphism
+An isomorphism from $G$ to itself is called an automorphism. The set of all these functions is $\text{Aut}(G)$. Note that $\text{Aut}(G)$ is closed under function composition.
+
+## Injective
+A function $f$ is injective if $\forall x, y$ in its domain, if $f(x)=f(y)$ then $x=y$. That is, no two elements map to the same element in the codomain.
+
+## Surjective
+A function $f$ is surjective if every element in its codomain is mapped to by an element of its domain. That is, the image of $f$ equals its codomain. 
+
+## Image
+Let $f: G \to H$ be a homomorphism, the image of a homomorphism $f$ is:
+$$
+\text{Im}(f)=\{ h \in H : h = f(g), g \in G \}
+$$
+That is, the elements in $H$ that are mapped to by points in $G$ under $f$.
+
+## Kernel
+The kernel of $f$ is:
+$$
+\text{Ker}(f)=\{ g \in G : f(g)=e_{H} \}
+$$
+That is, the elements in $G$ that map to the identity element of $H$ under $f$.
+
+## $\text{Ker}(f)=\{ e_{G} \}\iff f \text{ is injective}$
+($\Leftarrow$) Suppose $f$ is injective. $f(e_{G})=e_{H}$, so $e_{G} \in \text{Ker}(f)$. If $g \in \text{Ker}(f)$ then $f(g)=e_{H}=f(e_{G})$, so $g = e_{G}$ by injectivity. Hence $\text{Ker}(f)=\{ e_{G} \}$.
+
+($\Rightarrow$) Suppose $\text{Ker}(f)=\{ e_{G} \}$ and $f(x)=f(y)$. Then $f(xy^{-1})=f(x)f(y)^{-1}=e_{H}$, so $xy^{-1} \in \text{Ker}(f)$. Thus $xy^{-1}=e_{G}$, namely $x = y$, and $f$ is injective.
+
+## Pre-image
+Given a homomorphism $f: G \to H$ and $K \leq H$, the pre-image of $K$ is $f^{-1}(K)=\{ g \in G : f(g) \in K \}$. That is, the elements in $G$ that land us in $K$ under $f$.
+
+## $f^{-1}(K)\leq G$
+A corollary of this is that $\text{Ker}(f)=f^{-1}(\{ e_{H} \})$ is a subgroup of $G$ (take $K = \{ e_{H} \}$).
+
+$f(e_{G})=e_{H} \in K$ as $K \leq H$, so $e_{G} \in f^{-1}(K)$ and $f^{-1}(K)$ is non-empty. By the Subgroup Criterion Theorem it is enough to show:
+1. Closure: if $a, b \in f^{-1}(K)$ then $f(ab)=f(a)f(b) \in K$ as $K$ is closed, so $ab \in f^{-1}(K)$.
+2. Inverse: if $a \in f^{-1}(K)$ then $f(a^{-1})=f(a)^{-1} \in K$ as $K$ is closed under inverses, so $a^{-1} \in f^{-1}(K)$ and $aa^{-1}=e_{G}$.
+
+Hence $f^{-1}(K) \leq G$.

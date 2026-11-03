@@ -215,7 +215,7 @@ To use the definition of convergence you have to know the limit $L$. Cauchy sequ
 > **Uses:** Bolzano–Weierstrass and "closed sets contain their limits".
 
 ## 7. Series
-*[[content/Notes/Math/Real Analysis/Lecture 8|Lecture 8]], [[Homework 5|Homework 5]]*
+*[[content/Notes/Math/Real Analysis/Lecture 8|Lecture 8]], [[Private/Claude/Homework 5|Homework 5]]*
 
 A series is just the sequence of its partial sums, so everything from Parts 5 and 6 applies straight away.
 
@@ -251,7 +251,7 @@ A series is just the sequence of its partial sums, so everything from Parts 5 an
 > If $\sum a_{n}$ and $\sum b_{n}$ converge, then $\sum(a_{n}+b_{n})$ converges to $\sum a_{n}+\sum b_{n}$, and $\sum c\,a_{n}=c\sum a_{n}$.
 
 ## 8. Convergence Tests
-*[[content/Notes/Math/Real Analysis/Lecture 8|Lecture 8]], [[content/Notes/Math/Real Analysis/Lecture 9|Lecture 9]], [[Homework 5|Homework 5]]*
+*[[content/Notes/Math/Real Analysis/Lecture 8|Lecture 8]], [[content/Notes/Math/Real Analysis/Lecture 9|Lecture 9]], [[Private/Claude/Homework 5|Homework 5]]*
 
 For nonnegative terms the partial sums increase, so the monotone convergence theorem turns "converges" into "is bounded". Every test below is a comparison with a geometric series or a $p$-series.
 
@@ -286,7 +286,7 @@ For nonnegative terms the partial sums increase, so the monotone convergence the
 > Proof idea: the even partial sums increase, the odd ones decrease, both are bounded, so both converge (monotone convergence). They differ by $a_{n}\to 0$, so they have the same limit.
 
 ## 9. Products and Rearrangements
-*[[content/Notes/Math/Real Analysis/Lecture 9|Lecture 9]], [[Homework 5|Homework 5]] Q6*
+*[[content/Notes/Math/Real Analysis/Lecture 9|Lecture 9]], [[Private/Claude/Homework 5|Homework 5]] Q6*
 
 Absolute convergence is the safe kind. With it, products and rearrangements behave the way you'd expect. Without it, they can fail.
 
