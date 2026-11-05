@@ -92,3 +92,34 @@ Here `PC = 1002` because the instruction code is two bytes, so the next instruct
 
 Note that each `p` is 1 signed byte, so its value is `[-128, 127] = 1000 0000 - 0111 1111`. And our offset is `2*p = [-256, 254] = 1000 0000 0 - 0111 1111 0`. So our branch range is within `2*p` of our base.
 
+![[Pasted image 20261102231829.png]]
+
+In this clicker, our instruction code begins at 0x10, the instruction bgt is two bytes so our PC is two bytes after at 0x12. We want to jump to L1 if the conditional holds which is at 0x20, so the offset from our current position is 0x20-0x12 = 14 in base 10, chopping off the last bit we get `p = 14/2 = 7`. So, our instruction is 0xa0 0x07.
+
+![[Pasted image 20261102232531.png]]
+
+Here we want to branch to `loop`. We are told that each instruction is 2 bytes, so the offset is -10 bytes from our current PC after branch. So `p = -10/2 = -5` which is 0xfb. Hence our instruction in machine code is 0x80 0xfb
+
+![[Pasted image 20261102232853.png]]
+
+Here our `p=0` so our PC doesn't actually change.
+
+![[Pasted image 20261102232955.png]]
+
+Here we can just follow along and see that we halt once `r1` is decremented to zero, at that point `r0`has been doubled 4 times so it's value is 16.
+
+## Implementing For Loops
+
+![[Pasted image 20261102233302.png]]
+
+![[Pasted image 20261102233458.png]]
+
+## Implementing Conditionals
+
+![[Pasted image 20261102233645.png]]
+
+
+> [!tip] Two's Complement in Assembly 
+> `not r0` followed with `inc r0` is how you take the two's complement of `r0` so a value `a` in `r0` becomes `-a`.
+
+
