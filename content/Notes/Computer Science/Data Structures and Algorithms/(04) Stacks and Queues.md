@@ -30,7 +30,7 @@ This is a *last in - first out* stack implementation (LIFO).
 
 ## Stacks Using Linked Lists
 
-We can implement a stack using a *singly-linked list*, that is we can make the front of the list serve as the top of the stack. Hence removal and addition can be done in $O(1)$ time as we always have access to the front pointer of a singly-linked list.
+We can implement a stack using a *singly-linked list*, that is we can make the head of the list serve as the top of the stack. Hence removal and addition can be done in $O(1)$ time as we always have access to the head pointer of a singly-linked list.
 
 
 > [!Question] What if the front of the stack is at the back of list?
@@ -164,7 +164,7 @@ With this in mind, because ==linked list nodes are scattered randomly in memory=
 ### In Summary
 
 - A linked-list stack implementation is $O(1)$ for all operations
-- An array stack implementation has an $O(1)$ `pop` cost but $O(n)$ `push` cost. However over $n$ pushes the array implementation has an average cost of $O(1)$.
+- An array stack implementation has an $O(1)$ `pop` cost but $O(n)$ `push` cost because if the array becomes full we might need to resize. However over $n$ pushes the array implementation has an average cost of $O(1)$.
 
 ## Queue ADT
 
@@ -187,7 +187,7 @@ Ideally these can be implemented in constant time.
 
 ## Implementation Using Linked-Lists
 
-For example, using a singly-linked list with front and back pointers, the front of the queue should then be at the front of the list, and the back of the queue should be at the back of the list.
+For example, using a singly-linked list with head and tail pointers, the front of the queue should then be at the head of the list, and the back of the queue should be at the tail of the list.
 
 The cpp implementation is as follows:
 ```cpp
@@ -244,7 +244,7 @@ The trick in this case is to use a *circular array* to insert and remove items f
 
 This can be accomplished using the *modulo operator*, this operator (%) returns the remainder of two numbers, for example `1%5 = 1`, `5%5 = 0`.
 
-The mod operator can hence be used to calculate the front and back positions in a circular array which avoids comparisons to the array size. Now, the back of the queue is given by `(front + num) % capacity` where num is the number of items actually stored in the queue, and after removing an item from the queue the front of the queue is `(front + 1) % capacity`. Enqueue is possible as long as the queue is not full.
+The mod operator can hence be used to calculate the front and back positions in a circular array which avoids comparisons to the array size. Now, the back of the queue is given by `(front + num) % capacity` and the front of the queue is still 0, where num is the number of items actually stored in the queue, and after removing an item from the queue the front of the queue is `(front + 1) % capacity`. Enqueue is possible as long as the queue is not full.
 
 ### Resizing
 

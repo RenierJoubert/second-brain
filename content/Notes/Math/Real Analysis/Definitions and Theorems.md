@@ -318,7 +318,7 @@ For limits: if $\lim_{x\to c}f(x)=d$ and $g$ is continuous at $d$, then $\lim_{x
 ## Sign Persistence
 If $f$ is continuous at $c$ and $f(c)>0$, then there exists $\delta>0$ such that $f(x)>0$ for all $x\in(c-\delta,c+\delta)$. The same holds for $f(c)<0$.
 
-Proof: [[Lecture 11]]
+Proof: [[content/Notes/Math/Real Analysis/Lecture 11]]
 ## Bolzano's Theorem
 If $f:[a,b]\to\mathbb R$ is continuous and $f(a)$ and $f(b)$ have opposite signs, then there exists $c\in(a,b)$ with $f(c)=0$.
 
@@ -333,4 +333,4 @@ If $f:[a,b]\to\mathbb R$ is continuous and $f(a)$ and $f(b)$ have opposite signs
 ## Intermediate Value Theorem
 If $f:[a,b]\to\mathbb R$ is continuous, then for every $y$ between $f(a)$ and $f(b)$ there exists $x\in[a,b]$ with $f(x)=y$.
 
-Proof: [[Lecture 11]]
+Proof: [[content/Notes/Math/Real Analysis/Lecture 11]]

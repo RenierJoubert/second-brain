@@ -54,7 +54,7 @@ What does the code above look like in memory when we call it?
 
 > Variables declared in a function only exist within the scope of that function, the data structures in this course require objects and variables to persist beyond a function's lifetime, this requires heap memory /dynamic memory as they cannot be written to the call stack.
 > 
-> In C++ this can be accomplished with *pointers*
+> In C++ this can be accomplished with *pointers* so we can pass by reference instead of value. 
 
 ### Addresses  and Pointers
 
@@ -80,11 +80,14 @@ For example:
 
 Here we can change `x` by executing `x=38`. But we can also change the contents of `x`'s memory address by using `*p` and writing `*p=38` to change it to `38`. Essentially, with pointers we can be in a completely difference scope than `x` but as long as we know its address we can always de-reference `x` and change its value.
 
-We can also pass pointers as parameters, but the the pointer will be passed by value meaning the function will be operating with the memory address representative of the pointers value.
+We can also pass pointers as parameters, but the the pointer will be passed by value meaning the function will be operating with the memory address representative of the pointers value. (The value of a pointer is the address it stores).
 
 ![[Pasted image 20260515141911.png]]
 
 Here `x` after `f1` is still 45, even though the `cout` shows `"f1 arg: 22"`. However, after `f2` executes `x` is `410` and the `cout` is `"f2 *arg: 410"`. This is another way we can do pass by reference.
+
+## Delete
+> `delete` is a function that takes a pointer as an argument and frees the memory that it points to. It leaves the pointer unchanged. Only addresses from `new` can be deleted (heap memory)
 
 ## Pointing to a Pointer
 
@@ -105,6 +108,8 @@ In essence, pointers are how we interact with the heap. Requesting memory from t
 
 Failure to release the memory causes a memory leak error. This happens when you lose access to an allocation in the heap, as you still need to access the heap through a pointer on the stack, if you lose that pointer you have no way to free that memory in the heap. If this happens in a loop this can prove to be a big issue as you lose more and more memory.
 
+Basically, if you overwrite or for some reason can no longer access the pointer pointing to memory on the heap, then you can no longer free that memory on the heap as you cant find it. 
+
 For example, a memory leak can be caused by:
 
 ![[Pasted image 20260515143657.png]]
@@ -114,7 +119,7 @@ For example, a memory leak can be caused by:
 
 ![[Pasted image 20260515143904.png]]
 
-> If you plan to keep your pointer around, you should set it to null after you de-reference and free it.
+> If you plan to keep your pointer around, you should set it to null after you free it.
 
 ## Linked Lists
 
@@ -148,7 +153,7 @@ For example:
 
 ![[Pasted image 20260515150129.png]]
 
-Where the list is terminated using a *null-pointer*.
+Where the list is terminated using a *null-pointer*. Remember that deleting a null-pointer is fine because null is just the null register, so you are not leaking memory or causing any other issues. 
 
 ![[Pasted image 20260516170439.png]]
 
@@ -205,7 +210,7 @@ while (p != NULL) {
 Because we need the position before which we would like to do the insertion, if we have a head or tail pointer, then respectively insertion time is $O(1)$ at the head and or tail.
 ### Linked List Removal
 
-> In order to delete a node, we need to have access to the node that ==precedes== the node we wish to delete. (Comes before it in the list).
+> In order to delete a node, we need to have access to the node that ==precedes== the node we wish to delete. (Comes before it in the list). This is so we can make the preceding note point to the node after the one we want to delete. 
 
 ![[Pasted image 20260515152015.png]]
 
@@ -226,7 +231,7 @@ Because we need the position before which we would like to do the insertion, if 
 
 > A singly linked list with a head pointer has rather poor complexity when accessing the end of the list or when traversing, to combat this we can also implement a tail pointer at the end of the list instead of just a head pointer.
 
-A tail pointer allows us to perform insertion at the back of the list in $O(1)$ which is much better than $\Theta(n)$! However it does not help us when inserting in the middle of the list or *removing* from the end of the list.
+A tail pointer allows us to perform insertion at the back of the list in $O(1)$ which is much better than $\Theta(n)$. However it does not help us when inserting in the middle of the list or *removing* from the end of the list.
 
 ![[Pasted image 20260515152901.png]]
 
@@ -271,4 +276,4 @@ void PrintReverse(Node<LIT>* curr) {
 Which will only have a running time of $O(n)$.
 
 ## Linked Lists vs Arrays
-> Binary search can be implemented more efficiently on an array and not on a linked list. Moreover, inserting an element at the end of an array runs in $O(1)$ time (when the array is not full) where it runs in $O(n)$ time on a singly linked list with only a head pointer. Finally accessing elements in array is much faster and can be done in $O(1)$ time compared to $O(n)$ time for a linked list. That being said, arrays are of finite size and resizing it down the line can also be very costly, additionally, linked lists are much less costly when inserting elements into specific indexes. For example, insertion at the first position of the linked list takes $O(1)$ time, but $O(n)$ for an array.
+> Binary search can be implemented more efficiently on an array and not on a linked list because an array is contiguous in memory so it is far easier to navigate, whereas linked lists nodes can be very far apart. Moreover, inserting an element at the end of an array runs in $O(1)$ time (when the array is not full) where it runs in $O(n)$ time on a singly linked list with only a head pointer. Finally accessing elements in array is much faster and can be done in $O(1)$ time compared to $O(n)$ time for a linked list. That being said, arrays are of finite size and resizing it down the line can also be very costly, additionally, linked lists are much less costly when inserting elements into specific indexes. For example, insertion at the first position of the linked list takes $O(1)$ time, but $O(n)$ for an array.
