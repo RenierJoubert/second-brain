@@ -7,7 +7,7 @@ configuration:
   analytics:
     provider: plausible
   locale: en-US
-  baseUrl: renierj.dev
+  baseUrl: renierj.xyz
   ignorePatterns:
     - private
     - templates
