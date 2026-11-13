@@ -1,3 +1,234 @@
 @use "./variables.scss" as *;
 
-// put your custom CSS here!
+// Disable scroll bars
+* { scrollbar-width: none; }
+* { -ms-overflow-style: none; }
+*::-webkit-scrollbar { display: none; }
+
+// Custom callout for theorems
+.callout[data-callout="theorem"] {
+  --color: #c1c1c1;
+  --border: #444444;
+  --bg: #44444418;
+  --callout-icon: url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 7v14'/%3E%3Cpath d='M16 12h2'/%3E%3Cpath d='M16 8h2'/%3E%3Cpath d='M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z'/%3E%3Cpath d='M6 12h2'/%3E%3Cpath d='M6 8h2'/%3E%3C/svg%3E");
+}
+
+// Custom callout for proofs
+.callout[data-callout="proof"] {
+  --color: #888888;
+  --border: #888888;
+  --bg: #88888814;
+  --callout-icon: url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2020/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 7v14'/%3E%3Cpath d='M16 12h2'/%3E%3Cpath d='M16 8h2'/%3E%3Cpath d='M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z'/%3E%3Cpath d='M6 12h2'/%3E%3Cpath d='M6 8h2'/%3E%3C/svg%3E");
+}
+
+// Global font size
+:root {
+  font-size: 16px;
+}
+
+.sidebar-nav {
+  margin: 1rem 0;
+  width: 100%;
+
+  .nav-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    width: 100%;
+
+    .nav-button {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 0.5rem 0.8rem;
+      border-radius: 6px;
+      color: var(--dark);
+      text-decoration: none;
+      transition: all 0.2s ease;
+      background: var(--light);
+      border: 1px solid var(--lightgray);
+      position: relative;
+      cursor: pointer;
+      font-size: 0.9rem;
+      font-style: normal;
+      font-family: var(--bodyFont);
+      width: 100%;
+      box-sizing: border-box;
+
+      .nav-icon {
+        font-size: 1.1rem;
+        flex-shrink: 0;
+        font-style: normal;
+        width: 1.5rem;
+        text-align: center;
+      }
+
+      .nav-text {
+        font-weight: 500;
+        transition: color 0.2s ease;
+        font-style: normal;
+        flex: 1;
+        text-align: left;
+        color: var(--secondary);
+      }
+
+      &:hover {
+        transform: none;
+        background: var(--lightgray);
+        border-color: var(--secondary);
+        .nav-text { color: var(--dark); }
+      }
+
+      &.reading-mode-toggle .nav-text {
+        text-align: left;
+        color: var(--secondary);
+        &:hover { color: var(--dark); }
+      }
+    }
+  }
+}
+
+// Hide metadata on index.md
+body[data-slug="index"] .content-meta,
+body[data-slug="index"] .meta {
+  display: none !important;
+}
+
+// Get rid of inline code highlighting
+:not(pre) > code {
+  background-color: transparent !important;
+}
+
+// Give display math enough vertical room so tall exponents aren't clipped
+.katex-display {
+  padding: 0.6em 0;
+  overflow-y: visible;
+}
+
+// ─── EXPLORER ─────────────────────────────────────────────────────────────────
+// The v4 look on v5's explorer: folder names keep v5's header font, file names
+// use the code font with ├─ / └─ connectors. Connectors go on file rows only,
+// so a folder doesn't get an empty connector row above it.
+
+.explorer-content li:has(> a) {
+  display: flex;
+  font-family: var(--codeFont);
+  font-size: 0.8rem;
+  line-height: 2;
+
+  // flex keeps a long name wrapping under itself, not under the connector
+  &::before {
+    content: "├─\00a0";
+    flex: none;
+    color: var(--lightgray);
+  }
+
+  // last file in its folder (files always come after subfolders; the top-level
+  // list ends with an empty li.overflow-end)
+  &:last-child::before,
+  &:has(+ .overflow-end)::before {
+    content: "└─\00a0";
+  }
+
+  & > a {
+    font-family: var(--codeFont);
+    font-size: 0.8rem;
+    font-weight: normal;
+    color: var(--darkgray);
+    opacity: 1;
+
+    &:hover {
+      color: var(--dark);
+    }
+
+    // the page you're on
+    &.active {
+      font-weight: 600;
+      color: var(--tertiary);
+    }
+  }
+}
+
+// Desktop: no "Explore" toggle, explorer always open (as on v4)
+@media (min-width: 1200px) {
+  button.desktop-explorer {
+    display: none !important;
+  }
+
+  .explorer-content {
+    display: block !important;
+    max-height: none !important;
+    overflow: visible !important;
+  }
+}
+
+// v4's "right sidebar scrolls with the page" rule is now
+// `layout.sidebars.right: static` in quartz.config.yaml.
+
+// ─── INDEX PAGE ───────────────────────────────────────────────────────────────
+// Laid out like ewan.my's homepage: the same frame as a note (graph left,
+// explorer right, search on top) with the title as a banner.
+
+body[data-slug="index"] {
+  h1.article-title {
+    font-size: 3.5rem;
+    text-align: center;
+    margin: 2.5rem 0 0;
+  }
+
+  // The frame's own rule under the article, and the site footer: the
+  // GitHub/LinkedIn icons in index.md take its place
+  .center > hr,
+  footer {
+    display: none;
+  }
+
+  .index-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem; // room below the contribution graph
+
+    a {
+      display: flex;
+      align-items: center;
+      color: var(--gray);
+      text-decoration: none;
+      transition: color 0.15s ease;
+
+      &:hover {
+        color: var(--dark);
+      }
+
+      svg {
+        display: block;
+      }
+    }
+  }
+}
+
+// ─── CARRIED OVER FROM v4 CORE EDITS ──────────────────────────────────────────
+
+// Search bar: full width, label left, icon right (was search.scss + Search.tsx)
+.search {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+
+  & > .search-button {
+    width: 100%;
+    box-sizing: border-box;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+    margin-top: 1.5rem;
+
+    & > p {
+      margin-left: 0.75rem;
+    }
+  }
+}
+
+// Footer: drop the "Created with Quartz" line (was an edit to Footer.tsx)
+footer > p:first-child {
+  display: none;
+}

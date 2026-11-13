@@ -1,0 +1,25 @@
+{
+  "name": "note-timeline",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "main": "./index.js",
+  "scripts": {
+    "build": "node --check index.js && node --check client.js"
+  },
+  "exports": {
+    ".": "./index.js"
+  },
+  "quartz": {
+    "name": "note-timeline",
+    "displayName": "Note timeline",
+    "description": "A day-by-day strip of new and updated notes on the homepage, built from git history. Adapted from ewan.my's ewan-timeline.",
+    "version": "1.0.0",
+    "quartzVersion": ">=5.0.0",
+    "category": [
+      "transformer",
+      "emitter"
+    ],
+    "defaultOrder": 125
+  }
+}

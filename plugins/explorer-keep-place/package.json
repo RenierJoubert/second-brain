@@ -1,0 +1,35 @@
+{
+  "name": "explorer-keep-place",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "main": "./index.js",
+  "scripts": {
+    "build": "node --check components.js"
+  },
+  "exports": {
+    ".": "./index.js",
+    "./components": "./components.js"
+  },
+  "quartz": {
+    "name": "explorer-keep-place",
+    "displayName": "Explorer (keeps your place)",
+    "description": "The community explorer, patched so revealing the current note scrolls only the explorer list, not the whole page.",
+    "version": "1.0.0",
+    "quartzVersion": ">=5.0.0",
+    "category": "component",
+    "defaultOrder": 50,
+    "defaultOptions": {
+      "folderDefaultState": "collapsed",
+      "folderClickBehavior": "link",
+      "useSavedState": true
+    },
+    "components": {
+      "Explorer": {
+        "displayName": "Explorer",
+        "defaultPosition": "right",
+        "defaultPriority": 20
+      }
+    }
+  }
+}

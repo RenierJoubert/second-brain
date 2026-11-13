@@ -1,0 +1,257 @@
+# yaml-language-server: $schema=./quartz/plugins/quartz-plugins.schema.json
+configuration:
+  pageTitle: ""
+  pageTitleSuffix: ""
+  enableSPA: true
+  enablePopovers: true
+  analytics:
+    provider: plausible
+  locale: en-US
+  baseUrl: renierj.dev
+  ignorePatterns:
+    - private
+    - templates
+    - .obsidian
+  theme:
+    fontOrigin: googleFonts
+    cdnCaching: true
+    typography:
+      header: IM Fell DW Pica
+      body: Red Hat Mono
+      code: Red Hat Mono
+    # base16 black-metal-gorgoroth (grayscale)
+    colors:
+      lightMode:
+        light: "#000000"
+        lightgray: "#444444"
+        gray: "#888888"
+        darkgray: "#d6d2c8"
+        dark: "#c1c1c1"
+        secondary: "#c1c1c1"
+        tertiary: "#d6d2c8"
+        highlight: "#333333"
+        textHighlight: "#333333"
+      darkMode:
+        light: "#000000"
+        lightgray: "#444444"
+        gray: "#888888"
+        darkgray: "#888888"
+        dark: "#c1c1c1"
+        secondary: "#c1c1c1"
+        tertiary: "#d6d2c8"
+        highlight: "#333333"
+        textHighlight: "#333333"
+  links:
+    markdownLinkResolution: shortest
+  contentIndex:
+    enableSiteMap: true
+    enableRSS: true
+
+plugins:
+  # ── Markdown processing ─────────────────────────────────────────────
+  - source: "@quartz-community/created-modified-date"
+    enabled: true
+    options:
+      defaultDateType: modified
+      priority:
+        - frontmatter
+        - git
+    order: 10
+  - source: "@quartz-community/syntax-highlighting"
+    enabled: true
+    options:
+      theme:
+        light: github-dark
+        dark: github-dark
+      keepBackground: false
+    order: 20
+  - source: "@quartz-community/github-flavored-markdown"
+    enabled: true
+    order: 30
+  - source: "@quartz-community/obsidian-flavored-markdown"
+    enabled: true
+    options:
+      enableInHtmlEmbed: true
+      enableCheckbox: true
+      # v4 rendered a single line break as a space; v5 defaults to <br> like
+      # Obsidian's reading view. Delete this line to switch to the v5 behaviour.
+      strictLineBreaks: true
+    order: 40
+  - source: "@quartz-community/description"
+    enabled: true
+    order: 70
+  - source: "@quartz-community/latex"
+    enabled: true
+    options:
+      renderEngine: katex
+    order: 80
+  - source: "@quartz-community/table-of-contents"
+    enabled: false # v4 had no TOC component in the layout
+  - source: "@quartz-community/citations"
+    enabled: false
+  - source: "@quartz-community/ox-hugo"
+    enabled: false
+  - source: "@quartz-community/roam"
+    enabled: false
+
+  # ── Theme, fonts, publishing ────────────────────────────────────────
+  - source: "@quartz-community/quartz-fonts"
+    enabled: true
+  # Applies an Obsidian theme over your colours; off so your own palette is used.
+  - source: "@quartz-themes/core"
+    enabled: false
+    options:
+      theme: default
+      mode: both
+  - source: "@quartz-community/explicit-publish"
+    enabled: false
+  - source: "@quartz-community/unlisted-pages"
+    enabled: true
+    order: 45
+  - source: "@quartz-community/encrypted-pages"
+    enabled: false
+  - source: "@quartz-community/stacked-pages"
+    enabled: false
+
+  # ── Page emitters ───────────────────────────────────────────────────
+  - source: "@quartz-community/alias-redirects"
+    enabled: true
+  - source: "@quartz-community/favicon"
+    enabled: true
+  - source: "@quartz-community/og-image"
+    enabled: true
+  - source: "@quartz-community/cname"
+    enabled: false # you deploy on Cloudflare, v4 didn't emit a CNAME
+  - source: "@quartz-community/canvas-page"
+    enabled: true
+  - source: "@quartz-community/content-page"
+    enabled: true
+  - source: "@quartz-community/folder-page"
+    enabled: true
+  - source: "@quartz-community/tag-page"
+    enabled: true
+  - source: "@quartz-community/bases-page" # replaces your hand-added Bases code
+    enabled: true
+    order: 50
+  - source: "@quartz-community/obsidian-plugin-excalidraw"
+    enabled: true
+    options:
+      enableInteraction: true
+      darkMode: auto
+      exportPadding: 20
+    order: 50
+  # Homepage strip of new and updated notes by day, from git history. Goes where
+  # content/index.md has <div class="note-timeline"></div>.
+  # (plugins/note-timeline, adapted from ewan.my)
+  - source: ./plugins/note-timeline
+    enabled: true
+    order: 125
+
+  # ── Layout: above the note (was beforeBody in quartz.layout.ts) ─────
+  - source: "@quartz-community/breadcrumbs"
+    enabled: true
+    options:
+      spacerSymbol: "❯"
+      rootName: Home
+      resolveFrontmatterTitle: true
+      showCurrentPage: true
+    layout:
+      position: beforeBody
+      priority: 5
+      condition: not-index
+  - source: "@quartz-community/search"
+    enabled: true
+    layout:
+      position: beforeBody
+      priority: 10 # every page, including the homepage
+  - source: "@quartz-community/article-title"
+    enabled: true
+    layout:
+      position: beforeBody
+      priority: 20 # on the homepage too, styled as its banner (custom.scss)
+  - source: "@quartz-community/content-meta"
+    enabled: true
+    layout:
+      position: beforeBody
+      priority: 30
+      condition: not-index
+
+  # ── Layout: sidebars ────────────────────────────────────────────────
+  - source: "@quartz-community/graph"
+    enabled: true
+    layout:
+      position: left
+      priority: 10
+      display: desktop-only # homepage included, as on ewan.my
+  - source: "@quartz-community/backlinks"
+    enabled: true
+    layout:
+      position: right
+      priority: 10
+      condition: not-index
+  # The community explorer, wrapped so it doesn't scroll the whole page when it
+  # reveals the current note (see plugins/explorer-keep-place). The original
+  # entry stays installed because the wrapper imports it.
+  - source: "@quartz-community/explorer"
+    enabled: false
+  - source: ./plugins/explorer-keep-place
+    enabled: true
+    options:
+      title: Explore
+      useSavedState: true
+    layout:
+      position: right
+      priority: 20
+
+  # ── Layout: footer ──────────────────────────────────────────────────
+  - source: "@quartz-community/footer"
+    enabled: true
+    options:
+      links:
+        GitHub: https://github.com/renierjoubert
+    layout:
+      position: footer
+      priority: 50
+
+  # ── Not used on your v4 site ────────────────────────────────────────
+  - source: "@quartz-community/page-title"
+    enabled: false
+  - source: "@quartz-community/darkmode"
+    enabled: false
+  - source: "@quartz-community/reader-mode"
+    enabled: false
+  - source: "@quartz-community/spacer"
+    enabled: false
+  - source: "@quartz-community/note-properties"
+    enabled: false
+  - source: "@quartz-community/tag-list"
+    enabled: false
+  - source: "@quartz-community/comments"
+    enabled: false
+  - source: "@quartz-community/recent-notes"
+    enabled: false
+
+layout:
+  # Right sidebar scrolls away with the page (was a CSS override in v4)
+  sidebars:
+    right: static
+  byPageType:
+    "404":
+      positions:
+        beforeBody: []
+        left: []
+        right: []
+    content: {}
+    # v4's list layout (folders, tags): breadcrumbs, search, title, explorer only
+    folder:
+      exclude:
+        - content-meta
+        - graph
+        - backlinks
+    tag:
+      exclude:
+        - content-meta
+        - graph
+        - backlinks
+    canvas: {}
+    bases: {}
