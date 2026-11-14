@@ -1,4 +1,4 @@
-#math #LinearOptimization #linear-programming #optimization #game-theory
+#math #LinearOptimization #linear-programming #game-theory
 
 # A High Level Overview
 

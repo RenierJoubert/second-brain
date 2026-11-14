@@ -1,4 +1,4 @@
-#math #math316 #ODEs
+#math #DifferentialEquationsII
 
 # Bessel's Equation
 

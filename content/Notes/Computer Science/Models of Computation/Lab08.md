@@ -1,4 +1,4 @@
-#cs #ModelsOfComputation #labs 
+#cs #ModelsOfComputation #lab
 
 # A Working Computer
 

@@ -1,4 +1,4 @@
-#math #DifferentialEquationsI #ODEs
+#math #DifferentialEquationsI
 
 For continuously differentiable functions on an open set:
 

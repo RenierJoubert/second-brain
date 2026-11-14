@@ -1,4 +1,4 @@
-#cs #ModelsOfComputation #labs 
+#cs #ModelsOfComputation #lab
 
 # Time Dependent Circuits and Memory
 

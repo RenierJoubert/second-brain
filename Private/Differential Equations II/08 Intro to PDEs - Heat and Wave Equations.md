@@ -1,4 +1,4 @@
-#math #math316 #PDEs
+#math #DifferentialEquationsII #PDEs
 
 # Intro to PDEs: Heat and Wave Equations
 

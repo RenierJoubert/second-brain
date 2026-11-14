@@ -1,4 +1,4 @@
-#math #LinearOptimization #linear-programming #optimization 
+#math #LinearOptimization #linear-programming 
 
 # Optimal Transport
 

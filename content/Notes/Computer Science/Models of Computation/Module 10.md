@@ -1,4 +1,4 @@
-#cs #math #ModelsOfComputation #proof
+#cs #math #ModelsOfComputation
 
 # Strong Induction Proofs
 

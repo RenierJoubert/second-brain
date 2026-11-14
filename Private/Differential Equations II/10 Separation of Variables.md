@@ -1,4 +1,4 @@
-#math #math316 #PDEs
+#math #DifferentialEquationsII #PDEs
 
 # Separation of Variables
 

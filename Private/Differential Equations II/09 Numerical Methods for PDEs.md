@@ -1,4 +1,4 @@
-#math #math316 #PDEs
+#math #DifferentialEquationsII #PDEs
 
 # Numerical Methods for PDEs (Finite Differences)
 

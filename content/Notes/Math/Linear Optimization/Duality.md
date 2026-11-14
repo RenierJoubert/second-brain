@@ -1,4 +1,4 @@
-#math #LinearOptimization #proof #optimization
+#math #LinearOptimization
 
 # Duality introduction:
 

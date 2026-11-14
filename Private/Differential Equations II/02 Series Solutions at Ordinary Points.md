@@ -1,4 +1,4 @@
-#math #math316 #ODEs
+#math #DifferentialEquationsII
 
 # Series Solutions Near an Ordinary Point
 
