@@ -72,9 +72,7 @@ plugins:
     enabled: true
     options:
       enableInHtmlEmbed: true
-      enableCheckbox: true
-      # v4 rendered a single line break as a space; v5 defaults to <br> like
-      # Obsidian's reading view. Delete this line to switch to the v5 behaviour.
+      enableCheckbox: true 
       strictLineBreaks: true
     order: 40
   - source: "@quartz-community/description"
@@ -86,7 +84,7 @@ plugins:
       renderEngine: katex
     order: 80
   - source: "@quartz-community/table-of-contents"
-    enabled: false # v4 had no TOC component in the layout
+    enabled: false 
   - source: "@quartz-community/citations"
     enabled: false
   - source: "@quartz-community/ox-hugo"
@@ -97,7 +95,6 @@ plugins:
   # ── Theme, fonts, publishing ────────────────────────────────────────
   - source: "@quartz-community/quartz-fonts"
     enabled: true
-  # Applies an Obsidian theme over your colours; off so your own palette is used.
   - source: "@quartz-themes/core"
     enabled: false
     options:
@@ -121,7 +118,7 @@ plugins:
   - source: "@quartz-community/og-image"
     enabled: true
   - source: "@quartz-community/cname"
-    enabled: false # you deploy on Cloudflare, v4 didn't emit a CNAME
+    enabled: false 
   - source: "@quartz-community/canvas-page"
     enabled: true
   - source: "@quartz-community/content-page"
@@ -130,7 +127,7 @@ plugins:
     enabled: true
   - source: "@quartz-community/tag-page"
     enabled: true
-  - source: "@quartz-community/bases-page" # replaces your hand-added Bases code
+  - source: "@quartz-community/bases-page" 
     enabled: true
     order: 50
   - source: "@quartz-community/obsidian-plugin-excalidraw"
@@ -147,7 +144,7 @@ plugins:
     enabled: true
     order: 125
 
-  # ── Layout: above the note (was beforeBody in quartz.layout.ts) ─────
+  # ── Layout: 
   - source: "@quartz-community/breadcrumbs"
     enabled: true
     options:
@@ -213,7 +210,7 @@ plugins:
       position: footer
       priority: 50
 
-  # ── Not used on your v4 site ────────────────────────────────────────
+  # Never used on v4
   - source: "@quartz-community/page-title"
     enabled: false
   - source: "@quartz-community/darkmode"
