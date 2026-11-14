@@ -7,7 +7,7 @@ Hi, I'm [Renier](https://renierjoubert.com). This site is meant to serve as a re
 
 <div class="mobile-only">
 <div class="mobile-nav">
-<a href="Notes/Math/">Math</a> <a href="Notes/Computer Science/">Computer Science</a> <a href="Resources/Cool sites">Cool/Helpful Websites</a>
+<a href="Notes/Math/">Math</a> <a href="Notes/Computer Science/">Computer Science</a> <a href="Resources/Cool sites">Helpful Websites</a>
 </div>
 </div>
 
