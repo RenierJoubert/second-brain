@@ -1,4 +1,4 @@
-#ComputerSystems
+#cs #ComputerSystems #C #java
 
 ## Working with Strings in C
 ![[Pasted image 20261015165519.png]]

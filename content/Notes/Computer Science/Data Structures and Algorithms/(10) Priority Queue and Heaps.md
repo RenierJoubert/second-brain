@@ -1,4 +1,4 @@
-#cs #DataStructuresAndAlgorithms 
+#cs #DataStructuresAndAlgorithms #cpp 
 
 # Priority Queue and Binary Heaps
 

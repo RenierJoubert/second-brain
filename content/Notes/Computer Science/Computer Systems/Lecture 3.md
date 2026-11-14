@@ -1,4 +1,4 @@
-#ComputerSystems
+#cs #ComputerSystems #C #java
 
 # CPU Instructions (starting 1b)
 > A CPU executes instructions. Not C or Java code or any other high level languages. These instructions are simple and consist of essentially either loading a value from memory, or storing a value to memory, with some basic operations in between like logic or math.

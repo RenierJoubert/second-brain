@@ -1,4 +1,4 @@
-#cs #DataStructuresAndAlgorithms 
+#cs #DataStructuresAndAlgorithms #cpp 
 
 # Topological Sort and Minimum Spanning Trees
 > Covers topological sort, Kruskal's algorithm, and Prim's algorithm.

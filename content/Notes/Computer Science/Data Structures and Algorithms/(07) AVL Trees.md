@@ -1,4 +1,4 @@
-#cs #DataStructuresAndAlgorithms 
+#cs #DataStructuresAndAlgorithms #cpp 
 # AVL Trees
 > An AVL tree (**A**delson-**V**elsky and **L**andis tree) is a **balanced** BST, such that each node's left and right subtrees differ in height by **at most** 1. This is maintained by doing **rotations** when insertion or removal creates a height imbalance. To allow this, AVL tree nodes contain extra information to support this height information.
 

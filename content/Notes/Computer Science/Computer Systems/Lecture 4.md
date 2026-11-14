@@ -1,4 +1,4 @@
-#ComputerSystems
+#cs #ComputerSystems #C
 
 # RTL Semantics
 > Each line takes the form LHS <- RHS where the LHS receives the value from the RHS, wherein the RHS is a constant, memory, register, or expression.

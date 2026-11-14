@@ -1,4 +1,4 @@
-#ComputerSystems
+#cs #ComputerSystems #C #java
 
 ![[Pasted image 20261006124328.png]]
 
