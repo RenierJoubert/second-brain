@@ -29,6 +29,15 @@ article li{
   --callout-icon: url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2020/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 7v14'/%3E%3Cpath d='M16 12h2'/%3E%3Cpath d='M16 8h2'/%3E%3Cpath d='M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z'/%3E%3Cpath d='M6 12h2'/%3E%3Cpath d='M6 8h2'/%3E%3C/svg%3E");
 }
 
+// Links to notes and folders use plain underlined text. Tags keep the grey box.
+article a.internal:not(.tag-link) {
+  background-color: transparent;
+  padding: 0;
+  border-radius: 0;
+  text-decoration: underline;
+  text-underline-offset: 0.24em; 
+}
+
 // Global font size
 :root {
   font-size: 16px;
@@ -167,6 +176,12 @@ body[data-slug="index"] .meta {
   }
 }
 
+@media all and ($mobile) {
+    .explorer {
+      display: none;
+    }
+  }
+
 // ─── INDEX PAGE ───────────────────────────────────────────────────────────────
 body[data-slug="index"] {
   h1.article-title {
@@ -179,13 +194,6 @@ body[data-slug="index"] {
   .center > hr,
   footer {
     display: none;
-  }
-
-  // removes explorer from mobile index
-  @media all and ($mobile) {
-    .explorer {
-      display: none;
-    }
   }
 
   .index-links {

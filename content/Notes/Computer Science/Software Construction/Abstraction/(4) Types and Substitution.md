@@ -46,7 +46,7 @@ The effects clause is referred to as the post-condition of the method. For a sub
 
 ==Note:== if you want to change declared types of an object you need to do a cast even if they are substitutable!!. 
 
-This is referred to as the *Liskov Substitution Principle* and more can be read about it in [[(2) The Liskov Substitution Principle]]]
+This is referred to as the *Liskov Substitution Principle* and more can be read about it in [[(2) The Liskov Substitution Principle]]
 
 ## Variable types when calling methods
 
