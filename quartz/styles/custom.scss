@@ -106,9 +106,6 @@ body[data-slug="index"] .meta {
 }
 
 // ─── EXPLORER ─────────────────────────────────────────────────────────────────
-// The v4 look on v5's explorer: folder names keep v5's header font, file names
-// use the code font with ├─ / └─ connectors. Connectors go on file rows only,
-// so a folder doesn't get an empty connector row above it.
 
 .explorer-content li:has(> a) {
   display: flex;
@@ -162,13 +159,7 @@ body[data-slug="index"] .meta {
   }
 }
 
-// v4's "right sidebar scrolls with the page" rule is now
-// `layout.sidebars.right: static` in quartz.config.yaml.
-
 // ─── INDEX PAGE ───────────────────────────────────────────────────────────────
-// Laid out like ewan.my's homepage: the same frame as a note (graph left,
-// explorer right, search on top) with the title as a banner.
-
 body[data-slug="index"] {
   h1.article-title {
     font-size: 3.5rem;
@@ -176,11 +167,17 @@ body[data-slug="index"] {
     margin: 2.5rem 0 0;
   }
 
-  // The frame's own rule under the article, and the site footer: the
-  // GitHub/LinkedIn icons in index.md take its place
+  
   .center > hr,
   footer {
     display: none;
+  }
+
+  // removes explorer from mobile index
+  @media all and ($mobile) {
+    .explorer {
+      display: none;
+    }
   }
 
   .index-links {
@@ -206,7 +203,7 @@ body[data-slug="index"] {
   }
 }
 
-// ─── CARRIED OVER FROM v4 CORE EDITS ──────────────────────────────────────────
+
 
 // Search bar: full width, label left, icon right (was search.scss + Search.tsx)
 .search {
@@ -228,7 +225,14 @@ body[data-slug="index"] {
   }
 }
 
-// Footer: drop the "Created with Quartz" line (was an edit to Footer.tsx)
 footer > p:first-child {
   display: none;
 }
+
+.mobile-nav {
+    display: flex;
+    justify-content: space-evenly; 
+    gap: 1rem;                    
+    text-align: center;           
+    margin-top: 1.5rem;
+  }
