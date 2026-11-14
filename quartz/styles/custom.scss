@@ -1,4 +1,12 @@
 @use "./variables.scss" as *;
+@use "./base.scss";
+
+article p,
+article li{
+  text-align: justify;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+}
 
 // Disable scroll bars
 * { scrollbar-width: none; }
