@@ -1,4 +1,4 @@
-#math 
+#math #RealAnalysis
 
 ## Triangle Inequality
 > [[content/Notes/Math/Real Analysis/Definitions and Theorems|Definitions and Theorems]]

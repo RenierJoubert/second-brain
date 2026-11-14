@@ -1,4 +1,4 @@
-#math #math340 #linear-programming #optimization #game-theory
+#math #LinearOptimization #linear-programming #optimization #game-theory
 
 # A High Level Overview
 

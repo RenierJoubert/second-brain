@@ -1,4 +1,4 @@
-#math 
+#math #RealAnalysis
 
 ## Rationals are dense in $\mathbb Q$
 > Proof is in [[content/Notes/Math/Real Analysis/Definitions and Theorems|Definitions and Theorems]]

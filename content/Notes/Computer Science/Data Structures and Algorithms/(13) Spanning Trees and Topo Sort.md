@@ -1,4 +1,4 @@
-#cs #cs221 
+#cs #DataStructuresAndAlgorithms 
 
 # Topological Sort and Minimum Spanning Trees
 > Covers topological sort, Kruskal's algorithm, and Prim's algorithm.

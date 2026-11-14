@@ -1,5 +1,5 @@
 
-#cs #abstraction #cs210 #java
+#cs #abstraction #SoftwareConstruction #java
 
 # Abstract Classes
 - Abstract classes are the midpoint between a regular class and an interface, in that ==if a class extends an abstract class then it inherits the regular methods all the same, but must implement all of the abstract methods== similar to an interface. Also similar to an interface ==you cannot instantiate an abstract class==

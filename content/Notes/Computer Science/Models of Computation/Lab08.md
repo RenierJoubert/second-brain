@@ -1,4 +1,4 @@
-#cs #cs121 #labs 
+#cs #ModelsOfComputation #labs 
 
 # A Working Computer
 

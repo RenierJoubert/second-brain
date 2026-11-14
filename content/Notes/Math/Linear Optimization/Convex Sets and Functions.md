@@ -1,4 +1,4 @@
-#math #math340 #lp #proof #optimization 
+#math #LinearOptimization #proof #optimization 
 
 # Convex Sets and Functions
 

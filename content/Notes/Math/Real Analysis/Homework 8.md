@@ -1,3 +1,4 @@
+#RealAnalysis
 
 > [!question]- Proving the Generalized Value Theorem 
 > I want to show that for a non-empty $K \subseteq \mathbb{R}$ that is closed and bounded, if $f: K \to \mathbb{R}$ is a continuous function, then $\exists c,d \in K$ s.t. $f(c)\leq f(x)\leq f(d)$, $\forall x \in K$.

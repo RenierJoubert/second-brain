@@ -1,4 +1,4 @@
-#math 
+#math #AbstractAlgebra
 
 ## Binary Operation
 A binary operation $*$ on a set $S$ is a function s.t. $\forall a,b \in S$ we have that $a * b \in S$. In other words, $S$ is closed under $*$. We write $(S, *)$ to indicate a **binary structure**, which is just a set and some binary operation.

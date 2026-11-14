@@ -1,4 +1,4 @@
-#cs #cs210 #OOP #java 
+#cs #SoftwareConstruction #OOP #java 
 
 We can refactor our code to improve cohesion and coupling by abstracting duplicated code into methods, or we can also refactor our code to better adhere to the Single Responsibility Principle touched on in [[(1) Design Fundamentals]]. But ultimately, this is just a start and there are many more reasons to refactor. 
 

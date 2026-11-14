@@ -1,4 +1,4 @@
-#stats #math #math302
+#stats #math #IntroToProbability
 
 # Joint and Marginal Distributions
 

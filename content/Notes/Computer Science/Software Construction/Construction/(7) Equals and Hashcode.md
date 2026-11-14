@@ -1,5 +1,5 @@
 
-#cs #cs210 #java
+#cs #SoftwareConstruction #java
 
 # 1. `==` Compares Object References (pointers).
 # 2. `.equals()` compares **object content** - but *only if the class overrides it*. Else it behaves just like `==`.

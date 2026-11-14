@@ -1,4 +1,4 @@
-#stats #math #math302 
+#stats #math #IntroToProbability 
 
 # Conditional and Bayesian Probability
 

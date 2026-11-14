@@ -1,4 +1,4 @@
-#cs #cs210 #OOP #java
+#cs #SoftwareConstruction #OOP #java
 
 # The Observer Pattern
 

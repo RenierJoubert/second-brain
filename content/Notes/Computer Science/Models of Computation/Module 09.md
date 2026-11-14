@@ -1,4 +1,4 @@
-#cs #math #cs121 #proof 
+#cs #math #ModelsOfComputation #proof 
 
 # Weak Induction Proofs
 

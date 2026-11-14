@@ -1,4 +1,4 @@
-#math #math101 
+#math #CalculusII 
 
 When we need to integrate functions where the integrands are not linear combinations of simpler functions, but rather compositions of functions we need to use the *chain rule* in order to integrate.
 

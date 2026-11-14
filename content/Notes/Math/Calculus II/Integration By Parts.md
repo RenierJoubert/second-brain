@@ -1,4 +1,4 @@
-#math #math101 
+#math #CalculusII 
 
 Integration by parts, or ==IBP== allows us to integrate products of functions. So, first recall the product rule:
 

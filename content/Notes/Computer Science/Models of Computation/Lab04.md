@@ -1,4 +1,4 @@
-#cs #cs121 #labs
+#cs #ModelsOfComputation #labs
 
 # Computational Circuits
 

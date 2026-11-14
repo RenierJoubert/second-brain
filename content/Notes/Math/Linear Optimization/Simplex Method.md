@@ -1,4 +1,4 @@
-#math #math340 #linear-programming 
+#math #LinearOptimization #linear-programming 
 
 # The Simplex Method
 

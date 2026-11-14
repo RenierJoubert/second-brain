@@ -1,4 +1,4 @@
-#math #math340 #linear-programming #optimization 
+#math #LinearOptimization #linear-programming #optimization 
 
 # Optimal Transport
 

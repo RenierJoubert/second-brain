@@ -1,4 +1,4 @@
-#cs #cs121
+#cs #ModelsOfComputation
 
 # Propositional Logic / Regex / DFAs / NFAs
 

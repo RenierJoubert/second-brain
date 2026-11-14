@@ -1,4 +1,4 @@
-#math 
+#math #AbstractAlgebra
 
 
 > [!question]-  1.) Let G be finite. In its Cayley table, prove that every element appears exactly once in each row.

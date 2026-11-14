@@ -1,3 +1,5 @@
+#RealAnalysis
+
 ## Darboux
 A function is *Darboux* if it satisfies the conclusions of the Intermediate Value Theorem. For some perspective, a continuous function $f$ is Darboux, but a Darboux function $f$ is not continuous. Moreover, on a "niceness" scale, the progression would be as follows (most to least nice)
 

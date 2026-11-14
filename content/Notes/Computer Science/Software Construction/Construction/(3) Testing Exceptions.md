@@ -1,5 +1,5 @@
 
-#cs #cs210 #java
+#cs #SoftwareConstruction #java
 
 Testing exceptions:
 - When testing exceptions you must test that they are ==thrown when expected to be thrown and not thrown when not expected to be thrown==.

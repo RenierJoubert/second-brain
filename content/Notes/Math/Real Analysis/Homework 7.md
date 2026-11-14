@@ -1,3 +1,4 @@
+#RealAnalysis
 
 
 > [!question]- Prove that the alternating harmonic series is equal to $\log(2)$. Namely, that $\sum_{n=1}^{\infty}(-1)^{n+1} \frac{1}{n}=\log(2)$. 

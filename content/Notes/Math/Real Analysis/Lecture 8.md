@@ -1,4 +1,4 @@
-#math 
+#math #RealAnalysis
 
 # Series
 > We cannot literally take the sum of infinitely many terms, so to evaluate convergence in series we study the partial sum instead.
