@@ -43,6 +43,12 @@ article a.internal:not(.tag-link) {
   font-size: 16px;
 }
 
+*,
+*::before,
+*::after {
+  border-radius: 0 !important;
+}
+
 .sidebar-nav {
   margin: 1rem 0;
   width: 100%;
@@ -58,7 +64,7 @@ article a.internal:not(.tag-link) {
       align-items: center;
       gap: 0.6rem;
       padding: 0.5rem 0.8rem;
-      border-radius: 6px;
+      border-radius: 0;
       color: var(--dark);
       text-decoration: none;
       transition: all 0.2s ease;
