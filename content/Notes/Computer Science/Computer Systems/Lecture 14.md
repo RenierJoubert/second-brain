@@ -40,7 +40,7 @@ So `Object of Class A -> Class Object A -> Jump Table A -> methods of A`.
 
 ![[Pasted image 20261112205804.png]]
 
-So, a jump table is just a struct of function pointers. We can then define the methods for a specific class that match the description of the jump table specifications. Then, because a function name is just the address of the function, we can then initialize our class object as the type of our jump table struct, and initialize the struct members with the names of our defined methods. 
+So, a jump table is just a struct of function pointers. We can then define the methods for a specific class that match the description of the jump table specifications. Then, because a function name is just the address of the function **also remember that functions are static** (their address is known at compile time and does not change) , we can then initialize our class object as the type of our jump table struct, and initialize the struct members with the names of our defined methods.
 
 ![[Pasted image 20261112210325.png]]
 
