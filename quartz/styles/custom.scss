@@ -30,7 +30,9 @@ article li{
 }
 
 // Links to notes and folders use plain underlined text. Tags keep the grey box.
-article a.internal:not(.tag-link) {
+// (.page-listing = folder/tag pages, which render outside <article>)
+article a.internal:not(.tag-link),
+.page-listing a.internal:not(.tag-link) {
   background-color: transparent;
   padding: 0;
   border-radius: 0;
