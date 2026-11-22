@@ -38,7 +38,7 @@ $$
 ## Eigenvalue problems: show all three cases
 $y'' + \lambda y = 0$, $y(0) = 0$, $y(L) = 0$. The characteristic equation is $r^2 = -\lambda$.
 
-**Case $\lambda < 0$** ($\lambda = -\mu^2$, $\mu > 0$): $y = A\cosh\mu x + B\sinh\mu x$. $y(0) = A = 0$. $y(L) = B\sinh\mu L = 0$ and $\sinh\mu L \neq 0$, so $B = 0$. Only the trivial solution, so no eigenvalues.
+**Case $\lambda < 0$** ($\lambda = -\mu^2$, $\mu > 0$; see [[Hyperbolic Functions]]): $y = A\cosh\mu x + B\sinh\mu x$. $y(0) = A = 0$. $y(L) = B\sinh\mu L = 0$ and $\sinh\mu L \neq 0$, so $B = 0$. Only the trivial solution, so no eigenvalues.
 
 **Case $\lambda = 0$:** $y = A + Bx$. $y(0) = A = 0$ and $y(L) = BL = 0$, so $B = 0$. Trivial, so no eigenvalue.
 
@@ -48,7 +48,7 @@ $$
 $$
 
 > [!warning] Traps
-> - $\lambda = \mu^2$, so $\lambda_n = +\left(\frac{n\pi}{L}\right)^2$. The posted 2023 midterm solution writes $\lambda_n = -(2n)^2$; that's a typo.
+> - In this convention $\lambda = \mu^2$, so $\lambda_n = +\left(\frac{n\pi}{L}\right)^2$. The prof separates with $+\lambda$ instead, so posted solutions write $\lambda_n = -\mu_n^2$ (e.g. $-(2n)^2$). That's not a typo; the eigenfunctions are the same. See [[11 Standard Eigenvalue Problems]].
 > - With a Neumann condition ($y' = 0$) at both ends, $\lambda = 0$ ==is== an eigenvalue with $y_0 = 1$. Always check $\lambda = 0$.
 > - For a different ODE, split the cases on the ==discriminant==, not just the sign of $\lambda$. E.g. $y'' + 2y' + \lambda y = 0$ has $r = -1 \pm \sqrt{1 - \lambda}$, so the cases are $\lambda < 1$, $\lambda = 1$ and $\lambda > 1$.
 > - For Euler-type problems like $x^2y'' + xy' + \lambda y = 0$, $r^2 + \lambda = 0$ gives the same three cases, but in terms of $\ln x$. E.g. $\lambda = \mu^2$ gives $A\cos(\mu\ln x) + B\sin(\mu\ln x)$.
@@ -62,6 +62,7 @@ $$
 > | $y'(0) = 0$, $y(L) = 0$ | $\left(\frac{(2n-1)\pi}{2L}\right)^2$ | $\cos\frac{(2n-1)\pi x}{2L}$ | $1, 2, \dots$ |
 
 ## Orthogonality of trig functions (basis functions)
+For how to use it, see [[Orthogonality]].
 The eigenfunctions $\sin\frac{n\pi x}{L}$ form a basis: any reasonable $f$ on $[0, L]$ can be written as a combination of them. They are orthogonal:
 $$
 \int_0^L\sin\frac{m\pi x}{L}\sin\frac{n\pi x}{L}\,dx = \begin{cases}0 & m \neq n \\ \frac L2 & m = n\end{cases}

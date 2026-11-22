@@ -37,3 +37,34 @@ Separation of variables needs ==homogeneous== BCs (right side $= 0$).
 ## Good to know (may not be tested on MT1)
 - **Classification** of $Au_{xx} + Bu_{xy} + Cu_{yy} + \dots = 0$: $B^2 - 4AC < 0$ elliptic (Laplace), $= 0$ parabolic (heat), $> 0$ hyperbolic (wave).
 - **D'Alembert** (on the formula sheet), for the wave equation on the whole line: $u = \frac12\big[f(x+ct) + f(x-ct)\big] + \frac1{2c}\int_{x-ct}^{x+ct}g(s)\,ds$.
+
+## Deriving the equations (L9–11)
+Every derivation has the same two ingredients:
+1. A **conservation law** over a small slab $[x, x + \Delta x]$ during a time $\Delta t$: the change inside equals the flux in minus the flux out. Divide by $\Delta x\,\Delta t$ and let both go to $0$.
+2. A **constitutive law** that says how the flux depends on $u$.
+
+| Model | Conservation | Constitutive law | Result |
+|---|---|---|---|
+| Heat in a bar | $\rho c\,u_t + q_x = 0$ | Fourier: $q = -ku_x$ | $u_t = \alpha^2u_{xx}$, $\ \alpha^2 = \frac{k}{\rho c}$ |
+| Traffic | $u_t + q_x = 0$ | $q = cu$ | $u_t + cu_x = 0$ |
+| Cautious traffic | $u_t + q_x = 0$ | $q = cu - Du_x$ | $u_t + cu_x = Du_{xx}$ |
+| Elastic bar | Newton: $\sigma_x = \rho u_{tt}$ | Hooke: $\sigma = Eu_x$ | $u_{tt} = c^2u_{xx}$, $\ c = \sqrt{E/\rho}$ |
+| Porous flow | Mass: $u_x + v_y = 0$ | Darcy: $u = -Kh_x$, $v = -Kh_y$ | $h_{xx} + h_{yy} = 0$ |
+
+- Heat flows from hot to cold, which is where the minus sign in Fourier's law comes from.
+- **Units check:** every term must have the same units. $[\alpha^2] = \frac{\text{m}^2}{\text{s}}$, and in $q = cu - Du_x$, $[D] = \frac{L^2}{T}$.
+
+## Dispersion relations
+For a linear PDE with constant coefficients, try $u = e^{ikx + \sigma t}$ ($k$ is the wavenumber) and solve for $\sigma$.
+
+| PDE | $\sigma$ | Solution | Meaning |
+|---|---|---|---|
+| $u_t = \alpha^2u_{xx}$ | $-\alpha^2k^2$ | $e^{ikx}e^{-\alpha^2k^2t}$ | decays; ==higher $k$ decays faster== |
+| $u_t + cu_x = 0$ | $-ick$ | $e^{ik(x - ct)}$ | moves right at speed $c$ |
+| $u_t + cu_x = Du_{xx}$ | $-ick - Dk^2$ | $e^{ik(x - ct)}e^{-Dk^2t}$ | moves right and decays |
+| $u_{tt} = c^2u_{xx}$ | $\pm ick$ | $e^{ik(x \mp ct)}$ | waves moving both ways |
+
+- With a real exponent $e^{kx + \sigma t}$, the heat equation gives $\sigma = +\alpha^2k^2$, which blows up, so it isn't physical. That's why the $x$-part has to oscillate.
+- By the chain rule, any $f(x - ct)$ solves $u_t + cu_x = 0$: a fixed shape moving right. $u_t - cu_x = 0$ gives $f(x + ct)$, moving left.
+- In the frame moving with the wave, $z = x - ct$, convection–diffusion becomes pure diffusion: $U_t = DU_{zz}$.
+- The wave operator factors as $(\partial_t + c\partial_x)(\partial_t - c\partial_x)u = 0$, so $u = f(x - ct) + g(x + ct)$.
