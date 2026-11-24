@@ -242,3 +242,43 @@ $f(e_{G})=e_{H} \in K$ as $K \leq H$, so $e_{G} \in f^{-1}(K)$ and $f^{-1}(K)$ i
 2. Inverse: if $a \in f^{-1}(K)$ then $f(a^{-1})=f(a)^{-1} \in K$ as $K$ is closed under inverses, so $a^{-1} \in f^{-1}(K)$ and $aa^{-1}=e_{G}$.
 
 Hence $f^{-1}(K) \leq G$.
+
+## Permutation
+A permutation of a set $X$ is a bijective function $\sigma: X \to X$.
+
+## Cycle
+Given $X = \{ 1, \cdots, n \}$, a cycle is a string of distinct elements of the form $(a_{1} \quad a_{2} \quad \cdots \quad a_{k})$ indicating that $a_{j} \mapsto a_{j+1}$ and $a_{k} \mapsto a_{1}$.
+
+## Transposition
+A transposition is a cycle of length two, ie $(a_{1} \quad a_{2})$.
+
+## Even permutation
+A permutation $\sigma$ is "even" if it can be written with an even number of transpositions. 
+
+## Odd Permutation
+A permutation $\sigma$ is "odd" if it can be written with an odd number of transpositions.
+
+## Sign of a permutation
+The sign of a permutation is a function $\text{sgn}: \sigma \to \{ -1, 1 \}$ where $\text{sgn}(\sigma)=1$ if $\sigma$ is even, and -1 if $\sigma$ is odd.
+
+## The symmetric group
+The symmetric group $S_{n}$ is the set of all permutations on the set $X = \{ 1, \cdots, n \}$. $|S_{n}|=n!$. The binary of this group is function composition.
+
+## Left Cosets
+For a group $G$ and $H\leq G$, for $g \in G$ the set $gH=\{ gh : h \in H \}$ is a left coset of $H$ in $G$. For any $g_{1}, g_{2} \in G$, the left cosets of these elements are either disjoint or equal.
+
+## Right Cosets
+For a group $G$ and $H \leq G$, for $g \in G$, the set $Hg=\{ hg : h \in H \}$ is a right coset of $H$ in $G$. For any $g_{1}, g_{2} \in G$, the right cosets of these elements are either disjoint or equal.
+
+## Index of a Subgroup
+The index of $H \leq G$ is the cardinality of the set of left cosets of $H$ in $G$. This is written $[G:H]$ and is also equal to the cardinality of the right cosets of $H$ in $G$.
+
+## Lagrange's Theorem
+Let $G$ be a group and $H \leq G$. Then $|G|=[G:H]|H|$. This implies the following:
+- The order of a subgroup must divide the group.
+- The order of $g \in G$ must divide $|G|$, because $\langle g \rangle \leq G$.
+- If $G$ has prime order, then it must be cyclic and $\langle g \rangle = G$.
+
+2. Homework questions:  
+- Homework 6: Questions 2,3,4.  
+- Homework 7: Questions 1,2,3.
