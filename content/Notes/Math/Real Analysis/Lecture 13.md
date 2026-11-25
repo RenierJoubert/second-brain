@@ -10,7 +10,7 @@ $$
 exists. $f'(c)$ is the derivative of $f$ at $c$. If $f$ is differentiable at every point in an interval then we say that it is differentiable on that interval.
 
 ## HW: Differentiable Implies Continuous
-If a function is differentiable at $c$ then it is continuous at $c$. But, the converse is false. 
+If a function is differentiable at $c$ then it is continuous at $c$. But, the converse is false. Also, just because $f$ is diffble, doesnt meant that $f'$ is continuous, but it is always Darboux! In particular, the set of points where $f'$ DNE cannot be arbitrary and they do take a certain structure.
 
 ## Derivatives and Continuity
 

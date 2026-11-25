@@ -87,6 +87,9 @@ This means there is some point in the interval such that the derivative at that 
 >$$
 
 
+> [!Important] Potential Exam Qs 
+> Prof mentioned questions in sections 4.2 / 4.3 would make for excellent exam questions.  
+
 ## Cauchy MVT / Generalized MVT
 
 Let $[a, b]$ be a closed interval and let $f, g$ be functions that are continuous on $[a, b]$ and differentiable on $(a, b)$, there exists a point $c \in (a, b)$ so that:
@@ -99,4 +102,55 @@ If we set $g(x)=x$ we immediately get the original MVT.
 > [!theorem]- Proof 
 > Let $h(x)=f(x)(g(b)-g(a))-g(x)(f(b)-f(a))$ and apply Rolle's theorem. 
 > 
+
+## Consequences of the MVT
+
+### Increasing, Decreasing, Zero
+Let at $g$ be continuous on $[a, b]$ and diffble on $(a, b)$. Suppose $g'(x)>0$ for all $x \in (a, b)$. Then $g$ is strictly increasing on $(a, b)$ such that $g(x)<g(y)$ for all $x < y$. A similar result holds for $g'(x)<0$. Now, if $g'(x)=0$ for all of $(a, b)$ then $g(x)$ is constant on $[a, b]$
+
+
+> [!theorem]- Proof 
+> Let $x,y \in [a, b]$ with $x<y$, we can see that $g$ satisfies the MVT so there exists $c \in (x, y)$ such that $g(y)-g(x) = g'(c)(y-x)$. If $g'(x)>0$ we can see that $g(y)-g(x)>0$ as required. Now, if $g'(x)= 0$ on $[a, b]$, assume there are $x, y \in [a, b]$ with $x \ne y$ and $g(x) \ne g(y)$, but by the MVT $g'(c) \ne 0$ for $c \in (x, y)$ which contradicts our assumption.
+
+### The Inverse Function Theorem
+Suppose $f: (a, b) \to \mathbb{R}$ is a diffble function with $f'(x)>0$ for every $x \in (a, b)$. Then, $f$ is invertible and the inverse function $g$ is also diffble, with its derivative as follows:
+$$
+g'(y)=\frac{1}{f'(g(y))}.
+$$
+
+> [!important] Inverse Function Theorem Proof
+> The proof of this was apparently in the HW but I dont remember doing it, I will come back to this later.
+> 
+
+
+### Taylor's Theorem for Tangent Lines
+Let $[a, b]$ be a closed interval and let $f$ be twice diffble on $(a, b)$ and let $c \in [a, b]$. The tangent line to $f$ at $c$ is:
+$$
+T(x)=f(c)+(x-c)f'(c)
+$$
+Then, for any $x \in (a, b)$ with $x \ne c$, there exists $q$ **strictly** between $x$ and $c$ such that:
+$$
+f(x)=T(x)+\frac{(x-c)^2}{2}\cdot f''(q)
+$$
+
+> [!theorem]- Proof 
+> We can pick a $t$ between $x$ and $c$ such that:
+>$$
+> F(t)=f(t)+f'(c)(x-t) 
+>$$
+>We see that $F(x)=f(x)$ and $F(c)=f(c)+f'(c)(x-c)=T(x)$ so $F(x)-F(c)=f(x)-T(x)$. If we set a function $G(t)=(x-t)^2$ then $G(x)-G(c)=-(x-c)^2$. Using the generalized MVT above for a point $q$ between $x$ and $c$ we get:
+>$$
+>F(x)-F(c)=\frac{F'(q)}{G'(q)}(G(x)-G(c))
+>$$
+>So,
+>$$
+>F(x)-T(x)=-\frac{F'(q)}{G'(q)}(x-c)^2
+>$$
+>Now, $F'(q)=f'(q)+f''(q)(x-q)-f'(q)=f''(q)(x-q)$ and $G'(q)=-2(x-q)$ so we obtain:
+>$$
+>f(x)-T(x)=\frac{1}{2}f''(q)(x-c)^2
+>$$
+
+
+Moreover, if we have a bound on $f''$, $M$, then we can bound the difference between the function and its tangent line, giving us the error in approximating the function with its tangent line. 
 
